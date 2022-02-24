@@ -14,6 +14,7 @@ namespace CoTuong
         public static bool isMarked = false; //  kiem tra da chon quan co hay chua 
         public static QuanCo.QuanCo temp;// de tham chieu den quuan co duoc chon trong 1 nuoc di chuyen
         public static Bitmap BackBuffer = null;
+        public static bool isWin = false;
         static VanCo()
         {
             player[0] = new NguoiChoi(0);
@@ -35,7 +36,6 @@ namespace CoTuong
                 for (int i = 0; i < 5; i++)
                     player[0].qTot[i].picQuanCo.Visible = false;
                 player[0].qTuong.picQuanCo.Visible = false;
-
                 //=========================================
                 for (int i = 0; i < 2; i++)
                 {
@@ -209,8 +209,8 @@ namespace CoTuong
         {
             qc.TrangThai = 0;
             qc.picQuanCo.Cursor = Cursors.Arrow;
-            qc.picQuanCo.Top = 500;
-            qc.picQuanCo.Left = 1000;
+            qc.picQuanCo.Top = 5000;
+            qc.picQuanCo.Left = 6000;
         }
 
 

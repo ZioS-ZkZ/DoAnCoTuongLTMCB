@@ -51,85 +51,143 @@ namespace CoTuong
         }
         private void CanMove_MouseClick(Object sender, MouseEventArgs e)
         {
-            for (int i =0; i<10; i++)
-                for(int j =0; j<9; j++)
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 8; j++)
+                {
                     if (sender.Equals(BanCo.ViTri[i, j].CanMove))
+                    {
                         if (VanCo.isMarked)
                         {
-                            if (VanCo.temp.Phe == 0)
+                            switch (BanCo.ViTri[i, j].Trong)
                             {
-                                if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-                                if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-                                if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-                                if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-                                if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-                                if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-                                if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
-                            }
-                            else if (VanCo.temp.Phe == 1)
-                            {
-                                if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-                                if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-                                if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-                                if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-                                if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-                                if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-                                if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
-                            }
-                            VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
-                            if (BanCo.ViTri[i, j].Trong == false)
-                            {
-                                int PheConLai = (VanCo.temp.Phe == 0) ? 1 : 0;
-                                QuanCo.QuanCo QuanCoBiAn = new QuanCo.QuanCo();
-                                if (BanCo.ViTri[i, j].Ten == "xe")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qXe[0];
-                                    if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qXe[1];
-                                }
-                                if (BanCo.ViTri[i, j].Ten == "ma")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qMa[0];
-                                    if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qMa[1];
-                                }
-                                if (BanCo.ViTri[i, j].Ten == "voi")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qVoi[0];
-                                    if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qVoi[1];
-                                }
-                                if (BanCo.ViTri[i, j].Ten == "si")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qSi[0];
-                                    if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qSi[1];
-                                }
-                                if (BanCo.ViTri[i, j].Ten == "phao")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qPhao[0];
-                                    if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qPhao[1];
-                                }
-                                if (BanCo.ViTri[i, j].Ten == "tot")
-                                {
-                                    if (BanCo.ViTri[i, j].Phia == "1") QuanCoBiAn = VanCo.player[PheConLai].qTot[0];
-                                    if (BanCo.ViTri[i, j].Phia == "2") QuanCoBiAn = VanCo.player[PheConLai].qTot[1];
-                                    if (BanCo.ViTri[i, j].Phia == "3") QuanCoBiAn = VanCo.player[PheConLai].qTot[2];
-                                    if (BanCo.ViTri[i, j].Phia == "4") QuanCoBiAn = VanCo.player[PheConLai].qTot[3];
-                                    if (BanCo.ViTri[i, j].Phia == "5") QuanCoBiAn = VanCo.player[PheConLai].qTot[4];
-                                }
-                                VanCo.AnQuanCo(QuanCoBiAn);
-                                if(BanCo.ViTri[i, j].Ten == "tuong")
-                                {
-                                    QuanCoBiAn = VanCo.player[PheConLai].qTuong;
-                                    VanCo.AnQuanCo(QuanCoBiAn);
-                                    fEnd end = new fEnd();
-                                    this.Close();
-                                    end.ShowDialog();
+                                case true:
+                                    if (VanCo.temp.Phe == 0)
+                                    {
+                                        if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
+                                        if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
+                                        if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
+                                        if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
+                                        if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
+                                        if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
+                                        if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+                                    }
+                                    else if (VanCo.temp.Phe == 1)
+                                    {
+                                        if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
+                                        if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
+                                        if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
+                                        if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
+                                        if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
+                                        if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
+                                        if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
+                                    }
+                                    //Bỏ chọn quân cờ
+                                    VanCo.isMarked = false;
+
+                                    //Ô cờ trống tại ví trí ban đầu                
+                                    VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
+
+                                    //Đặt quân cờ đã chọn vào vị trí mới [i,j]
+                                    VanCo.DatQuanCo(sender, VanCo.temp, i, j);
                                     
-                                }
+                                    //Thay đổi lượt đi                        
+                                    VanCo.DoiLuotDi();
+                                    BanCo.ResetCanMove();
+                                    break;
+                                case false:
+                                    if (VanCo.temp.Phe == 0)
+                                    {
+                                        if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
+                                        if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
+                                        if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
+                                        if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
+                                        if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
+                                        if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
+                                        if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+                                    }
+                                    else if (VanCo.temp.Phe == 1)
+                                    {
+                                        if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
+                                        if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
+                                        if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
+                                        if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
+                                        if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
+                                        if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
+                                        if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
+                                    }
+
+                                    int PheConLai = (VanCo.temp.Phe == 0) ? 1 : 0;
+                                    QuanCo.QuanCo QuanCoBiAn = new QuanCo.QuanCo();
+
+                                    if (BanCo.ViTri[i, j].Ten == "xe")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qXe[0];
+                                        if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qXe[1];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "ma")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qMa[0];
+                                        if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qMa[1];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "voi")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qVoi[0];
+                                        if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qVoi[1];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "si")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qSi[0];
+                                        if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qSi[1];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "phao")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "trai") QuanCoBiAn = VanCo.player[PheConLai].qPhao[0];
+                                        if (BanCo.ViTri[i, j].Phia == "phai") QuanCoBiAn = VanCo.player[PheConLai].qPhao[1];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "tot")
+                                    {
+                                        if (BanCo.ViTri[i, j].Phia == "1") QuanCoBiAn = VanCo.player[PheConLai].qTot[0];
+                                        if (BanCo.ViTri[i, j].Phia == "2") QuanCoBiAn = VanCo.player[PheConLai].qTot[1];
+                                        if (BanCo.ViTri[i, j].Phia == "3") QuanCoBiAn = VanCo.player[PheConLai].qTot[2];
+                                        if (BanCo.ViTri[i, j].Phia == "4") QuanCoBiAn = VanCo.player[PheConLai].qTot[3];
+                                        if (BanCo.ViTri[i, j].Phia == "5") QuanCoBiAn = VanCo.player[PheConLai].qTot[4];
+                                    }
+                                    if (BanCo.ViTri[i, j].Ten == "tuong")
+                                    {
+                                        QuanCoBiAn = VanCo.player[PheConLai].qTuong;
+                                        VanCo.isWin = true;
+                                    }
+                                    //Bỏ chọn quân cờ
+                                    VanCo.isMarked = false;
+
+                                    //Ăn quân cờ của đối phương
+                                    VanCo.AnQuanCo(QuanCoBiAn);
+
+                                    //Trả lại ô cờ trống
+                                    VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
+
+                                    //Thiết lập quân cờ đã chọn vào bàn cờ
+                                    VanCo.DatQuanCo(sender, VanCo.temp, i, j);
+
+                                    //Thay đổi lượt đi                            
+                                    VanCo.DoiLuotDi();
+                                    
+                                    if (VanCo.isWin)
+                                    {
+                                        VanCo.NewGame();
+                                        fEnd end = new fEnd();
+                                        end.ShowDialog();
+                                    }
+                                    
+                                    BanCo.ResetCanMove();
+                                    break;
                             }
-                            VanCo.DatQuanCo(sender, VanCo.temp, i, j);
-                            VanCo.DoiLuotDi();
-                            BanCo.ResetCanMove();
-                            VanCo.isMarked = false;
                         }
+                    }
+                }
+
+            }
         }
         private void addQuanCo()
         {

@@ -118,14 +118,45 @@ namespace CoTuong.QuanCo
                             {
                                 VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
                                 VanCo.AnQuanCo(this);
+                                if (this.Ten == "tuong")
+                                    VanCo.isWin = true;
                                 VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
                                 VanCo.DoiLuotDi();
                             }
+                            if (VanCo.isWin)
+                            {
+                                VanCo.NewGame();
+                                fEnd end = new fEnd();
+                                end.ShowDialog();
+                            }
                             BanCo.ResetCanMove();
                         }
+                        
                         VanCo.isMarked = false;
+                        if (VanCo.temp.Phe == 0)
+                        {
+                            if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
+                            if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
+                            if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
+                            if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
+                            if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
+                            if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
+                            if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+                        }
+                        else if (VanCo.temp.Phe == 1)
+                        {
+                            if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
+                            if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
+                            if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
+                            if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
+                            if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
+                            if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
+                            if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
+                        }
                         BanCo.ResetCanMove();
+
                     }
+
                     break;
                 
             }

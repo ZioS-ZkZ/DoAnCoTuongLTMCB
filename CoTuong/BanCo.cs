@@ -30,13 +30,12 @@ namespace CoTuong
                     ViTri[i, j].Trong = true;
                     ViTri[i, j].Ten = "";
                     ViTri[i, j].Phia = "";
-                    ViTri[i, j].Phe = 0;
+                    ViTri[i, j].Phe = 2;
                     ViTri[i, j].CanMove = new PictureBox();
                     ViTri[i, j].CanMove.BackColor = System.Drawing.Color.Transparent;
                     ViTri[i, j].CanMove.Image = CoTuong.Properties.Resources.viTriDiDuoc;
                     ViTri[i, j].CanMove.Width = 20;
                     ViTri[i, j].CanMove.Height = 20;
-                    ViTri[i, j].CanMove.BackColor = Color.Transparent;
                     ViTri[i, j].CanMove.Top = i * 50 + 35;
                     ViTri[i, j].CanMove.Left = j * 50 + 10;
                     ViTri[i, j].CanMove.Cursor = Cursors.Hand;
@@ -67,7 +66,7 @@ namespace CoTuong
                     ViTri[i, j].Trong = true;
                     ViTri[i, j].Ten = "";
                     ViTri[i, j].Phia = "";
-                    ViTri[i, j].Phe = 0;
+                    ViTri[i, j].Phe = 2;
                     ViTri[i, j].CanMove.Visible = false;
                 }
             }
