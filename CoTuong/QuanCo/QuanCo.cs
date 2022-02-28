@@ -192,10 +192,10 @@ namespace CoTuong.QuanCo
                 if (Ten == "tot") picQuanCo.Image = CoTuong.Properties.Resources.totDo;
             }
 
-            //Vẽ quân cờ
-            picQuanCo.Width = 39;
-            picQuanCo.Height = 39;
-            picQuanCo.Cursor = Cursors.Hand;
+			//Vẽ quân cờ
+			picQuanCo.Width = 39;
+			picQuanCo.Height = 39;
+			picQuanCo.Cursor = Cursors.Hand;
             picQuanCo.Top = Hang * 50 + 31;
             picQuanCo.Left = Cot * 49 + 10;
             picQuanCo.BackColor = Color.Transparent;

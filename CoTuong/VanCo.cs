@@ -213,6 +213,10 @@ namespace CoTuong
         {
             qc.TrangThai = 0;
             qc.picQuanCo.Cursor = Cursors.Arrow;
+			qc.picQuanCo.Width = 29;
+			qc.picQuanCo.Height = 29;
+			qc.picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+
 
 			if (qc.Phe == 0) {
 				qc.toaDoMoDen_x = toaDoMoDen_x;
@@ -239,14 +243,14 @@ namespace CoTuong
 
 			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Den)
 			{
-				item.picQuanCo.Top =  item.toaDoMoDen_y * 40 + 227;
-				item.picQuanCo.Left = item.toaDoMoDen_x * 37 + 586;
+				item.picQuanCo.Top =  item.toaDoMoDen_y * 32 + 181;
+				item.picQuanCo.Left = item.toaDoMoDen_x * 29 + 463;
 			}
 
 			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Do)
 			{
-				item.picQuanCo.Top = item.toaDoMoDo_y * 40 + 483;
-				item.picQuanCo.Left = item.toaDoMoDo_x * 37 + 586;
+				item.picQuanCo.Top = item.toaDoMoDo_y * 32 + 382;
+				item.picQuanCo.Left = item.toaDoMoDo_x * 29 + 463;
 			}
 			//qc.picQuanCo.Top = 5000;
 			//qc.picQuanCo.Left = 6000;
