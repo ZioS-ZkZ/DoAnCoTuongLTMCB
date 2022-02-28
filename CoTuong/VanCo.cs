@@ -222,12 +222,14 @@ namespace CoTuong
 				qc.toaDoMoDen_x = toaDoMoDen_x;
 				qc.toaDoMoDen_y = toaDoMoDen_y;
 				toaDoMoDen_x++;
-				if(toaDoMoDen_x==5)
+				if (toaDoMoDen_x == 5)
 				{
 					toaDoMoDen_x = 0;
 					toaDoMoDen_y++;
 				}
-				QuanCo.QuanCo.dsCoChet_Den.Add(qc); 
+				qc.picQuanCo.Top = qc.toaDoMoDen_y * 32 + 181;
+				qc.picQuanCo.Left = qc.toaDoMoDen_x * 29 + 463;
+				//QuanCo.QuanCo.dsCoChet_Den.Add(qc); 
 			}
 			else {
 				qc.toaDoMoDo_x = toaDoMoDo_x;
@@ -238,20 +240,22 @@ namespace CoTuong
 					toaDoMoDo_x = 0;
 					toaDoMoDo_y++;
 				}
-				QuanCo.QuanCo.dsCoChet_Do.Add(qc); 
+				qc.picQuanCo.Top = qc.toaDoMoDo_y * 32 + 382;
+				qc.picQuanCo.Left = qc.toaDoMoDo_x * 29 + 463;
+				//QuanCo.QuanCo.dsCoChet_Do.Add(qc); 
 			}
 
-			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Den)
-			{
-				item.picQuanCo.Top =  item.toaDoMoDen_y * 32 + 181;
-				item.picQuanCo.Left = item.toaDoMoDen_x * 29 + 463;
-			}
+			//foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Den)
+			//{
+			//	item.picQuanCo.Top =  item.toaDoMoDen_y * 32 + 181;
+			//	item.picQuanCo.Left = item.toaDoMoDen_x * 29 + 463;
+			//}
 
-			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Do)
-			{
-				item.picQuanCo.Top = item.toaDoMoDo_y * 32 + 382;
-				item.picQuanCo.Left = item.toaDoMoDo_x * 29 + 463;
-			}
+			//foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Do)
+			//{
+			//	item.picQuanCo.Top = item.toaDoMoDo_y * 32 + 382;
+			//	item.picQuanCo.Left = item.toaDoMoDo_x * 29 + 463;
+			//}
 			//qc.picQuanCo.Top = 5000;
 			//qc.picQuanCo.Left = 6000;
 		}
