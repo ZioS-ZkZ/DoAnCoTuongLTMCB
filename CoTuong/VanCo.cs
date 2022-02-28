@@ -15,7 +15,11 @@ namespace CoTuong
         public static QuanCo.QuanCo temp;// de tham chieu den quuan co duoc chon trong 1 nuoc di chuyen
         public static Bitmap BackBuffer = null;
         public static bool isWin = false;
-        static VanCo()
+		public static int toaDoMoDo_x = 0;//toa do hien thi quan co bi an
+		public static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
+		public static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
+		public static int toaDoMoDen_y = 0;//toa do hien thi quan co bi an
+		static VanCo()
         {
             player[0] = new NguoiChoi(0);
             player[1] = new NguoiChoi(1);
@@ -209,9 +213,44 @@ namespace CoTuong
         {
             qc.TrangThai = 0;
             qc.picQuanCo.Cursor = Cursors.Arrow;
-            qc.picQuanCo.Top = 5000;
-            qc.picQuanCo.Left = 6000;
-        }
+
+			if (qc.Phe == 0) {
+				qc.toaDoMoDen_x = toaDoMoDen_x;
+				qc.toaDoMoDen_y = toaDoMoDen_y;
+				toaDoMoDen_x++;
+				if(toaDoMoDen_x==5)
+				{
+					toaDoMoDen_x = 0;
+					toaDoMoDen_y++;
+				}
+				QuanCo.QuanCo.dsCoChet_Den.Add(qc); 
+			}
+			else {
+				qc.toaDoMoDo_x = toaDoMoDo_x;
+				qc.toaDoMoDo_y = toaDoMoDo_y;
+				toaDoMoDo_x++;
+				if (toaDoMoDo_x == 5)
+				{
+					toaDoMoDo_x = 0;
+					toaDoMoDo_y++;
+				}
+				QuanCo.QuanCo.dsCoChet_Do.Add(qc); 
+			}
+
+			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Den)
+			{
+				item.picQuanCo.Top =  item.toaDoMoDen_y * 40 + 227;
+				item.picQuanCo.Left = item.toaDoMoDen_x * 37 + 586;
+			}
+
+			foreach (QuanCo.QuanCo item in QuanCo.QuanCo.dsCoChet_Do)
+			{
+				item.picQuanCo.Top = item.toaDoMoDo_y * 40 + 483;
+				item.picQuanCo.Left = item.toaDoMoDo_x * 37 + 586;
+			}
+			//qc.picQuanCo.Top = 5000;
+			//qc.picQuanCo.Left = 6000;
+		}
 
 
     }

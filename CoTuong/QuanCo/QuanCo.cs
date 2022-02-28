@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
 
 
 namespace CoTuong.QuanCo
@@ -9,7 +10,13 @@ namespace CoTuong.QuanCo
     {
         public int Hang;
         public int Cot;
-        public string Ten;
+		public int toaDoMoDo_x;//toa do hien thi quan co bi an
+		public int toaDoMoDo_y;//toa do hien thi quan co bi an
+		public int toaDoMoDen_x;//toa do hien thi quan co bi an
+		public int toaDoMoDen_y;//toa do hien thi quan co bi an
+		public static List<QuanCo> dsCoChet_Do = new List<QuanCo>();
+		public static List<QuanCo> dsCoChet_Den = new List<QuanCo>();
+		public string Ten;
         public int Phe;
         public string Phia;// phia ben trai hoac phai VD: xe-trai, xe-phai
         public int TrangThai;// =1(con song), =0(da bi an)
