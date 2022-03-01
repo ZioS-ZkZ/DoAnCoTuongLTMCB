@@ -88,6 +88,9 @@ namespace CoTuong
                                     //Ô cờ trống tại ví trí ban đầu                
                                     VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
 
+									//In lịch sử nước đi
+									VanCo.InLichSu(VanCo.temp, i, j);
+
                                     //Đặt quân cờ đã chọn vào vị trí mới [i,j]
                                     VanCo.DatQuanCo(sender, VanCo.temp, i, j);
                                     
@@ -167,8 +170,11 @@ namespace CoTuong
                                     //Trả lại ô cờ trống
                                     VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
 
-                                    //Thiết lập quân cờ đã chọn vào bàn cờ
-                                    VanCo.DatQuanCo(sender, VanCo.temp, i, j);
+									//In lịch sử nước đi
+									VanCo.InLichSu(VanCo.temp, i, j);
+
+									//Thiết lập quân cờ đã chọn vào bàn cờ
+									VanCo.DatQuanCo(sender, VanCo.temp, i, j);
 
                                     //Thay đổi lượt đi                            
                                     VanCo.DoiLuotDi();
@@ -225,6 +231,9 @@ namespace CoTuong
             }
         }
 
-       
-    }
+		private void lichSuDo_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

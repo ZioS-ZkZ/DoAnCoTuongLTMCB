@@ -19,6 +19,8 @@ namespace CoTuong
 		public static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
 		public static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
 		public static int toaDoMoDen_y = 0;//toa do hien thi quan co bi an
+		public static int soLanDi_Do = 1;
+		public static int soLanDi_Den = 1;
 		static VanCo()
         {
             player[0] = new NguoiChoi(0);
@@ -87,7 +89,19 @@ namespace CoTuong
                 for (int i = 0; i < 5; i++)
                     player[1].qTot[i].draw();
                 player[1].qTuong.draw();
-            }
+
+				//Reset toạ độ mộ
+				toaDoMoDen_x = 0;
+				toaDoMoDen_x = 0;
+				toaDoMoDo_x = 0;
+				toaDoMoDo_y = 0;
+
+				//Reset lịch sử nước đi
+				fBanCo.lichSuDo.Text = "";
+				fBanCo.lichSuDen.Text = "";
+				soLanDi_Den = 1;
+				soLanDi_Do = 1;
+			}
             else
             {
                 // tao ban co trong
@@ -209,7 +223,23 @@ namespace CoTuong
                 temp.picQuanCo.Left = col * 50 + 10;
             }
         }
-        public static void AnQuanCo(QuanCo.QuanCo qc)
+
+		public static void InLichSu(QuanCo.QuanCo qc, int row, int col)
+		{
+			string content = $"{char.ToUpper(qc.Ten[0])}({qc.Hang + 1},{qc.Cot + 1})->({row + 1},{col + 1})";
+			
+			if (qc.Phe == 0)
+			{
+				fBanCo.lichSuDen.AppendText($"{soLanDi_Den}. {content}\r\n");
+				soLanDi_Den++;
+			} else
+			{
+				fBanCo.lichSuDo.AppendText($"{soLanDi_Do}. {content}\r\n");
+				soLanDi_Do++;
+			}
+		}
+
+		public static void AnQuanCo(QuanCo.QuanCo qc)
         {
             qc.TrangThai = 0;
             qc.picQuanCo.Cursor = Cursors.Arrow;

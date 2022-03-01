@@ -121,7 +121,8 @@ namespace CoTuong.QuanCo
                                 VanCo.AnQuanCo(this);
                                 if (this.Ten == "tuong")
                                     VanCo.isWin = true;
-                                VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
+								VanCo.InLichSu(VanCo.temp, this.Hang, this.Cot);
+								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
                                 VanCo.DoiLuotDi();
                             }
                             if (VanCo.isWin)
