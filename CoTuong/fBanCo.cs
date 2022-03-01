@@ -231,9 +231,6 @@ namespace CoTuong
             }
         }
 
-		private void lichSuDo_TextChanged(object sender, EventArgs e)
-		{
-
-		}
+		
 	}
 }

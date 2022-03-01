@@ -226,7 +226,22 @@ namespace CoTuong
 
 		public static void InLichSu(QuanCo.QuanCo qc, int row, int col)
 		{
-			string content = $"{char.ToUpper(qc.Ten[0])}({qc.Hang + 1},{qc.Cot + 1})->({row + 1},{col + 1})";
+            string tenTiengViet = "";
+            if (qc.Ten == "xe")
+                tenTiengViet = "XE";
+            else if (qc.Ten == "ma")
+                tenTiengViet = "MÃ";
+            else if (qc.Ten == "voi")
+                tenTiengViet = "TƯỢNG";
+            else if (qc.Ten == "si")
+                tenTiengViet = "Sỹ";
+            else if (qc.Ten == "tuong")
+                tenTiengViet = "TƯỚNG";
+            else if (qc.Ten == "phao")
+                tenTiengViet = "PHÁO";
+            else if (qc.Ten == "tot")
+                tenTiengViet = "TỐT";
+            string content = $"{tenTiengViet}({qc.Hang + 1},{qc.Cot + 1})->({row + 1},{col + 1})";
 			
 			if (qc.Phe == 0)
 			{
