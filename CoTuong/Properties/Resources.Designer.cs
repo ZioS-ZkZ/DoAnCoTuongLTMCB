@@ -63,9 +63,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background {
+        internal static System.Drawing.Bitmap bk {
             get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
+                object obj = ResourceManager.GetObject("bk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background1 {
+        internal static System.Drawing.Bitmap bk1 {
             get {
-                object obj = ResourceManager.GetObject("background1", resourceCulture);
+                object obj = ResourceManager.GetObject("bk1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Expand1 {
+        internal static System.Drawing.Bitmap Gameover {
             get {
-                object obj = ResourceManager.GetObject("Expand1", resourceCulture);
+                object obj = ResourceManager.GetObject("Gameover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,19 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gameover {
+        internal static System.Drawing.Bitmap iconMess {
             get {
-                object obj = ResourceManager.GetObject("Gameover", resourceCulture);
+                object obj = ResourceManager.GetObject("iconMess", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMess1 {
+            get {
+                object obj = ResourceManager.GetObject("iconMess1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

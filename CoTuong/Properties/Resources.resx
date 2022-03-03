@@ -136,8 +136,8 @@
   <data name="xeDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xeDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="viTriCu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\viTriCu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="youwin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\youwin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="selecSiDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\selecSiDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,9 +169,6 @@
   <data name="maDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="selecSiDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\selecSiDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,8 +181,14 @@
   <data name="Chuot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chuot.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="viTriCu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viTriCu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="chieuTuongDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chieuTuongDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viTriDiDuoc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viTriDiDuoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="selecTotDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\selecTotDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +199,8 @@
   <data name="Undo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="youwin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\youwin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconMess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -219,6 +219,9 @@
   </data>
   <data name="phaoDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phaoDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="selecVoiDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\selecVoiDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,6 +250,9 @@
   <data name="chieuTuongDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chieuTuongDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="selecMaDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\selecMaDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -262,13 +268,10 @@
   <data name="endgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\endgame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Expand1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="siDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\siDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="viTriDiDuoc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\viTriDiDuoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconMess1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconMess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -12,13 +12,12 @@ namespace CoTuong
 {
     public partial class fBanCo : Form
     {
-        private bool isClickNewGame = false; // check xem da nhan vao nut NEWGAME hay chua
         public fBanCo()
         {
             InitializeComponent();
 
             VanCo.BackBuffer = new Bitmap(this.Width, this.Height);
-            Bitmap bg = new Bitmap(CoTuong.Properties.Resources.background);
+            Bitmap bg = new Bitmap(CoTuong.Properties.Resources.bk);
             Graphics g = Graphics.FromImage(VanCo.BackBuffer);
             g.Clear(this.BackColor);
             g.DrawImage(bg, 0, 0);
