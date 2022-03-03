@@ -97,7 +97,8 @@ namespace CoTuong
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.BackgroundImage = global::CoTuong.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(813, 569);
+            this.Width = 813;
+            this.Height = 616;
             this.Controls.Add(lichSuDo);
             this.Controls.Add(lichSuDen);
             this.Controls.Add(this.NewGame);
