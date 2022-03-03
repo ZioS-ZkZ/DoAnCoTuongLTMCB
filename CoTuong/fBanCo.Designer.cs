@@ -38,12 +38,12 @@ namespace CoTuong
             // 
             // undo
             // 
-            this.undo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.undo.BackColor = System.Drawing.Color.Transparent;
             this.undo.Image = global::CoTuong.Properties.Resources.Undo1;
-            this.undo.Location = new System.Drawing.Point(569, 37);
             this.undo.Name = "undo";
-            this.undo.Size = new System.Drawing.Size(48, 48);
+            this.undo.Top = 37;
+            this.undo.Left = 569;
+            this.undo.Width = this.undo.Height = 48;
             this.undo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.undo.TabIndex = 0;
             this.undo.TabStop = false;
@@ -51,13 +51,14 @@ namespace CoTuong
             // 
             // NewGame
             // 
-            this.NewGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NewGame.AutoSize = true;
             this.NewGame.BackColor = System.Drawing.Color.SaddleBrown;
             this.NewGame.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NewGame.Location = new System.Drawing.Point(660, 37);
             this.NewGame.Name = "NewGame";
-            this.NewGame.Size = new System.Drawing.Size(120, 48);
+            this.NewGame.Top = 37;
+            this.NewGame.Left = 660;
+            this.NewGame.Width = 120;
+            this.NewGame.Height = 48;
             this.NewGame.TabIndex = 1;
             this.NewGame.Text = "NEWGAME";
             this.NewGame.UseVisualStyleBackColor = false;
@@ -65,40 +66,39 @@ namespace CoTuong
             // 
             // lichSuDen
             // 
-            lichSuDen.Anchor = System.Windows.Forms.AnchorStyles.None;
             lichSuDen.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lichSuDen.Location = new System.Drawing.Point(610, 177);
             lichSuDen.Margin = new System.Windows.Forms.Padding(2);
             lichSuDen.Multiline = true;
             lichSuDen.Name = "lichSuDen";
             lichSuDen.ReadOnly = true;
             lichSuDen.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            lichSuDen.Size = new System.Drawing.Size(182, 101);
+            lichSuDen.Width = 200;
+            lichSuDen.Height = 101;
+            lichSuDen.Top = 177;
+            lichSuDen.Left = 610;
             lichSuDen.TabIndex = 3;
             // 
             // lichSuDo
             // 
-            lichSuDo.Anchor = System.Windows.Forms.AnchorStyles.None;
             lichSuDo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lichSuDo.Location = new System.Drawing.Point(610, 379);
             lichSuDo.Margin = new System.Windows.Forms.Padding(2);
             lichSuDo.Multiline = true;
             lichSuDo.Name = "lichSuDo";
             lichSuDo.ReadOnly = true;
             lichSuDo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            lichSuDo.Size = new System.Drawing.Size(182, 101);
+            lichSuDo.Width = 200;
+            lichSuDo.Height = 101;
+            lichSuDo.Top = 377;
+            lichSuDo.Left = 610;
             lichSuDo.TabIndex = 4;
             // 
             // fBanCo
             // 
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.BackgroundImage = global::CoTuong.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            //this.ClientSize = new System.Drawing.Size(813, 569);
-            this.Width = 813;
+            this.Width = 840;
             this.Height = 616;
             this.Controls.Add(lichSuDo);
             this.Controls.Add(lichSuDen);
