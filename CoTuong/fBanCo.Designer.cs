@@ -38,7 +38,7 @@ namespace CoTuong
             // 
             // undo
             // 
-            this.undo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.undo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.undo.BackColor = System.Drawing.Color.Transparent;
             this.undo.Image = global::CoTuong.Properties.Resources.Undo1;
             this.undo.Location = new System.Drawing.Point(569, 37);
@@ -51,7 +51,7 @@ namespace CoTuong
             // 
             // NewGame
             // 
-            this.NewGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NewGame.AutoSize = true;
             this.NewGame.BackColor = System.Drawing.Color.SaddleBrown;
             this.NewGame.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -65,6 +65,7 @@ namespace CoTuong
             // 
             // lichSuDen
             // 
+            lichSuDen.Anchor = System.Windows.Forms.AnchorStyles.None;
             lichSuDen.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lichSuDen.Location = new System.Drawing.Point(610, 177);
             lichSuDen.Margin = new System.Windows.Forms.Padding(2);
@@ -77,6 +78,7 @@ namespace CoTuong
             // 
             // lichSuDo
             // 
+            lichSuDo.Anchor = System.Windows.Forms.AnchorStyles.None;
             lichSuDo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lichSuDo.Location = new System.Drawing.Point(610, 379);
             lichSuDo.Margin = new System.Windows.Forms.Padding(2);
@@ -115,7 +117,7 @@ namespace CoTuong
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox undo;
         private System.Windows.Forms.Button NewGame;
-        public static System.Windows.Forms.TextBox lichSuDen;
+        public static  System.Windows.Forms.TextBox lichSuDen;
         public static System.Windows.Forms.TextBox lichSuDo;
     }
 }
