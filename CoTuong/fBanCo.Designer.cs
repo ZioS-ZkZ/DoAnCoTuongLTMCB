@@ -50,11 +50,12 @@ namespace CoTuong
             this.undo.Click += new System.EventHandler(this.undo_Click);
             this.undo.Top = 37;
             this.undo.Left = 569;
-            this.undo.Width = this.undo.Height = 48;
-            // 
-            // NewGame
-            // 
-            this.NewGame.AutoSize = true;
+            this.undo.Width = 48;
+			this.undo.Height = 48;
+			// 
+			// NewGame
+			// 
+			this.NewGame.AutoSize = true;
             this.NewGame.BackColor = System.Drawing.Color.SaddleBrown;
             this.NewGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NewGame.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
