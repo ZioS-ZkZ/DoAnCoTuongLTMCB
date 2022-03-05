@@ -108,8 +108,9 @@ namespace CoTuong
             this.btChat.Name = "btChat";
             this.btChat.Top = 500;
             this.btChat.Left = 740;
-            this.btChat.Width = this.btChat.Height = 60;
-            this.btChat.TabIndex = 5;
+            this.btChat.Width = 60;
+			this.btChat.Height = 60;
+			this.btChat.TabIndex = 5;
             this.btChat.UseVisualStyleBackColor = false;
             // 
             // fBanCo
