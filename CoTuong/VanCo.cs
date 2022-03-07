@@ -15,17 +15,25 @@ namespace CoTuong
         public static QuanCo.QuanCo temp;// de tham chieu den quuan co duoc chon trong 1 nuoc di chuyen
         public static Bitmap BackBuffer = null;
         public static bool isWin = false;
-		public static int toaDoMoDo_x = 0;//toa do hien thi quan co bi an
-		public static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
-		public static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
-		public static int toaDoMoDen_y = 0;//toa do hien thi quan co bi an
-		public static int soLanDi_Do = 1;
-		public static int soLanDi_Den = 1;
+		private static int toaDoMoDo_x = 0;//toa do hien thi quan co bi an
+		private static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
+		private static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
+		private static int toaDoMoDen_y = 0;//toa do hien thi quan co bi an
+		private static int soLanDi_Do = 1;
+		private static int soLanDi_Den = 1;
+		public static Timer timerDen;
+		public static Timer timerDo;
+		private static int secondsDo = 3600;
+		private static int secondsDen = 3600;
 		static VanCo()
         {
             player[0] = new NguoiChoi(0);
             player[1] = new NguoiChoi(1);
-        }
+			timerDo = new Timer();
+			timerDen = new Timer();
+			timerDo.Tick += (sender1, e1) => Count_down(sender1, e1, 1);
+			timerDen.Tick += (sender1, e1) => Count_down(sender1, e1, 0);
+		}
         public static void NewGame()
         {
             if (DangChoi)
@@ -101,6 +109,14 @@ namespace CoTuong
 				fBanCo.lichSuDen.Text = "";
 				soLanDi_Den = 1;
 				soLanDi_Do = 1;
+
+				//Reset timer
+				secondsDen = 3600;
+				secondsDo = 3600;
+				timerDo.Stop();
+				timerDen.Stop();
+				fBanCo.labelTimerDen.Text = "";
+				fBanCo.labelTimerDo.Text = "";
 			}
             else
             {
@@ -136,8 +152,22 @@ namespace CoTuong
         }
         public static void DoiLuotDi()
         {
-            if (LuotDi == 0) LuotDi = 1;
-            else if(LuotDi == 1) LuotDi = 0;
+            if (LuotDi == 0)
+			{
+				LuotDi = 1;
+				timerDo.Interval = 1000;
+				timerDo.Start();
+				timerDen.Stop();
+				secondsDen = 3600;
+			}
+            else if(LuotDi == 1)
+			{
+				LuotDi = 0;
+				timerDen.Interval = 1000;
+				timerDen.Start();
+				timerDo.Stop();
+				secondsDo = 3600;
+			}
             if(VanCo.LuotDi == 0)
             {
                 for (int i = 0; i < 2; i++)
@@ -284,5 +314,44 @@ namespace CoTuong
 				}
 			}
 		}
-    }
+
+		//private void CountDownTimer(object sender, EventArgs e, int phe)
+		//{
+			
+		//}
+
+		public static void Count_down(object sender, EventArgs e, int phe)
+		{
+			if (phe == 0)
+			{
+				secondsDen--;
+				if (secondsDen <= 10) fBanCo.labelTimerDen.ForeColor = Color.Red;
+				else fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
+				fBanCo.labelTimerDen.Text = $"{secondsDen / 60}:{secondsDen % 60}";
+				if (secondsDen == 0)
+				{
+					timerDen.Stop();
+					VanCo.isWin = true; VanCo.NewGame();
+					fEnd end = new fEnd();
+					end.ShowDialog();
+				}
+			}
+			else
+			{
+				secondsDo--;
+				if (secondsDo <= 10) fBanCo.labelTimerDo.ForeColor = Color.Red;
+				else fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
+				fBanCo.labelTimerDo.Text = $"{secondsDo / 60}:{secondsDo % 60}";
+				if (secondsDo == 0)
+				{
+					timerDo.Stop();
+					VanCo.isWin = true;
+					VanCo.NewGame();
+					fEnd end = new fEnd();
+					end.ShowDialog();
+				}
+			}
+		}
+
+	}
 }

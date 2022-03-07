@@ -227,9 +227,15 @@ namespace CoTuong
             if (MessageBox.Show("BAN MUON QUAY TRO LAI MENU ???", "THONG BAO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 this.Close();
+				VanCo.timerDen.Stop();
+				VanCo.timerDo.Stop();
             }
         }
 
-		
+		private void closeFormBanCo(object sender, FormClosedEventArgs e)
+		{
+			VanCo.timerDen.Stop();
+			VanCo.timerDo.Stop();
+		}
 	}
 }
