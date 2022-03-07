@@ -158,7 +158,6 @@ namespace CoTuong
 				timerDo.Interval = 1000;
 				timerDo.Start();
 				timerDen.Stop();
-				secondsDen = 3600;
 			}
             else if(LuotDi == 1)
 			{
@@ -166,7 +165,6 @@ namespace CoTuong
 				timerDen.Interval = 1000;
 				timerDen.Start();
 				timerDo.Stop();
-				secondsDo = 3600;
 			}
             if(VanCo.LuotDi == 0)
             {
