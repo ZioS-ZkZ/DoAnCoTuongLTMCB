@@ -26,17 +26,21 @@ namespace CoTuong
 		public static Timer timerDo;
 		private static int secondsDo = 3600;
 		private static int secondsDen = 3600;
-       
 
 
-        static VanCo()
-        {
-            player[0] = new NguoiChoi(0);
-            player[1] = new NguoiChoi(1);
-			timerDo = new Timer();
-			timerDen = new Timer();
-			timerDen.Interval = 1000;
-			timerDo.Interval = 1000;
+
+		static VanCo()
+		{
+			player[0] = new NguoiChoi(0);
+			player[1] = new NguoiChoi(1);
+			timerDo = new Timer
+			{
+				Interval = 1000
+			};
+			timerDen = new Timer
+			{
+				Interval = 1000
+			};
 			timerDo.Tick += (sender1, e1) => Count_down(sender1, e1, 1);
 			timerDen.Tick += (sender1, e1) => Count_down(sender1, e1, 0);
 		}
