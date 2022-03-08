@@ -67,6 +67,7 @@ namespace CoTuong.QuanCo
                                 }
                                 else if (Phe == 1)
                                 {
+								if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
                                     if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDo;
                                     if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDo;
                                     if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDo;
@@ -125,6 +126,7 @@ namespace CoTuong.QuanCo
 								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
                                 
                                 VanCo.DoiLuotDi();
+								VanCo.HandleDoiLuotDi();
                             }
                             if (VanCo.isWin)
                             {

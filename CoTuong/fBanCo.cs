@@ -93,9 +93,10 @@ namespace CoTuong
 
                                     //Đặt quân cờ đã chọn vào vị trí mới [i,j]
                                     VanCo.DatQuanCo(sender, VanCo.temp, i, j);
-                                    
-                                    //Thay đổi lượt đi                        
-                                    VanCo.DoiLuotDi();
+
+									//Thay đổi lượt đi
+									VanCo.DoiLuotDi();
+                                    VanCo.HandleDoiLuotDi();
                                     BanCo.ResetCanMove();
                                     break;
                                 case false:
@@ -178,6 +179,7 @@ namespace CoTuong
 
                                     //Thay đổi lượt đi                            
                                     VanCo.DoiLuotDi();
+									VanCo.HandleDoiLuotDi();
                                     
                                     if (VanCo.isWin)
                                     {

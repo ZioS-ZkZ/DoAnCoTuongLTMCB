@@ -35,6 +35,8 @@ namespace CoTuong
             player[1] = new NguoiChoi(1);
 			timerDo = new Timer();
 			timerDen = new Timer();
+			timerDen.Interval = 1000;
+			timerDo.Interval = 1000;
 			timerDo.Tick += (sender1, e1) => Count_down(sender1, e1, 1);
 			timerDen.Tick += (sender1, e1) => Count_down(sender1, e1, 0);
 		}
@@ -154,77 +156,84 @@ namespace CoTuong
             }
 
         }
-        public static void DoiLuotDi()
-        {
-            if (LuotDi == 0)
+
+		public static void DoiLuotDi()
+		{
+			if (LuotDi == 0) LuotDi = 1;
+			else LuotDi = 0;
+
+			if(VanCo.LuotDi == 0)
 			{
-				LuotDi = 1;
-				timerDo.Interval = 1000;
+				for (int i = 0; i < 2; i++)
+				{
+					player[0].qXe[i].isLock = false;
+					player[0].qMa[i].isLock = false;
+					player[0].qVoi[i].isLock = false;
+					player[0].qSi[i].isLock = false;
+					player[0].qPhao[i].isLock = false;
+				}
+				for (int i = 0; i < 5; i++)
+					player[0].qTot[i].isLock = false;
+				player[0].qTuong.isLock = false;
+
+				//khoa quan co lai
+				for (int i = 0; i < 2; i++)
+				{
+					player[1].qXe[i].isLock = true;
+					player[1].qMa[i].isLock = true;
+					player[1].qVoi[i].isLock = true;
+					player[1].qSi[i].isLock = true;
+					player[1].qPhao[i].isLock = true;
+				}
+				for (int i = 0; i < 5; i++)
+					player[1].qTot[i].isLock = true;
+				player[1].qTuong.isLock = true;
+			}
+			else if (LuotDi == 1)
+			{
+				for (int i = 0; i < 2; i++)
+				{
+					player[1].qXe[i].isLock = false;
+					player[1].qMa[i].isLock = false;
+					player[1].qVoi[i].isLock = false;
+					player[1].qSi[i].isLock = false;
+					player[1].qPhao[i].isLock = false;
+				}
+				for (int i = 0; i < 5; i++)
+					player[1].qTot[i].isLock = false;
+				player[1].qTuong.isLock = false;
+				//==========================
+				for (int i = 0; i < 2; i++)
+				{
+					player[0].qXe[i].isLock = true;
+					player[0].qMa[i].isLock = true;
+					player[0].qVoi[i].isLock = true;
+					player[0].qSi[i].isLock = true;
+					player[0].qPhao[i].isLock = true;
+				}
+				for (int i = 0; i < 5; i++)
+					player[0].qTot[i].isLock = true;
+				player[0].qTuong.isLock = true;
+			
+			}
+		}
+
+		public static void HandleDoiLuotDi()
+        {
+			if (VanCo.LuotDi == 0)
+			{
+				timerDen.Enabled = true;
+				timerDen.Start();
+				timerDo.Enabled = false;
+				timerDo.Stop();
+
+			} else
+			{
+				timerDo.Enabled = true;
 				timerDo.Start();
+				timerDen.Enabled = false;
 				timerDen.Stop();
 			}
-            else if(LuotDi == 1)
-			{
-				LuotDi = 0;
-				timerDen.Interval = 1000;
-				timerDen.Start();
-				timerDo.Stop();
-			}
-            if(VanCo.LuotDi == 0)
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    player[0].qXe[i].isLock = false;
-                    player[0].qMa[i].isLock = false;
-                    player[0].qVoi[i].isLock = false;
-                    player[0].qSi[i].isLock = false;
-                    player[0].qPhao[i].isLock = false;
-                }
-                for (int i = 0; i < 5; i++)
-                    player[0].qTot[i].isLock = false;
-                player[0].qTuong.isLock = false;
-
-                //khoa quan co lai
-                for (int i = 0; i < 2; i++)
-                {
-                    player[1].qXe[i].isLock = true;
-                    player[1].qMa[i].isLock = true;
-                    player[1].qVoi[i].isLock = true;
-                    player[1].qSi[i].isLock = true;
-                    player[1].qPhao[i].isLock = true;
-                }
-                for (int i = 0; i < 5; i++)
-                    player[1].qTot[i].isLock = true;
-                player[1].qTuong.isLock = true;
-            }
-            else if(LuotDi == 1)
-            {
-
-
-                for (int i = 0; i < 2; i++)
-                {
-                    player[1].qXe[i].isLock = false;
-                    player[1].qMa[i].isLock = false;
-                    player[1].qVoi[i].isLock = false;
-                    player[1].qSi[i].isLock = false;
-                    player[1].qPhao[i].isLock = false;
-                }
-                for (int i = 0; i < 5; i++)
-                    player[1].qTot[i].isLock = false;
-                player[1].qTuong.isLock = false;
-                //==========================
-                for (int i = 0; i < 2; i++)
-                {
-                    player[0].qXe[i].isLock = true;
-                    player[0].qMa[i].isLock = true;
-                    player[0].qVoi[i].isLock = true;
-                    player[0].qSi[i].isLock = true;
-                    player[0].qPhao[i].isLock = true;
-                }
-                for (int i = 0; i < 5; i++)
-                    player[0].qTot[i].isLock = true;
-                player[0].qTuong.isLock = true;
-            }
         }
         public static void setOCoTrong(int row, int col)
         {
