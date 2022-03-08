@@ -274,4 +274,25 @@
   <data name="iconMess1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconMess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Chieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chieu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mark.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ready.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clickChon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clickChon.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ketThuc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ketThuc.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nenMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nenMenu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nhacNen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nhacNen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

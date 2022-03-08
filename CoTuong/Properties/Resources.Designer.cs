@@ -81,6 +81,15 @@ namespace CoTuong.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Chieu {
+            get {
+                return ResourceManager.GetStream("Chieu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap chieuTuongDen {
@@ -107,6 +116,15 @@ namespace CoTuong.Properties {
             get {
                 object obj = ResourceManager.GetObject("Chuot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream clickChon {
+            get {
+                return ResourceManager.GetStream("clickChon", resourceCulture);
             }
         }
         
@@ -181,6 +199,15 @@ namespace CoTuong.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ketThuc {
+            get {
+                return ResourceManager.GetStream("ketThuc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap maDen {
@@ -197,6 +224,15 @@ namespace CoTuong.Properties {
             get {
                 object obj = ResourceManager.GetObject("maDo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Mark {
+            get {
+                return ResourceManager.GetStream("Mark", resourceCulture);
             }
         }
         
@@ -231,6 +267,24 @@ namespace CoTuong.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream nenMenu {
+            get {
+                return ResourceManager.GetStream("nenMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream nhacNen {
+            get {
+                return ResourceManager.GetStream("nhacNen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap phaoDen {
@@ -247,6 +301,15 @@ namespace CoTuong.Properties {
             get {
                 object obj = ResourceManager.GetObject("phaoDo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Ready {
+            get {
+                return ResourceManager.GetStream("Ready", resourceCulture);
             }
         }
         

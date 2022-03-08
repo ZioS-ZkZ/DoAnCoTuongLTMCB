@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CoTuong
 {
@@ -25,7 +26,10 @@ namespace CoTuong
 		public static Timer timerDo;
 		private static int secondsDo = 3600;
 		private static int secondsDen = 3600;
-		static VanCo()
+       
+
+
+        static VanCo()
         {
             player[0] = new NguoiChoi(0);
             player[1] = new NguoiChoi(1);
@@ -250,6 +254,7 @@ namespace CoTuong
                 temp.picQuanCo.Top = row * 50 + 35;
                 temp.picQuanCo.Left = col * 50 + 10;
             }
+            VanCo.clickSound("chon");
         }
 
 		public static void InLichSu(QuanCo.QuanCo qc, int row, int col)
@@ -350,6 +355,29 @@ namespace CoTuong
 				}
 			}
 		}
+        public static void clickSound(string name)
+        {
+            if(name == "chon")
+            {
+                SoundPlayer sound = new SoundPlayer(CoTuong.Properties.Resources.Mark);
+                sound.Play();
+            }
+            if(name == "chieu")
+            {
+                SoundPlayer sound = new SoundPlayer(CoTuong.Properties.Resources.Chieu);
+                sound.Play();
+            }
+            if(name == "ready")
+            {
+                SoundPlayer sound = new SoundPlayer(CoTuong.Properties.Resources.Ready);
+                sound.Play();
+            }
+            if(name == "click")
+            {
+                SoundPlayer sound = new SoundPlayer(CoTuong.Properties.Resources.clickChon);
+                sound.Play();
+            }
+    }
 
 	}
 }

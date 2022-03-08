@@ -39,6 +39,7 @@ namespace CoTuong
         {
             
             VanCo.NewGame();
+            VanCo.clickSound("ready");
             if (VanCo.LuotDi == 0) VanCo.DoiLuotDi();
             for (int i = 0; i< 10; i++)
                 for(int j = 0; j<9; j++)
@@ -165,7 +166,7 @@ namespace CoTuong
 
                                     //Ăn quân cờ của đối phương
                                     VanCo.AnQuanCo(QuanCoBiAn);
-
+                                    
                                     //Trả lại ô cờ trống
                                     VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
 
@@ -224,6 +225,7 @@ namespace CoTuong
 
         private void undo_Click(object sender, EventArgs e)
         {
+            VanCo.clickSound("click");
             if (MessageBox.Show("BAN MUON QUAY TRO LAI MENU ???", "THONG BAO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 this.Close();

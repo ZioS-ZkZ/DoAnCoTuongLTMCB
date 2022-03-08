@@ -123,6 +123,7 @@ namespace CoTuong.QuanCo
                                     VanCo.isWin = true;
 								VanCo.InLichSu(VanCo.temp, this.Hang, this.Cot);
 								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
+                                
                                 VanCo.DoiLuotDi();
                             }
                             if (VanCo.isWin)
