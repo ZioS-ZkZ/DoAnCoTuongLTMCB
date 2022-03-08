@@ -128,6 +128,7 @@ namespace CoTuong
 			labelTimerDo.Height = 32;
 			labelTimerDo.Top = 335;
 			labelTimerDo.Left = 518;
+			labelTimerDo.Text = "60:00";
 			// 
 			// labelTimerDen
 			// 
@@ -142,6 +143,7 @@ namespace CoTuong
 			labelTimerDen.Height = 32;
 			labelTimerDen.Top = 133;
 			labelTimerDen.Left = 518;
+			labelTimerDen.Text = "60:00";
 			// 
 			// fBanCo
 			// 

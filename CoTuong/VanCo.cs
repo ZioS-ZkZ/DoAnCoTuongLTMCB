@@ -48,8 +48,8 @@ namespace CoTuong
         {
             if (DangChoi)
             {
-                // xoa quan cho tren ban co 
-                for(int i =0; i<2; i++)
+				// xoa quan cho tren ban co 
+				for (int i =0; i<2; i++)
                 {
                     player[0].qXe[i].picQuanCo.Visible = false;
                     player[0].qMa[i].picQuanCo.Visible = false;
@@ -130,8 +130,8 @@ namespace CoTuong
 			}
             else
             {
-                // tao ban co trong
-                BanCo.ResetBanCo();
+				// tao ban co trong
+				BanCo.ResetBanCo();
                 VanCo.DangChoi = true;
                 // dat quan co vao vi tri
                 for (int i = 0; i < 2; i++)

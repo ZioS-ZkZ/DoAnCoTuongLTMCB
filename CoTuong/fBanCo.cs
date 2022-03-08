@@ -48,7 +48,9 @@ namespace CoTuong
                     BanCo.ViTri[i, j].CanMove.MouseClick += new MouseEventHandler(CanMove_MouseClick);
                 }
             addQuanCo();
-        }
+			fBanCo.labelTimerDen.Text = "60:00";
+			fBanCo.labelTimerDo.Text = "60:00";
+		}
         private void CanMove_MouseClick(Object sender, MouseEventArgs e)
         {
             for (int i = 0; i <= 9; i++)
