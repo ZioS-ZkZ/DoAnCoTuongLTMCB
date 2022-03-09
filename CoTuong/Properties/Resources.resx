@@ -295,4 +295,16 @@
   <data name="nhacNen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nhacNen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MuiTen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MuiTen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NutGui" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NutGui.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KhungChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KhungChat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

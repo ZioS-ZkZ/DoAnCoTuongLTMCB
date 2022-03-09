@@ -228,13 +228,20 @@ namespace CoTuong
         }
 
         private void undo_Click(object sender, EventArgs e)
-        {
+        {   
+
             VanCo.clickSound("click");
             if (MessageBox.Show("BAN MUON QUAY TRO LAI MENU ???", "THONG BAO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 this.Close();
 				VanCo.timerDen.Stop();
 				VanCo.timerDo.Stop();
+                if(khungChat != null)
+                {
+                    khungChat.Close();
+                    khungChat = null;
+                }
+
             }
         }
 
@@ -243,5 +250,23 @@ namespace CoTuong
 			VanCo.timerDen.Stop();
 			VanCo.timerDo.Stop();
 		}
-	}
+        private fChat khungChat;
+        private void btChat_Click(object sender, EventArgs e)
+        {
+            VanCo.clickSound("click");
+            if (khungChat != null)
+            {
+                khungChat.Close();
+                khungChat = null;
+            }
+            else
+            {
+                khungChat = new fChat();
+                khungChat.Show();
+                Screen scr = Screen.PrimaryScreen; //đi lấy màn hình chính
+                khungChat.Left = (scr.WorkingArea.Width )/ 2 + 410;
+                khungChat.Top = (scr.WorkingArea.Height)/ 2 - 281;
+            }
+        }
+    }
 }
