@@ -121,17 +121,37 @@ namespace CoTuong.QuanCo
                                 VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
                                 VanCo.AnQuanCo(this);
                                 if (this.Ten == "tuong")
-                                    VanCo.isWin = true;
+                                {
+                                    if (this.Phe == 0)
+                                        VanCo.isWin = "do";
+                                    else if (this.Phe == 1)
+                                        VanCo.isWin = "den";
+                                }
 								VanCo.InLichSu(VanCo.temp, this.Hang, this.Cot);
 								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
                                 
                                 VanCo.DoiLuotDi();
 								VanCo.HandleDoiLuotDi();
                             }
-                            if (VanCo.isWin)
+                            if (VanCo.isWin == "do")
                             {
                                 VanCo.NewGame();
                                 fEnd end = new fEnd();
+                                end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
+                                end.ShowDialog();
+                            }
+                            if (VanCo.isWin == "den")
+                            {
+                                VanCo.NewGame();
+                                fEnd end = new fEnd();
+                                end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
+                                end.ShowDialog();
+                            }
+                            if (VanCo.isWin == "hoa")
+                            {
+                                VanCo.NewGame();
+                                fEnd end = new fEnd();
+                                end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
                                 end.ShowDialog();
                             }
                             BanCo.ResetCanMove();

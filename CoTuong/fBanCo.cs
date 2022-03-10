@@ -162,7 +162,10 @@ namespace CoTuong
                                     if (BanCo.ViTri[i, j].Ten == "tuong")
                                     {
                                         QuanCoBiAn = VanCo.player[PheConLai].qTuong;
-                                        VanCo.isWin = true;
+                                        if (BanCo.ViTri[i, j].Phe == 0)
+                                            VanCo.isWin = "do";
+                                        else if (BanCo.ViTri[i, j].Phe == 1)
+                                            VanCo.isWin = "den";
                                     }
                                     //Bỏ chọn quân cờ
                                     VanCo.isMarked = false;
@@ -183,13 +186,28 @@ namespace CoTuong
                                     VanCo.DoiLuotDi();
 									VanCo.HandleDoiLuotDi();
                                     
-                                    if (VanCo.isWin)
+                                    if (VanCo.isWin == "do")
                                     {
                                         VanCo.NewGame();
                                         fEnd end = new fEnd();
+                                        end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
                                         end.ShowDialog();
                                     }
-                                    
+                                    if (VanCo.isWin == "den")
+                                    {
+                                        VanCo.NewGame();
+                                        fEnd end = new fEnd();
+                                        end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
+                                        end.ShowDialog();
+                                    }
+                                    if (VanCo.isWin == "hoa")
+                                    {
+                                        VanCo.NewGame();
+                                        fEnd end = new fEnd();
+                                        end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
+                                        end.ShowDialog();
+                                    }
+
                                     BanCo.ResetCanMove();
                                     break;
                             }

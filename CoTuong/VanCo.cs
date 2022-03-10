@@ -15,7 +15,7 @@ namespace CoTuong
         public static bool isMarked = false; //  kiem tra da chon quan co hay chua 
         public static QuanCo.QuanCo temp;// de tham chieu den quuan co duoc chon trong 1 nuoc di chuyen
         public static Bitmap BackBuffer = null;
-        public static bool isWin = false;
+        public static string isWin = "none";
 		private static int toaDoMoDo_x = 0;//toa do hien thi quan co bi an
 		private static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
 		private static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
@@ -347,7 +347,8 @@ namespace CoTuong
 				if (secondsDen == 0)
 				{
 					timerDen.Stop();
-					VanCo.isWin = true; VanCo.NewGame();
+					VanCo.isWin = "do";
+					VanCo.NewGame();
 					fEnd end = new fEnd();
 					end.ShowDialog();
 				}
@@ -361,7 +362,7 @@ namespace CoTuong
 				if (secondsDo == 0)
 				{
 					timerDo.Stop();
-					VanCo.isWin = true;
+					VanCo.isWin = "den";
 					VanCo.NewGame();
 					fEnd end = new fEnd();
 					end.ShowDialog();

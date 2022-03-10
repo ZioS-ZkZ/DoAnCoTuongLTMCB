@@ -19,7 +19,7 @@ namespace CoTuong
 
         private void rePlay_Click(object sender, EventArgs e)
         {
-            VanCo.isWin = false;
+            VanCo.isWin = "none";
             VanCo.clickSound("click");
             this.Close();
             
