@@ -98,7 +98,7 @@ namespace CoTuong
 
 									//Thay đổi lượt đi
 									VanCo.DoiLuotDi();
-                                    VanCo.HandleDoiLuotDi();
+                                    
                                     BanCo.ResetCanMove();
                                     break;
                                 case false:
@@ -184,8 +184,7 @@ namespace CoTuong
 
                                     //Thay đổi lượt đi                            
                                     VanCo.DoiLuotDi();
-									VanCo.HandleDoiLuotDi();
-                                    
+									
                                     if (VanCo.isWin == "do")
                                     {
                                         VanCo.NewGame();

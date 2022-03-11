@@ -131,7 +131,7 @@ namespace CoTuong.QuanCo
 								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
                                 
                                 VanCo.DoiLuotDi();
-								VanCo.HandleDoiLuotDi();
+								
                             }
                             if (VanCo.isWin == "do")
                             {

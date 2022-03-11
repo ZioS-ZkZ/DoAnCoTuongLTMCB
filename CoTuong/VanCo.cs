@@ -166,6 +166,10 @@ namespace CoTuong
 
 			if(VanCo.LuotDi == 0)
 			{
+				timerDen.Enabled = true;
+				timerDen.Start();
+				timerDo.Enabled = false;
+				timerDo.Stop();
 				for (int i = 0; i < 2; i++)
 				{
 					player[0].qXe[i].isLock = false;
@@ -193,6 +197,10 @@ namespace CoTuong
 			}
 			else if (LuotDi == 1)
 			{
+				timerDo.Enabled = true;
+				timerDo.Start();
+				timerDen.Enabled = false;
+				timerDen.Stop();
 				for (int i = 0; i < 2; i++)
 				{
 					player[1].qXe[i].isLock = false;
@@ -220,23 +228,6 @@ namespace CoTuong
 			}
 		}
 
-		public static void HandleDoiLuotDi()
-        {
-			if (VanCo.LuotDi == 0)
-			{
-				timerDen.Enabled = true;
-				timerDen.Start();
-				timerDo.Enabled = false;
-				timerDo.Stop();
-
-			} else
-			{
-				timerDo.Enabled = true;
-				timerDo.Start();
-				timerDen.Enabled = false;
-				timerDen.Stop();
-			}
-        }
         public static void setOCoTrong(int row, int col)
         {
             BanCo.ViTri[row, col].Trong = true;
