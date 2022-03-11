@@ -16,10 +16,8 @@ namespace CoTuong
         public static QuanCo.QuanCo temp;// de tham chieu den quuan co duoc chon trong 1 nuoc di chuyen
         public static Bitmap BackBuffer = null;
         public static string isWin = "none";
-		private static int toaDoMoDo_x = 0;//toa do hien thi quan co bi an
-		private static int toaDoMoDo_y = 0;//toa do hien thi quan co bi an
-		private static int toaDoMoDen_x = 0;//toa do hien thi quan co bi an
-		private static int toaDoMoDen_y = 0;//toa do hien thi quan co bi an
+		private static ToaDo toaDoMoDo = new ToaDo(0,0);
+		private static ToaDo toaDoMoDen = new ToaDo(0, 0);
 		private static int soLanDi_Do = 1;
 		private static int soLanDi_Den = 1;
 		public static Timer timerDen;
@@ -109,10 +107,10 @@ namespace CoTuong
                 player[1].qTuong.draw();
 
 				//Reset toạ độ mộ
-				toaDoMoDen_x = 0;
-				toaDoMoDen_x = 0;
-				toaDoMoDo_x = 0;
-				toaDoMoDo_y = 0;
+				toaDoMoDen.x = 0;
+				toaDoMoDen.y = 0;
+				toaDoMoDo.x = 0;
+				toaDoMoDo.y = 0;
 
 				//Reset lịch sử nước đi
 				fBanCo.lichSuDo.Text = "";
@@ -310,23 +308,23 @@ namespace CoTuong
 
 
 			if (qc.Phe == 0) {
-				qc.picQuanCo.Top = toaDoMoDen_y * 32 + 181;
-				qc.picQuanCo.Left = toaDoMoDen_x * 29 + 463;
-				toaDoMoDen_x++;
-				if (toaDoMoDen_x == 5)
+				qc.picQuanCo.Top = toaDoMoDen.y * 32 + 181;
+				qc.picQuanCo.Left = toaDoMoDen.x * 29 + 463;
+				toaDoMoDen.x++;
+				if (toaDoMoDen.x == 5)
 				{
-					toaDoMoDen_x = 0;
-					toaDoMoDen_y++;
+					toaDoMoDen.x = 0;
+					toaDoMoDen.y++;
 				} 
 			}
 			else {
-				qc.picQuanCo.Top = toaDoMoDo_y * 32 + 382;
-				qc.picQuanCo.Left = toaDoMoDo_x * 29 + 463;
-				toaDoMoDo_x++;
-				if (toaDoMoDo_x == 5)
+				qc.picQuanCo.Top = toaDoMoDo.y * 32 + 382;
+				qc.picQuanCo.Left = toaDoMoDo.x * 29 + 463;
+				toaDoMoDo.x++;
+				if (toaDoMoDo.x == 5)
 				{
-					toaDoMoDo_x = 0;
-					toaDoMoDo_y++;
+					toaDoMoDo.x = 0;
+					toaDoMoDo.y++;
 				}
 			}
 		}
