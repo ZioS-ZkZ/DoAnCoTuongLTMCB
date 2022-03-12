@@ -40,7 +40,21 @@ namespace CoTuong
             
             VanCo.NewGame();
             VanCo.clickSound("ready");
-            if (VanCo.LuotDi == 0) VanCo.DoiLuotDi();
+            if (VanCo.LuotDi == 0)
+            {
+                VanCo.LuotDi = 1;// VanCo.DoiLuotDi();
+                for (int i = 0; i < 2; i++)
+                {
+                    VanCo.player[0].qXe[i].isLock = true;
+                    VanCo.player[0].qMa[i].isLock = true;
+                    VanCo.player[0].qVoi[i].isLock = true;
+                    VanCo.player[0].qSi[i].isLock = true;
+                    VanCo.player[0].qPhao[i].isLock = true;
+                }
+                for (int i = 0; i < 5; i++)
+                    VanCo.player[0].qTot[i].isLock = true;
+                VanCo.player[0].qTuong.isLock = true;
+            }
             for (int i = 0; i< 10; i++)
                 for(int j = 0; j<9; j++)
                 {
@@ -262,11 +276,11 @@ namespace CoTuong
             }
         }
 
-		private void closeFormBanCo(object sender, FormClosedEventArgs e)
-		{
-			VanCo.timerDen.Stop();
-			VanCo.timerDo.Stop();
-		}
+        private void closeFormBanCo(object sender, FormClosedEventArgs e)
+        {
+            VanCo.timerDen.Stop();
+            VanCo.timerDo.Stop();
+        }
         private fChat khungChat;
         private void btChat_Click(object sender, EventArgs e)
         {

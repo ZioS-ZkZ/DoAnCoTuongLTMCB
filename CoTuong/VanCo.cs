@@ -320,10 +320,6 @@ namespace CoTuong
 			}
 		}
 
-		//private void CountDownTimer(object sender, EventArgs e, int phe)
-		//{
-			
-		//}
 
 		public static void Count_down(object sender, EventArgs e, int phe)
 		{
