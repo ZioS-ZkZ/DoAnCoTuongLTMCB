@@ -253,9 +253,10 @@ namespace CoTuong
                 BanCo.ViTri[row, col].Phia = temp.Phia;
                 temp.Hang = row;
                 temp.Cot = col;
-                temp.picQuanCo.Top = row * 50 + 35;
-                temp.picQuanCo.Left = col * 50 + 10;
-            }
+				temp.picQuanCo.Top = row * 107 + 28;
+				temp.picQuanCo.Left = col * 105 + 500;
+
+			}
             VanCo.clickSound("chon");
         }
 
@@ -293,14 +294,14 @@ namespace CoTuong
         {
             qc.TrangThai = 0;
             qc.picQuanCo.Cursor = Cursors.Arrow;
-			qc.picQuanCo.Width = 29;
-			qc.picQuanCo.Height = 29;
+			qc.picQuanCo.Width = 67;
+			qc.picQuanCo.Height = 67;
 			qc.picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
 
 
 			if (qc.Phe == 0) {
-				qc.picQuanCo.Top = toaDoMoDen.y * 32 + 181;
-				qc.picQuanCo.Left = toaDoMoDen.x * 29 + 463;
+				qc.picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+				qc.picQuanCo.Left = toaDoMoDen.x * 69+ 80;
 				toaDoMoDen.x++;
 				if (toaDoMoDen.x == 5)
 				{
@@ -309,8 +310,8 @@ namespace CoTuong
 				} 
 			}
 			else {
-				qc.picQuanCo.Top = toaDoMoDo.y * 32 + 382;
-				qc.picQuanCo.Left = toaDoMoDo.x * 29 + 463;
+				qc.picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+				qc.picQuanCo.Left = toaDoMoDo.x * 69 + 80;
 				toaDoMoDo.x++;
 				if (toaDoMoDo.x == 5)
 				{
@@ -326,12 +327,25 @@ namespace CoTuong
 			if (phe == 0)
 			{
 				secondsDen--;
+
+				int m = secondsDen / 60;
+				int s = secondsDen % 60;
+				string mi, se;
+
 				if (secondsDen <= 10) fBanCo.labelTimerDen.ForeColor = Color.Red;
 				else fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
-				fBanCo.labelTimerDen.Text = $"{secondsDen / 60}:{secondsDen % 60}";
+
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				fBanCo.labelTimerDen.Text = $"{mi}:{se}";
+				
 				if (secondsDen == 0)
 				{
 					timerDen.Stop();
+					fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "do";
 					VanCo.NewGame();
 					fEnd end = new fEnd();
@@ -341,12 +355,25 @@ namespace CoTuong
 			else
 			{
 				secondsDo--;
+
+				int m = secondsDo / 60;
+				int s = secondsDo % 60;
+				string mi, se;
+
 				if (secondsDo <= 10) fBanCo.labelTimerDo.ForeColor = Color.Red;
 				else fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
-				fBanCo.labelTimerDo.Text = $"{secondsDo / 60}:{secondsDo % 60}";
+
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				fBanCo.labelTimerDo.Text = $"{mi}:{se}";
+				
 				if (secondsDo == 0)
 				{
 					timerDo.Stop();
+					fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "den";
 					VanCo.NewGame();
 					fEnd end = new fEnd();

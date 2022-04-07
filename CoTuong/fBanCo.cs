@@ -17,7 +17,7 @@ namespace CoTuong
             InitializeComponent();
 
             VanCo.BackBuffer = new Bitmap(this.Width, this.Height);
-            Bitmap bg = new Bitmap(CoTuong.Properties.Resources.bk);
+            Bitmap bg = new Bitmap(CoTuong.Properties.Resources.board);
             Graphics g = Graphics.FromImage(VanCo.BackBuffer);
             g.Clear(this.BackColor);
             g.DrawImage(bg, 0, 0);

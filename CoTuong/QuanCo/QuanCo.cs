@@ -198,7 +198,7 @@ namespace CoTuong.QuanCo
                 if (Ten == "phao") picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
                 if (Ten == "ma") picQuanCo.Image = CoTuong.Properties.Resources.maDen;
                 if (Ten == "tot") picQuanCo.Image = CoTuong.Properties.Resources.totDen;
-            }
+			}
             if (Phe == 1)
             {
                 if (Ten == "tuong") picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
@@ -208,19 +208,20 @@ namespace CoTuong.QuanCo
                 if (Ten == "phao") picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
                 if (Ten == "ma") picQuanCo.Image = CoTuong.Properties.Resources.maDo;
                 if (Ten == "tot") picQuanCo.Image = CoTuong.Properties.Resources.totDo;
-            }
+				
+			}
 
 			//Vẽ quân cờ
-			picQuanCo.Width = 39;
-			picQuanCo.Height = 39;
+			picQuanCo.Width = 83;
+			picQuanCo.Height = 83;
 			picQuanCo.Cursor = Cursors.Hand;
-            picQuanCo.Top = Hang * 50 + 31;
-            picQuanCo.Left = Cot * 49 + 10;
             picQuanCo.BackColor = Color.Transparent;
+			picQuanCo.SizeMode = PictureBoxSizeMode.StretchImage;
+			picQuanCo.Top = Hang * 107 + 28;
+			picQuanCo.Left = Cot * 105 + 500;
 
-
-            //Thiết lập quân cờ trên Bàn Cờ
-            BanCo.ViTri[Hang, Cot].Hang = Hang;
+			//Thiết lập quân cờ trên Bàn Cờ
+			BanCo.ViTri[Hang, Cot].Hang = Hang;
             BanCo.ViTri[Hang, Cot].Cot = Cot;
             BanCo.ViTri[Hang, Cot].Trong = false;
             BanCo.ViTri[Hang, Cot].Ten = Ten;

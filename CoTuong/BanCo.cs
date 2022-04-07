@@ -32,12 +32,13 @@ namespace CoTuong
                     ViTri[i, j].Phia = "";
                     ViTri[i, j].Phe = 2;
                     ViTri[i, j].CanMove = new PictureBox();
-                    ViTri[i, j].CanMove.BackColor = System.Drawing.Color.Transparent;
-                    ViTri[i, j].CanMove.Image = CoTuong.Properties.Resources.viTriDiDuoc;
-                    ViTri[i, j].CanMove.Width = 20;
-                    ViTri[i, j].CanMove.Height = 20;
-                    ViTri[i, j].CanMove.Top = i * 50 + 35;
-                    ViTri[i, j].CanMove.Left = j * 50 + 10;
+					ViTri[i, j].CanMove.SizeMode = PictureBoxSizeMode.StretchImage;
+					ViTri[i, j].CanMove.BackColor = Color.Transparent;
+					ViTri[i, j].CanMove.Image = Properties.Resources.viTriDiDuoc;
+                    ViTri[i, j].CanMove.Width = 40;
+                    ViTri[i, j].CanMove.Height = 40;
+                    ViTri[i, j].CanMove.Top = i * 110 + 35;
+                    ViTri[i, j].CanMove.Left = j * 106 + 513;
                     ViTri[i, j].CanMove.Cursor = Cursors.Hand;
                     ViTri[i, j].CanMove.Visible = false;
 

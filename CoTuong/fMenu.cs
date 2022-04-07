@@ -15,7 +15,7 @@ namespace CoTuong
         public fMenu()
         {
             InitializeComponent();
-            soundMenu.PlayLooping();
+            //soundMenu.PlayLooping();
         }
 
         private void ExitGame_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace CoTuong
             this.soundMenu.Stop();
             f.ShowDialog();
             this.Show();
-            this.soundMenu.PlayLooping();
+            //this.soundMenu.PlayLooping();
         }
     }
 }
