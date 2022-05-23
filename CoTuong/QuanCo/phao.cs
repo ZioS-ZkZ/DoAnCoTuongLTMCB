@@ -4,7 +4,8 @@ using System.Text;
 
 namespace CoTuong.QuanCo
 {
-    class phao:QuanCo
+    [Serializable]
+    public class phao:QuanCo
     {
         public override int KiemTra(int row, int col)
         {

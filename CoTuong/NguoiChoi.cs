@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Net.Sockets;
 
 namespace CoTuong
 {
-    class NguoiChoi
+    public class NguoiChoi
     {
-        public int Phe;
+        int Phe;
+
         public QuanCo.xe[] qXe = new QuanCo.xe[2];
         public QuanCo.ma[] qMa = new QuanCo.ma[2];
         public QuanCo.voi[] qVoi = new QuanCo.voi[2];

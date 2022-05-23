@@ -32,6 +32,7 @@ namespace CoTuong
             this.panel1 = new System.Windows.Forms.Panel();
             this.ExitGame = new System.Windows.Forms.Button();
             this.PlayGame = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,13 @@ namespace CoTuong
             this.PlayGame.UseVisualStyleBackColor = false;
             this.PlayGame.Click += new System.EventHandler(this.PlayGame_Click);
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(189, 154);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(296, 27);
+            this.txtUsername.TabIndex = 1;
+            // 
             // fMenu
             // 
             this.AccessibleName = "Co Tuong";
@@ -82,14 +90,17 @@ namespace CoTuong
             this.BackgroundImage = global::CoTuong.Properties.Resources.menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(700, 589);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "fMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Game Cờ Tướng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMenu_FormClosing);
+            this.Load += new System.EventHandler(this.fMenu_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,5 +109,6 @@ namespace CoTuong
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ExitGame;
         private System.Windows.Forms.Button PlayGame;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }

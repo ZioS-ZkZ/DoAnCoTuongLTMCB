@@ -2,11 +2,12 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
-
+using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace CoTuong.QuanCo
 {
-    class QuanCo
+    public class QuanCo
     {
         public int Hang;
         public int Cot;
@@ -48,48 +49,48 @@ namespace CoTuong.QuanCo
             switch (VanCo.isMarked)
             {
                 case false:
-                        if (this.TrangThai == 1)
+                    if (this.TrangThai == 1)
+                    {
+                        if (this.isLock == false)
                         {
-                            if (this.isLock == false)
+                            VanCo.isMarked = true;
+                            VanCo.temp = new QuanCo();
+                            VanCo.temp = this;
+                            if (Phe == 0)
                             {
-                                VanCo.isMarked = true;
-                                VanCo.temp = new QuanCo();
-                                VanCo.temp = this;
-                                if (Phe == 0)
-                                {
-                                    if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDen;
-                                    if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDen;
-                                    if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDen;
-                                    if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDen;
-                                    if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDen;
-                                    if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDen;
-                                    if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDen;
-                                }
-                                else if (Phe == 1)
-                                {
-								    if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
-                                    if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDo;
-                                    if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDo;
-                                    if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDo;
-                                    if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDo;
-                                    if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDo;
-                                    if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDo;
-                                    if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDo;
-                                }
-                                for (int i = 0; i < 10; i++)
-                                    for (int j = 0; j < 9; j++)
-                                            if (this.KiemTra(i, j) == 1)
-                                            {
-                                                BanCo.ViTri[i, j].CanMove.Visible = true;  
-
-                                            }
+                                if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDen;
+                                if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDen;
+                                if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDen;
+                                if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDen;
+                                if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDen;
+                                if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDen;
+                                if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDen;
                             }
+                            else if (Phe == 1)
+                            {
+                                if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
+                                if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDo;
+                                if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDo;
+                                if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDo;
+                                if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDo;
+                                if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDo;
+                                if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDo;
+                                if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDo;
+                            }
+                            for (int i = 0; i < 10; i++)
+                                for (int j = 0; j < 9; j++)
+                                    if (this.KiemTra(i, j) == 1)
+                                    {
+                                        BanCo.ViTri[i, j].CanMove.Visible = true;
+
+                                    }
                         }
+                    }
                     break;
                 case true:
-                    if(this.TrangThai == 1)
+                    if (this.TrangThai == 1)
                     {
-                        if(this.Phe == VanCo.temp.Phe)
+                        if (this.Phe == VanCo.temp.Phe)
                         {
                             VanCo.isMarked = false;
                             if (VanCo.temp.Phe == 0)
@@ -114,12 +115,16 @@ namespace CoTuong.QuanCo
                             }
                             BanCo.ResetCanMove();
                         }
-                        if(this.Phe != VanCo.temp.Phe)
+                        if (this.Phe != VanCo.temp.Phe)
                         {
                             if (VanCo.temp.KiemTra(this.Hang, this.Cot) == 1)
                             {
                                 VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
-                                VanCo.AnQuanCo(this);
+                                //Ăn quân cờ của đối phương
+                                int row = this.Hang;
+                                int col = this.Cot;
+                                this.Hang = 10;
+                                this.Cot = 10;
                                 if (this.Ten == "tuong")
                                 {
                                     if (this.Phe == 0)
@@ -127,36 +132,25 @@ namespace CoTuong.QuanCo
                                     else if (this.Phe == 1)
                                         VanCo.isWin = "den";
                                 }
-								VanCo.InLichSu(VanCo.temp, this.Hang, this.Cot);
-								VanCo.DatQuanCo(sender, VanCo.temp, this.Hang, this.Cot);
-                                
-                                VanCo.DoiLuotDi();
-								
+                                VanCo.InLichSu(VanCo.temp, row, col);
+                                VanCo.DatQuanCo(sender, VanCo.temp, row, col);
+                                fBanCo.player.socket.Send(VanCo.Serialize("DOILUOTDI|," + VanCo.LuotDi));
                             }
                             if (VanCo.isWin == "do")
                             {
-                                VanCo.NewGame();
-                                fEnd end = new fEnd();
-                                end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
-                                end.ShowDialog();
+                                fBanCo.player.socket.Send(VanCo.Serialize("DOWIN|,"));
                             }
                             if (VanCo.isWin == "den")
                             {
-                                VanCo.NewGame();
-                                fEnd end = new fEnd();
-                                end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
-                                end.ShowDialog();
+                                fBanCo.player.socket.Send(VanCo.Serialize("DENWIN|,"));
                             }
                             if (VanCo.isWin == "hoa")
                             {
-                                VanCo.NewGame();
-                                fEnd end = new fEnd();
-                                end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
-                                end.ShowDialog();
+                                fBanCo.player.socket.Send(VanCo.Serialize("HOA|,"));
                             }
                             BanCo.ResetCanMove();
                         }
-                        
+
                         VanCo.isMarked = false;
                         if (VanCo.temp.Phe == 0)
                         {
@@ -179,13 +173,15 @@ namespace CoTuong.QuanCo
                             if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
                         }
                         BanCo.ResetCanMove();
-
                     }
-
+                    fBanCo.sendStatus();
                     break;
-                
+
+
             }
+            
         }
+
         //Hàm vẽ quân cờ
         public void draw()
         {
@@ -220,8 +216,9 @@ namespace CoTuong.QuanCo
 			picQuanCo.Top = Hang * 107 + 28;
 			picQuanCo.Left = Cot * 105 + 500;
 
-			//Thiết lập quân cờ trên Bàn Cờ
-			BanCo.ViTri[Hang, Cot].Hang = Hang;
+            //Thiết lập quân cờ trên Bàn Cờ
+
+            BanCo.ViTri[Hang, Cot].Hang = Hang;
             BanCo.ViTri[Hang, Cot].Cot = Cot;
             BanCo.ViTri[Hang, Cot].Trong = false;
             BanCo.ViTri[Hang, Cot].Ten = Ten;
