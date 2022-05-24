@@ -132,8 +132,8 @@ namespace CoTuong.QuanCo
                                     else if (this.Phe == 1)
                                         VanCo.isWin = "den";
                                 }
-                                VanCo.InLichSu(VanCo.temp, row, col);
-                                VanCo.DatQuanCo(sender, VanCo.temp, row, col);
+								fBanCo.player.socket.Send(VanCo.Serialize($"INLICHSU|{VanCo.temp.Ten}|{VanCo.temp.Phe}|{row}|{col}"));
+								VanCo.DatQuanCo(sender, VanCo.temp, row, col);
                                 fBanCo.player.socket.Send(VanCo.Serialize("DOILUOTDI|," + VanCo.LuotDi));
                             }
                             if (VanCo.isWin == "do")

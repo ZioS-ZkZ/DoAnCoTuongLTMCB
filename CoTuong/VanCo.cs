@@ -233,7 +233,7 @@ namespace CoTuong
 				player[0].qTuong.isLock = true;
 			
 			}
-			updateIsLock();
+			//updateIsLock();
 		}
 		public static void updateIsLock()
         {
@@ -320,26 +320,26 @@ namespace CoTuong
 			VanCo.clickSound("chon");
 		}
 
-		public static void InLichSu(QuanCo.QuanCo qc, int row, int col)
+		public static void InLichSu(string ten, int phe, int rowCo, int colCo, int row, int col)
 		{
 			string tenTiengViet = "";
-			if (qc.Ten == "xe")
+			if (ten == "xe")
 				tenTiengViet = "XE";
-			else if (qc.Ten == "ma")
+			else if (ten == "ma")
 				tenTiengViet = "MÃ";
-			else if (qc.Ten == "voi")
+			else if (ten == "voi")
 				tenTiengViet = "TƯỢNG";
-			else if (qc.Ten == "si")
+			else if (ten == "si")
 				tenTiengViet = "Sỹ";
-			else if (qc.Ten == "tuong")
+			else if (ten == "tuong")
 				tenTiengViet = "TƯỚNG";
-			else if (qc.Ten == "phao")
+			else if (ten == "phao")
 				tenTiengViet = "PHÁO";
-			else if (qc.Ten == "tot")
+			else if (ten == "tot")
 				tenTiengViet = "TỐT";
-			string content = $"{tenTiengViet}({qc.Hang + 1},{qc.Cot + 1})->({row + 1},{col + 1})";
+			string content = $"{tenTiengViet}({rowCo + 1},{colCo + 1})->({row + 1},{col + 1})";
 
-			if (qc.Phe == 0)
+			if (phe == 0)
 			{
 				fBanCo.lichSuDen.AppendText($"{soLanDi_Den}. {content}\r\n");
 				soLanDi_Den++;

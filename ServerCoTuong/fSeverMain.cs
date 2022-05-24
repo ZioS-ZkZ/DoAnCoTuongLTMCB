@@ -144,7 +144,11 @@ namespace ServerCoTuong
                     player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
                     player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
                     break;
-            }
+				case "INLICHSU":
+					player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+					player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+					break;
+			}
         }
         private void setNameClient(string mess, playerSocket player)
         {
@@ -253,7 +257,6 @@ namespace ServerCoTuong
         {
             player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
             player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
-
         }
     }
 }
