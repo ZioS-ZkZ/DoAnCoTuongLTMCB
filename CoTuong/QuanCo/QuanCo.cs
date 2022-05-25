@@ -114,17 +114,15 @@ namespace CoTuong.QuanCo
                                 if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
                             }
                             BanCo.ResetCanMove();
+
                         }
                         if (this.Phe != VanCo.temp.Phe)
                         {
                             if (VanCo.temp.KiemTra(this.Hang, this.Cot) == 1)
                             {
-                                VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
-                                //Ăn quân cờ của đối phương
-                                int row = this.Hang;
-                                int col = this.Cot;
-                                this.Hang = 10;
-                                this.Cot = 10;
+                                string inforQuanCoBiAn = this.Ten + "," + this.Phe + "," + this.Phia;
+                                fBanCo.player.socket.Send(VanCo.Serialize("DANHCO|," + VanCo.temp.Hang + "," + VanCo.temp.Cot + "," + VanCo.temp.Ten + "," + VanCo.temp.Phe + "," + VanCo.temp.Phia + "," + this.Hang + "," + this.Cot + "," + VanCo.LuotDi + "," + inforQuanCoBiAn));
+
                                 if (this.Ten == "tuong")
                                 {
                                     if (this.Phe == 0)
@@ -132,9 +130,6 @@ namespace CoTuong.QuanCo
                                     else if (this.Phe == 1)
                                         VanCo.isWin = "den";
                                 }
-								fBanCo.player.socket.Send(VanCo.Serialize($"INLICHSU|{VanCo.temp.Ten}|{VanCo.temp.Phe}|{row}|{col}"));
-								VanCo.DatQuanCo(sender, VanCo.temp, row, col);
-                                fBanCo.player.socket.Send(VanCo.Serialize("DOILUOTDI|," + VanCo.LuotDi));
                             }
                             if (VanCo.isWin == "do")
                             {
@@ -149,6 +144,7 @@ namespace CoTuong.QuanCo
                                 fBanCo.player.socket.Send(VanCo.Serialize("HOA|,"));
                             }
                             BanCo.ResetCanMove();
+
                         }
 
                         VanCo.isMarked = false;
@@ -173,8 +169,10 @@ namespace CoTuong.QuanCo
                             if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
                         }
                         BanCo.ResetCanMove();
+
+
                     }
-                    fBanCo.sendStatus();
+                    //fBanCo.sendStatus();
                     break;
 
 

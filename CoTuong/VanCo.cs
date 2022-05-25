@@ -164,11 +164,9 @@ namespace CoTuong
 
         }
 
-		public static void DoiLuotDi(string mess)
+		public static void DoiLuotDi(int luotdi)
 		{
-			string[] item = mess.Split(',');
-
-			if (int.Parse(item[1]) == 0) LuotDi = 1;
+			if (luotdi == 0) LuotDi = 1;
 			else LuotDi = 0;
 
 			if(VanCo.LuotDi == 0)
@@ -233,60 +231,8 @@ namespace CoTuong
 				player[0].qTuong.isLock = true;
 			
 			}
-			//updateIsLock();
 		}
-		public static void updateIsLock()
-        {
-			//send update status isLock
-			//quan xe
-			string infoXe_00 = ((VanCo.player[0].qXe[0].isLock == true) ? "1" : "0");
-			string infoXe_01 = ((VanCo.player[0].qXe[1].isLock == true) ? "1" : "0");
-			string infoXe_10 = ((VanCo.player[1].qXe[0].isLock == true) ? "1" : "0");
-			string infoXe_11 = ((VanCo.player[1].qXe[1].isLock == true) ? "1" : "0");
-			//quan ma
-			string infoMa_00 = ((VanCo.player[0].qMa[0].isLock == true) ? "1" : "0");
-			string infoMa_01 = ((VanCo.player[0].qMa[1].isLock == true) ? "1" : "0");
-			string infoMa_10 = ((VanCo.player[1].qMa[0].isLock == true) ? "1" : "0");
-			string infoMa_11 = ((VanCo.player[1].qMa[1].isLock == true) ? "1" : "0");
-			//quan voi
-			string infoVoi_00 = ((VanCo.player[0].qVoi[0].isLock == true) ? "1" : "0");
-			string infoVoi_01 = ((VanCo.player[0].qVoi[1].isLock == true) ? "1" : "0");
-			string infoVoi_10 = ((VanCo.player[1].qVoi[0].isLock == true) ? "1" : "0");
-			string infoVoi_11 = ((VanCo.player[1].qVoi[1].isLock == true) ? "1" : "0");
-			// quan sy
-			string infoSy_00 = ((VanCo.player[0].qSi[0].isLock == true) ? "1" : "0");
-			string infoSy_01 = ((VanCo.player[0].qSi[1].isLock == true) ? "1" : "0");
-			string infoSy_10 = ((VanCo.player[1].qSi[1].isLock == true) ? "1" : "0");
-			string infoSy_11 = ((VanCo.player[1].qSi[1].isLock == true) ? "1" : "0");
-			// quan Phao
-			string infoPhao_00 = ((VanCo.player[0].qPhao[0].isLock == true) ? "1" : "0");
-			string infoPhao_01 = ((VanCo.player[0].qPhao[1].isLock == true) ? "1" : "0");
-			string infoPhao_10 = ((VanCo.player[1].qPhao[0].isLock == true) ? "1" : "0");
-			string infoPhao_11 = ((VanCo.player[1].qPhao[1].isLock == true) ? "1" : "0");
-			//quan tuong
-			string infoTuongDen = ((VanCo.player[0].qTuong.isLock == true) ? "1" : "0");
-			string infoTuongDo = ((VanCo.player[1].qTuong.isLock == true) ? "1" : "0");
-			//quan tot
-			string infoTot_00 = ((VanCo.player[0].qTot[0].isLock == true) ? "1" : "0");
-			string infoTot_01 = ((VanCo.player[0].qTot[1].isLock == true) ? "1" : "0");
-			string infoTot_02 = ((VanCo.player[0].qTot[2].isLock == true) ? "1" : "0");
-			string infoTot_03 = ((VanCo.player[0].qTot[3].isLock == true) ? "1" : "0");
-			string infoTot_04 = ((VanCo.player[0].qTot[4].isLock == true) ? "1" : "0");
-			string infoTot_10 = ((VanCo.player[1].qTot[0].isLock == true) ? "1" : "0");
-			string infoTot_11 = ((VanCo.player[1].qTot[1].isLock == true) ? "1" : "0");
-			string infoTot_12 = ((VanCo.player[1].qTot[2].isLock == true) ? "1" : "0");
-			string infoTot_13 = ((VanCo.player[1].qTot[3].isLock == true) ? "1" : "0");
-			string infoTot_14 = ((VanCo.player[1].qTot[4].isLock == true) ? "1" : "0");
-			fBanCo.player.socket.Send(VanCo.Serialize("UPDATEISLOCK|," + infoXe_00 + "," + infoXe_01 + "," + infoXe_10 + "," + infoXe_11 + ","
-														+ infoMa_00 + "," + infoMa_01 + "," + infoMa_10 + "," + infoMa_11 + ","
-														+ infoVoi_00 + "," + infoVoi_01 + "," + infoVoi_10 + "," + infoVoi_11 + ","
-														+ infoSy_00 + "," + infoSy_01 + "," + infoSy_10 + "," + infoSy_11 + ","
-														+ infoTuongDen + "," + infoTuongDo + ","
-														+ infoPhao_00 + "," + infoPhao_01 + "," + infoPhao_10 + "," + infoPhao_11 + ","
-														+ infoTot_00 + "," + infoTot_01 + "," + infoTot_02 + "," + infoTot_03 + "," + infoTot_04 + ","
-														+ infoTot_10 + "," + infoTot_11 + "," + infoTot_12 + "," + infoTot_13 + "," + infoTot_14 + ","));
-
-		}
+		
 
 		public static void setOCoTrong(int row, int col)
 		{
@@ -295,28 +241,146 @@ namespace CoTuong
 			BanCo.ViTri[row, col].Phia = "";
 			BanCo.ViTri[row, col].Phe = 2;
 		}
-		public static void DatQuanCo(Object sender, QuanCo.QuanCo qc, int row, int col)
+		public static void DatQuanCo(int qcHang,int qcCot,string qcTen, int qcPhe, string qcPhia, int row, int col)
 		{
-			//  dat quan co len ban co 
-			if (sender.GetType() == typeof(CoTuong.fBanCo))
+			
+			BanCo.ViTri[row, col].Trong = false;
+			BanCo.ViTri[row, col].Phe = qcPhe;
+			BanCo.ViTri[row, col].Ten = qcTen;
+			BanCo.ViTri[row, col].Phia = qcPhia;
+			if (qcTen == "xe")
 			{
-				qc.Hang = row;
-				qc.Cot = col;
-				qc.draw();
+				if (qcPhia == "trai")
+                {
+					VanCo.player[qcPhe].qXe[0].Hang = row;
+					VanCo.player[qcPhe].qXe[0].Cot = col;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "phai")
+                {
+					VanCo.player[qcPhe].qXe[1].Hang = row;
+					VanCo.player[qcPhe].qXe[1].Cot = col;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.Left = col * 105 + 500;
+				}
 			}
-			// dat quan co len 1 quan co khac 
-			if (sender.GetType() == typeof(System.Windows.Forms.PictureBox))
+			if (qcTen == "ma")
 			{
-				BanCo.ViTri[row, col].Trong = false;
-				BanCo.ViTri[row, col].Phe = temp.Phe;
-				BanCo.ViTri[row, col].Ten = temp.Ten;
-				BanCo.ViTri[row, col].Phia = temp.Phia;
-				temp.Hang = row;
-				temp.Cot = col;
-				temp.picQuanCo.Top = row * 107 + 28;
-				temp.picQuanCo.Left = col * 105 + 500;
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qMa[0].Hang = row;
+					VanCo.player[qcPhe].qMa[0].Cot = col;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qMa[1].Hang = row;
+					VanCo.player[qcPhe].qMa[1].Cot = col;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.Left = col * 105 + 500;
+				}
+			}
+			if (qcTen == "voi")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qVoi[0].Hang = row;
+					VanCo.player[qcPhe].qVoi[0].Cot = col;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qVoi[1].Hang = row;
+					VanCo.player[qcPhe].qVoi[1].Cot = col;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.Left = col * 105 + 500;
+				}
+			}
+			if (qcTen == "si")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qSi[0].Hang = row;
+					VanCo.player[qcPhe].qSi[0].Cot = col;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qSi[1].Hang = row;
+					VanCo.player[qcPhe].qSi[1].Cot = col;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.Left = col * 105 + 500;
+				}
+			}
+			if (qcTen == "phao")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qPhao[0].Hang = row;
+					VanCo.player[qcPhe].qPhao[0].Cot = col;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qPhao[1].Hang = row;
+					VanCo.player[qcPhe].qPhao[1].Cot = col;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.Left = col * 105 + 500;
+				}
+			}
+			if (qcTen == "tot")
+			{
+				if (qcPhia == "1")
+                {
+					VanCo.player[qcPhe].qTot[0].Hang = row;
+					VanCo.player[qcPhe].qTot[0].Cot = col;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "2")
+				{
+					VanCo.player[qcPhe].qTot[1].Hang = row;
+					VanCo.player[qcPhe].qTot[1].Cot = col;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "3")
+				{
+					VanCo.player[qcPhe].qTot[2].Hang = row;
+					VanCo.player[qcPhe].qTot[2].Cot = col;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "4")
+				{
+					VanCo.player[qcPhe].qTot[3].Hang = row;
+					VanCo.player[qcPhe].qTot[3].Cot = col;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.Left = col * 105 + 500;
+				}
+				if (qcPhia == "5")
+				{
+					VanCo.player[qcPhe].qTot[4].Hang = row;
+					VanCo.player[qcPhe].qTot[4].Cot = col;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.Top = row * 107 + 28;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.Left = col * 105 + 500;
+				}
 
 			}
+			if (qcTen == "tuong")
+			{
+				VanCo.player[qcPhe].qTuong.Hang = row;
+				VanCo.player[qcPhe].qTuong.Cot = col;
+				VanCo.player[qcPhe].qTuong.picQuanCo.Top = row * 107 + 28;
+				VanCo.player[qcPhe].qTuong.picQuanCo.Left = col * 105 + 500;
+			}
+			
+			
 			VanCo.clickSound("chon");
 		}
 
@@ -351,37 +415,481 @@ namespace CoTuong
 			}
 		}
 
-		public static void AnQuanCo(QuanCo.QuanCo qc)
+		public static void AnQuanCo(string qcTen,int qcPhe,string qcPhia)
 		{
-			qc.TrangThai = 0;
-			qc.picQuanCo.Cursor = Cursors.Arrow;
-			qc.picQuanCo.Width = 67;
-			qc.picQuanCo.Height = 67;
-			qc.picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+			if (qcTen == "xe")
+			{
+				if (qcPhia == "trai")
+                {
+					VanCo.player[qcPhe].qXe[0].TrangThai = 0;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qXe[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qXe[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qXe[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qXe[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qXe[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qXe[1].TrangThai = 0;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qXe[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qXe[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qXe[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qXe[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qXe[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			if (qcTen == "ma")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qMa[0].TrangThai = 0;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qMa[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qMa[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qMa[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qMa[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qMa[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qMa[1].TrangThai = 0;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qMa[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qMa[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qMa[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qMa[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qMa[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			if (qcTen == "voi")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qVoi[0].TrangThai = 0;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qVoi[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qVoi[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qVoi[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qVoi[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qVoi[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qVoi[1].TrangThai = 0;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qVoi[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qVoi[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qVoi[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qVoi[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qVoi[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			if (qcTen == "si")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qSi[0].TrangThai = 0;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qSi[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qSi[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qSi[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qSi[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qSi[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qSi[1].TrangThai = 0;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qSi[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qSi[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qSi[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qSi[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qSi[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			if (qcTen == "phao")
+			{
+				if (qcPhia == "trai")
+				{
+					VanCo.player[qcPhe].qPhao[0].TrangThai = 0;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qPhao[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qPhao[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qPhao[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qPhao[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qPhao[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "phai")
+				{
+					VanCo.player[qcPhe].qPhao[1].TrangThai = 0;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qPhao[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qPhao[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qPhao[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qPhao[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qPhao[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			if (qcTen == "tot")
+			{
+				if (qcPhia == "1") 
+				{
+					
+					VanCo.player[qcPhe].qTot[0].TrangThai = 0;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qTot[0].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qTot[0].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qTot[0].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qTot[0].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qTot[0].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "2")
+                {
+					VanCo.player[qcPhe].qTot[1].TrangThai = 0;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qTot[1].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qTot[1].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qTot[1].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qTot[1].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qTot[1].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "3")
+				{
+					VanCo.player[qcPhe].qTot[2].TrangThai = 0;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qTot[2].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qTot[2].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qTot[2].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qTot[2].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qTot[2].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "4")
+                {
+					VanCo.player[qcPhe].qTot[3].TrangThai = 0;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qTot[3].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qTot[3].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qTot[3].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qTot[3].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qTot[3].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+				if (qcPhia == "5")
+				{
+					VanCo.player[qcPhe].qTot[4].TrangThai = 0;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.Cursor = Cursors.Arrow;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.Width = 67;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.Height = 67;
+					VanCo.player[qcPhe].qTot[4].picQuanCo.SizeMode = PictureBoxSizeMode.Zoom;
+					if (qcPhe == 0)
+					{
+						VanCo.player[qcPhe].qTot[4].picQuanCo.Top = toaDoMoDen.y * 67 + 114;
+						VanCo.player[qcPhe].qTot[4].picQuanCo.Left = toaDoMoDen.x * 69 + 80;
+						toaDoMoDen.x++;
+						if (toaDoMoDen.x == 5)
+						{
+							toaDoMoDen.x = 0;
+							toaDoMoDen.y++;
+						}
+					}
+					else
+					{
+						VanCo.player[qcPhe].qTot[4].picQuanCo.Top = toaDoMoDo.y * 67 + 774;
+						VanCo.player[qcPhe].qTot[4].picQuanCo.Left = toaDoMoDo.x * 69 + 80;
+						toaDoMoDo.x++;
+						if (toaDoMoDo.x == 5)
+						{
+							toaDoMoDo.x = 0;
+							toaDoMoDo.y++;
+						}
+					}
+				}
+			}
+			
 			
 
-			if (qc.Phe == 0)
-			{
-				qc.picQuanCo.Top = toaDoMoDen.y * 67 + 114;
-				qc.picQuanCo.Left = toaDoMoDen.x * 69 + 80;
-				toaDoMoDen.x++;
-				if (toaDoMoDen.x == 5)
-				{
-					toaDoMoDen.x = 0;
-					toaDoMoDen.y++;
-				}
-			}
-			else
-			{
-				qc.picQuanCo.Top = toaDoMoDo.y * 67 + 774;
-				qc.picQuanCo.Left = toaDoMoDo.x * 69 + 80;
-				toaDoMoDo.x++;
-				if (toaDoMoDo.x == 5)
-				{
-					toaDoMoDo.x = 0;
-					toaDoMoDo.y++;
-				}
-			}
+			
 		}
 
 

@@ -24,7 +24,7 @@ namespace ServerCoTuong
             try
             {
                 ipe = new IPEndPoint(IPAddress.Any, 9999);
-                skListen = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
+                skListen = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 skListen.Bind(ipe);
 
                 Thread threadListen = new Thread(LangNgheClient);
@@ -119,35 +119,50 @@ namespace ServerCoTuong
                     thoatphonggame(data, player);
                     break;
                 case "NEWGAME":
-                    newGame(data,player);
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "DANHCO":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+                    break;
+                //case "DANHCO":
+                //    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
+                //    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                //    break;
+                case "SETOCOTRONG":
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+                    break;
+                case "DATQUANCO":
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+                    break;
+                case "ANQUANCO":
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "DOILUOTDI":
-                    doiLuotDi(data, player);
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
-                case "UPDATEISLOCK":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                case "INLICHSU":
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "DOWIN":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "DENWIN":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "HOA":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
+                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
-				case "INLICHSU":
-					player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
-					player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
-					break;
+				
 			}
         }
         private void setNameClient(string mess, playerSocket player)
@@ -247,16 +262,5 @@ namespace ServerCoTuong
             }
         }
 
-        private void newGame(string mess, playerSocket player)
-        {
-            player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-            player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
-
-        }
-        private void doiLuotDi(string mess,playerSocket player)
-        {
-            player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-            player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
-        }
     }
 }
