@@ -209,7 +209,7 @@ namespace CoTuong
 			// 
 			// rtbBoxSend
 			// 
-			this.rtbBoxSend.Location = new System.Drawing.Point(1415, 990);
+			this.rtbBoxSend.Location = new System.Drawing.Point(1435, 990);
 			this.rtbBoxSend.Name = "rtbBoxSend";
 			this.rtbBoxSend.Size = new System.Drawing.Size(429, 60);
 			this.rtbBoxSend.TabIndex = 10;
@@ -218,7 +218,7 @@ namespace CoTuong
 			// 
 			// rtbContentChat
 			// 
-			this.rtbContentChat.Location = new System.Drawing.Point(1415, 202);
+			this.rtbContentChat.Location = new System.Drawing.Point(1435, 202);
 			this.rtbContentChat.Name = "rtbContentChat";
 			this.rtbContentChat.Size = new System.Drawing.Size(429, 774);
 			this.rtbContentChat.TabIndex = 11;
@@ -226,6 +226,7 @@ namespace CoTuong
 			// 
 			// panel1
 			// 
+			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel1.Controls.Add(this.txtBirth);
 			this.panel1.Controls.Add(this.txtSex);
 			this.panel1.Controls.Add(this.txtName);
@@ -259,6 +260,7 @@ namespace CoTuong
 			// 
 			// panel2
 			// 
+			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel2.Controls.Add(this.listViewHistory);
 			this.panel2.Controls.Add(this.txtDraw);
 			this.panel2.Controls.Add(this.txtLose);

@@ -180,7 +180,6 @@
 //			// btTimPhong
 //			// 
 //			this.btTimPhong.Location = new System.Drawing.Point(1030, 920);
-//			this.btTimPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 //			this.btTimPhong.Name = "btTimPhong";
 //			this.btTimPhong.Size = new System.Drawing.Size(211, 82);
 //			this.btTimPhong.TabIndex = 2;
@@ -191,7 +190,6 @@
 //			// btTaoPhong
 //			// 
 //			this.btTaoPhong.Location = new System.Drawing.Point(665, 920);
-//			this.btTaoPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 //			this.btTaoPhong.Name = "btTaoPhong";
 //			this.btTaoPhong.Size = new System.Drawing.Size(211, 82);
 //			this.btTaoPhong.TabIndex = 1;
@@ -204,7 +202,6 @@
 //			this.lbDanhSachPhong.FormattingEnabled = true;
 //			this.lbDanhSachPhong.ItemHeight = 25;
 //			this.lbDanhSachPhong.Location = new System.Drawing.Point(665, 115);
-//			this.lbDanhSachPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 //			this.lbDanhSachPhong.Name = "lbDanhSachPhong";
 //			this.lbDanhSachPhong.Size = new System.Drawing.Size(575, 779);
 //			this.lbDanhSachPhong.TabIndex = 0;
@@ -212,8 +209,7 @@
 //			// 
 //			// rtbBoxSend
 //			// 
-//			this.rtbBoxSend.Location = new System.Drawing.Point(1919, 1241);
-//			this.rtbBoxSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+//			this.rtbBoxSend.Location = new System.Drawing.Point(1435, 990);
 //			this.rtbBoxSend.Name = "rtbBoxSend";
 //			this.rtbBoxSend.Size = new System.Drawing.Size(429, 60);
 //			this.rtbBoxSend.TabIndex = 10;
@@ -222,8 +218,7 @@
 //			// 
 //			// rtbContentChat
 //			// 
-//			this.rtbContentChat.Location = new System.Drawing.Point(1919, 400);
-//			this.rtbContentChat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+//			this.rtbContentChat.Location = new System.Drawing.Point(1435, 202);
 //			this.rtbContentChat.Name = "rtbContentChat";
 //			this.rtbContentChat.Size = new System.Drawing.Size(429, 774);
 //			this.rtbContentChat.TabIndex = 11;
@@ -231,13 +226,14 @@
 //			// 
 //			// panel1
 //			// 
+//			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 //			this.panel1.Controls.Add(this.txtBirth);
 //			this.panel1.Controls.Add(this.txtSex);
 //			this.panel1.Controls.Add(this.txtName);
 //			this.panel1.Controls.Add(this.lbBirth);
 //			this.panel1.Controls.Add(this.lbSex);
 //			this.panel1.Controls.Add(this.lbName);
-//			this.panel1.Location = new System.Drawing.Point(1379, 115);
+//			this.panel1.Location = new System.Drawing.Point(1339, 115);
 //			this.panel1.Name = "panel1";
 //			this.panel1.Size = new System.Drawing.Size(516, 162);
 //			this.panel1.TabIndex = 3;
@@ -264,6 +260,7 @@
 //			// 
 //			// panel2
 //			// 
+//			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 //			this.panel2.Controls.Add(this.listViewHistory);
 //			this.panel2.Controls.Add(this.txtDraw);
 //			this.panel2.Controls.Add(this.txtLose);
@@ -271,7 +268,7 @@
 //			this.panel2.Controls.Add(this.lbLose);
 //			this.panel2.Controls.Add(this.txtWin);
 //			this.panel2.Controls.Add(this.lbWin);
-//			this.panel2.Location = new System.Drawing.Point(1379, 360);
+//			this.panel2.Location = new System.Drawing.Point(1339, 360);
 //			this.panel2.Name = "panel2";
 //			this.panel2.Size = new System.Drawing.Size(516, 471);
 //			this.panel2.TabIndex = 5;
@@ -446,7 +443,7 @@
 //			"Blue",
 //			"Grey",
 //			"Paper"});
-//			cmbSelectColor.Location = new System.Drawing.Point(1629, 130);
+//			cmbSelectColor.Location = new System.Drawing.Point(1627, 130);
 //			cmbSelectColor.Name = "cmbSelectColor";
 //			cmbSelectColor.Size = new System.Drawing.Size(219, 33);
 //			cmbSelectColor.TabIndex = 9;
@@ -454,10 +451,9 @@
 //			// 
 //			// fBanCo
 //			// 
-//			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
 //			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 //			this.BackColor = System.Drawing.Color.NavajoWhite;
-//			this.BackgroundImage = global::CoTuong.Properties.Resources.board;
+//			this.BackgroundImage = global::CoTuong.Properties.Resources.board_default;
 //			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 //			this.Width = 1920;
 //			this.Height = 1080;
@@ -473,7 +469,6 @@
 //			this.Controls.Add(cmbSelectColor);
 //			this.DoubleBuffered = true;
 //			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-//			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 //			this.MaximizeBox = false;
 //			this.Name = "fBanCo";
 //			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
