@@ -76,14 +76,16 @@ namespace CoTuong
 					newGame(mess);
 					break;
 				case "DANHCO":
-					updateMoveQuanCo(mess);
-
-					break;
-				case "DOILUOTDI":
-					VanCo.DoiLuotDi(mess);
-					break;
-				case "UPDATEISLOCK":
-					updateIsLock(mess);
+					fBanCo.itemMess = mess.Split(',');
+					VanCo.setOCoTrong(int.Parse(fBanCo.itemMess[1]), int.Parse(fBanCo.itemMess[2]));
+					VanCo.DatQuanCo(int.Parse(fBanCo.itemMess[1]),int.Parse(fBanCo.itemMess[2]), fBanCo.itemMess[3],int.Parse(fBanCo.itemMess[4]), 
+									fBanCo.itemMess[5] ,int.Parse(fBanCo.itemMess[6]), int.Parse(fBanCo.itemMess[7]));
+					if(fBanCo.itemMess[9] != "0")
+                    {
+						VanCo.AnQuanCo(fBanCo.itemMess[9], int.Parse(fBanCo.itemMess[10]), fBanCo.itemMess[11]);
+					}
+					VanCo.InLichSu(fBanCo.itemMess[3], int.Parse(fBanCo.itemMess[4]), int.Parse(fBanCo.itemMess[1]), int.Parse(fBanCo.itemMess[2]), int.Parse(fBanCo.itemMess[6]), int.Parse(fBanCo.itemMess[7]));
+					VanCo.DoiLuotDi(int.Parse(fBanCo.itemMess[8]));
 					break;
 				case "DOWIN":
 					VanCo.NewGame();
@@ -102,10 +104,6 @@ namespace CoTuong
 					end = new fEnd();
 					end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
 					end.ShowDialog();
-					break;
-				case "INLICHSU":
-					string[] data = mess.Split("|");
-					VanCo.InLichSu(data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), int.Parse(data[5]), int.Parse(data[6]));
 					break;
 			}
 		}
@@ -251,15 +249,7 @@ namespace CoTuong
 			}
 
 			addQuanCo();
-			for (int i = 0; i < 2; i++)
-			{
-				flagUpdateXeDo[i] = flagUpdateXeDen[i] = flagUpdateMaDo[i] = flagUpdateMaDen[i] = flagUpdateVoiDo[i] = flagUpdateVoiDen[i] = flagUpdateSiDo[i] = flagUpdateSiDen[i] = flagUpdatePhaoDo[i] = flagUpdatePhaoDen[i] = true;
-			}
-			for (int i = 0; i < 5; i++)
-			{
-				flagUpdateTotDo[i] = flagUpdateTotDen[i] = true;
-			}
-			flagUpdateTuongDen = flagUpdateTuongDo = true;
+			
 			fBanCo.labelTimerDen.Text = "60:00";
 			fBanCo.labelTimerDo.Text = "60:00";
 		}
@@ -298,16 +288,9 @@ namespace CoTuong
 									}
 									//Bỏ chọn quân cờ
 									VanCo.isMarked = false;
-									//Ô cờ trống tại ví trí ban đầu                
-									VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
-									//In lịch sử nước đi
-									fBanCo.player.socket.Send(VanCo.Serialize($"INLICHSU|{VanCo.temp.Ten}|{VanCo.temp.Phe}|{VanCo.temp.Hang}|{VanCo.temp.Cot}|{i}|{j}"));
-									//Đặt quân cờ đã chọn vào vị trí mới [i,j]
-									VanCo.DatQuanCo(sender, VanCo.temp, i, j);
-									fBanCo.player.socket.Send(VanCo.Serialize("DOILUOTDI|," + VanCo.LuotDi.ToString()));
+									fBanCo.player.socket.Send(VanCo.Serialize("DANHCO|," + VanCo.temp.Hang + "," + VanCo.temp.Cot + "," + VanCo.temp.Ten + "," + VanCo.temp.Phe + "," + VanCo.temp.Phia + "," + i + "," + j+","+VanCo.LuotDi+","+"0,0,0"));
 									BanCo.ResetCanMove();
-									sendStatus();
-									//VanCo.updateIsLock();
+									//sendStatus();
 									break;
 								case false:
 									if (VanCo.temp.Phe == 0)
@@ -379,15 +362,8 @@ namespace CoTuong
 									VanCo.isMarked = false;
 
 									//Ăn quân cờ của đối phương
-									QuanCoBiAn.Hang = 10;
-									QuanCoBiAn.Cot = 10;
-
-									VanCo.setOCoTrong(VanCo.temp.Hang, VanCo.temp.Cot);
-									//In lịch sử nước đi
-									fBanCo.player.socket.Send(VanCo.Serialize($"INLICHSU|{VanCo.temp.Ten}|{VanCo.temp.Phe}|{VanCo.temp.Hang}|{VanCo.temp.Cot}|{i}|{j}"));
-									//Đặt quân cờ đã chọn vào vị trí mới [i,j]
-									VanCo.DatQuanCo(sender, VanCo.temp, i, j);
-									fBanCo.player.socket.Send(VanCo.Serialize("DOILUOTDI|," + VanCo.LuotDi));
+									string inforQuanCoBiAn = QuanCoBiAn.Ten+ "," + QuanCoBiAn.Phe + "," + QuanCoBiAn.Phia;
+									fBanCo.player.socket.Send(VanCo.Serialize("DANHCO|," + VanCo.temp.Hang + "," + VanCo.temp.Cot + "," + VanCo.temp.Ten + "," + VanCo.temp.Phe + "," + VanCo.temp.Phia + "," + i + "," + j + "," + VanCo.LuotDi + "," + inforQuanCoBiAn));
 
 									if (VanCo.isWin == "do")
 									{
@@ -402,9 +378,7 @@ namespace CoTuong
 										player.socket.Send(VanCo.Serialize("HOA|,"));
 									}
 									BanCo.ResetCanMove();
-									sendStatus();
-									//VanCo.updateIsLock();
-
+									//sendStatus();
 									break;
 							}
 						}
@@ -498,378 +472,7 @@ namespace CoTuong
 														+ infoTot_10 + "," + infoTot_11 + "," + infoTot_12 + "," + infoTot_13 + "," + infoTot_14 + ","));
 
 		}
-		bool[] flagUpdateXeDo = new bool[2];
-		bool[] flagUpdateXeDen = new bool[2];
-		bool[] flagUpdateMaDo = new bool[2];
-		bool[] flagUpdateMaDen = new bool[2];
-		bool[] flagUpdateVoiDo = new bool[2];
-		bool[] flagUpdateVoiDen = new bool[2];
-		bool[] flagUpdateSiDo = new bool[2];
-		bool[] flagUpdateSiDen = new bool[2];
-		bool[] flagUpdatePhaoDo = new bool[2];
-		bool[] flagUpdatePhaoDen = new bool[2];
-		bool[] flagUpdateTotDo = new bool[5];
-		bool[] flagUpdateTotDen = new bool[5];
-		bool flagUpdateTuongDen, flagUpdateTuongDo;
-		private void updateMoveQuanCo(string mess)
-		{
-			itemMess = mess.Split(',');
-			BanCo.ResetBanCo();
-			int index = 0;
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateXeDen[i])
-				{
-					VanCo.player[0].qXe[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qXe[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qXe[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qXe[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qXe[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qXe[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qXe[i].Hang > 9 || VanCo.player[0].qXe[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qXe[i]);
-						flagUpdateXeDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qXe[i].draw();
-					}
-				}
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateXeDo[i])
-				{
-					VanCo.player[1].qXe[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qXe[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qXe[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qXe[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qXe[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qXe[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qXe[i].Hang > 9 || VanCo.player[1].qXe[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qXe[i]);
-						flagUpdateXeDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qXe[i].draw();
-					}
-				}
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateMaDen[i])
-				{
-					VanCo.player[0].qMa[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qMa[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qMa[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qMa[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qMa[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qMa[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qMa[i].Hang > 9 || VanCo.player[0].qMa[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qMa[i]);
-						flagUpdateMaDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qMa[i].draw();
-					}
-				}
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateMaDo[i])
-				{
-					VanCo.player[1].qMa[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qMa[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qMa[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qMa[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qMa[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qMa[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qMa[i].Hang > 9 || VanCo.player[1].qMa[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qMa[i]);
-						flagUpdateMaDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qMa[i].draw();
-					}
-				}
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateVoiDen[i])
-				{
-					VanCo.player[0].qVoi[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qVoi[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qVoi[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qVoi[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qVoi[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qVoi[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qVoi[i].Hang > 9 || VanCo.player[0].qVoi[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qVoi[i]);
-						flagUpdateVoiDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qVoi[i].draw();
-					}
-				}
 
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateVoiDo[i])
-				{
-					VanCo.player[1].qVoi[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qVoi[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qVoi[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qVoi[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qVoi[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qVoi[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qVoi[i].Hang > 9 || VanCo.player[1].qVoi[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qVoi[i]);
-						flagUpdateVoiDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qVoi[i].draw();
-					}
-				}
-
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateSiDen[i])
-				{
-					VanCo.player[0].qSi[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qSi[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qSi[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qSi[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qSi[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qSi[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qSi[i].Hang > 9 || VanCo.player[0].qSi[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qSi[i]);
-						flagUpdateSiDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qSi[i].draw();
-					}
-				}
-
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdateSiDo[i])
-				{
-					VanCo.player[1].qSi[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qSi[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qSi[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qSi[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qSi[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qSi[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qSi[i].Hang > 9 || VanCo.player[1].qSi[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qSi[i]);
-						flagUpdateSiDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qSi[i].draw();
-					}
-				}
-
-				index += 6;
-			}
-			if (flagUpdateTuongDen)
-			{
-				VanCo.player[0].qTuong.Hang = int.Parse(itemMess[index + 1]);
-				VanCo.player[0].qTuong.Cot = int.Parse(itemMess[index + 2]);
-				VanCo.player[0].qTuong.Ten = itemMess[index + 3];
-				VanCo.player[0].qTuong.Phe = int.Parse(itemMess[index + 4]);
-				VanCo.player[0].qTuong.Phia = itemMess[index + 5];
-				VanCo.player[0].qTuong.TrangThai = int.Parse(itemMess[index + 6]);
-				if (VanCo.player[0].qTuong.Hang > 9 || VanCo.player[0].qTuong.Cot > 8)
-				{
-					VanCo.AnQuanCo(VanCo.player[0].qTuong);
-					flagUpdateTuongDen = false;
-				}
-				else
-				{
-					VanCo.player[0].qTuong.draw();
-				}
-			}
-			index += 6;
-			if (flagUpdateTuongDo)
-			{
-				VanCo.player[1].qTuong.Hang = int.Parse(itemMess[index + 1]);
-				VanCo.player[1].qTuong.Cot = int.Parse(itemMess[index + 2]);
-				VanCo.player[1].qTuong.Ten = itemMess[index + 3];
-				VanCo.player[1].qTuong.Phe = int.Parse(itemMess[index + 4]);
-				VanCo.player[1].qTuong.Phia = itemMess[index + 5];
-				VanCo.player[1].qTuong.TrangThai = int.Parse(itemMess[index + 6]);
-				if (VanCo.player[0].qTuong.Hang > 9 || VanCo.player[0].qTuong.Cot > 8)
-				{
-					VanCo.AnQuanCo(VanCo.player[1].qTuong);
-					flagUpdateTuongDo = false;
-				}
-				else
-				{
-					VanCo.player[1].qTuong.draw();
-				}
-			}
-			index += 6;
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdatePhaoDen[i])
-				{
-					VanCo.player[0].qPhao[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qPhao[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qPhao[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qPhao[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qPhao[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qPhao[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qPhao[i].Hang > 9 || VanCo.player[0].qPhao[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qPhao[i]);
-						flagUpdatePhaoDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qPhao[i].draw();
-					}
-				}
-
-				index += 6;
-			}
-			for (int i = 0; i < 2; i++)
-			{
-				if (flagUpdatePhaoDo[i])
-				{
-					VanCo.player[1].qPhao[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qPhao[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qPhao[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qPhao[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qPhao[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qPhao[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qPhao[i].Hang > 9 || VanCo.player[1].qPhao[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qPhao[i]);
-						flagUpdatePhaoDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qPhao[i].draw();
-					}
-				}
-				index += 6;
-			}
-
-			for (int i = 0; i < 5; i++)
-			{
-				if (flagUpdateTotDen[i])
-				{
-					VanCo.player[0].qTot[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[0].qTot[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[0].qTot[i].Ten = itemMess[index + 3];
-					VanCo.player[0].qTot[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[0].qTot[i].Phia = itemMess[index + 5];
-					VanCo.player[0].qTot[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[0].qTot[i].Hang > 9 || VanCo.player[0].qTot[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[0].qTot[i]);
-						flagUpdateTotDen[i] = false;
-					}
-					else
-					{
-						VanCo.player[0].qTot[i].draw();
-					}
-				}
-				index += 6;
-			}
-			for (int i = 0; i < 5; i++)
-			{
-				if (flagUpdateTotDo[i])
-				{
-					VanCo.player[1].qTot[i].Hang = int.Parse(itemMess[index + 1]);
-					VanCo.player[1].qTot[i].Cot = int.Parse(itemMess[index + 2]);
-					VanCo.player[1].qTot[i].Ten = itemMess[index + 3];
-					VanCo.player[1].qTot[i].Phe = int.Parse(itemMess[index + 4]);
-					VanCo.player[1].qTot[i].Phia = itemMess[index + 5];
-					VanCo.player[1].qTot[i].TrangThai = int.Parse(itemMess[index + 6]);
-					if (VanCo.player[1].qTot[i].Hang > 9 || VanCo.player[1].qTot[i].Cot > 8)
-					{
-						VanCo.AnQuanCo(VanCo.player[1].qTot[i]);
-						flagUpdateTotDo[i] = false;
-					}
-					else
-					{
-						VanCo.player[1].qTot[i].draw();
-					}
-				}
-				index += 6;
-			}
-		}
-		private void updateIsLock(string mess)
-		{
-			itemMess = mess.Split(',');
-			VanCo.player[0].qXe[0].isLock = (itemMess[1] == "1") ? true : false;
-			VanCo.player[0].qXe[1].isLock = (itemMess[2] == "1") ? true : false;
-			VanCo.player[1].qXe[0].isLock = (itemMess[3] == "1") ? true : false;
-			VanCo.player[1].qXe[1].isLock = (itemMess[4] == "1") ? true : false;
-
-			VanCo.player[0].qMa[0].isLock = (itemMess[5] == "1") ? true : false;
-			VanCo.player[0].qMa[1].isLock = (itemMess[6] == "1") ? true : false;
-			VanCo.player[1].qMa[0].isLock = (itemMess[7] == "1") ? true : false;
-			VanCo.player[1].qMa[1].isLock = (itemMess[8] == "1") ? true : false;
-
-			VanCo.player[0].qVoi[0].isLock = (itemMess[9] == "1") ? true : false;
-			VanCo.player[0].qVoi[1].isLock = (itemMess[10] == "1") ? true : false;
-			VanCo.player[1].qVoi[0].isLock = (itemMess[11] == "1") ? true : false;
-			VanCo.player[1].qVoi[1].isLock = (itemMess[12] == "1") ? true : false;
-
-			VanCo.player[0].qSi[0].isLock = (itemMess[13] == "1") ? true : false;
-			VanCo.player[0].qSi[1].isLock = (itemMess[14] == "1") ? true : false;
-			VanCo.player[1].qSi[0].isLock = (itemMess[15] == "1") ? true : false;
-			VanCo.player[1].qSi[1].isLock = (itemMess[16] == "1") ? true : false;
-
-			VanCo.player[0].qTuong.isLock = (itemMess[17] == "1") ? true : false;
-			VanCo.player[1].qTuong.isLock = (itemMess[18] == "1") ? true : false;
-
-			VanCo.player[0].qPhao[0].isLock = (itemMess[19] == "1") ? true : false;
-			VanCo.player[0].qPhao[1].isLock = (itemMess[20] == "1") ? true : false;
-			VanCo.player[1].qPhao[0].isLock = (itemMess[21] == "1") ? true : false;
-			VanCo.player[1].qPhao[1].isLock = (itemMess[22] == "1") ? true : false;
-
-			VanCo.player[0].qTot[0].isLock = (itemMess[23] == "1") ? true : false;
-			VanCo.player[0].qTot[1].isLock = (itemMess[24] == "1") ? true : false;
-			VanCo.player[0].qTot[2].isLock = (itemMess[25] == "1") ? true : false;
-			VanCo.player[0].qTot[3].isLock = (itemMess[26] == "1") ? true : false;
-			VanCo.player[0].qTot[4].isLock = (itemMess[27] == "1") ? true : false;
-
-			VanCo.player[1].qTot[0].isLock = (itemMess[28] == "1") ? true : false;
-			VanCo.player[1].qTot[1].isLock = (itemMess[29] == "1") ? true : false;
-			VanCo.player[1].qTot[2].isLock = (itemMess[30] == "1") ? true : false;
-			VanCo.player[1].qTot[3].isLock = (itemMess[31] == "1") ? true : false;
-			VanCo.player[1].qTot[4].isLock = (itemMess[32] == "1") ? true : false;
-
-
-		}
 		private void addQuanCo()
 		{
 			PictureBox temp = new PictureBox();
