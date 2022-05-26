@@ -44,8 +44,6 @@ namespace ServerCoTuong
         }
         private void LangNgheClient()
         {
-
-
             while (true)
             {
                 try
@@ -126,10 +124,6 @@ namespace ServerCoTuong
                     player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
                     player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
-                //case "DANHCO":
-                //    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(mess));
-                //    player.room.plnguoichoi2.socket.Send(VanCo.Serialize(mess));
-                //    break;
                 case "SETOCOTRONG":
                     player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
                     player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
@@ -159,10 +153,17 @@ namespace ServerCoTuong
                     player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
                 case "HOA":
-                    player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+				case "DOen":
+					player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
                     player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
                     break;
-				
+				case "REQUESTDRAW":
+					string requester = data.Split(',')[1];
+					if(player.room.plnguoichoi1.ten != requester)
+						player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+					else if (player.room.plnguoichoi2.ten != requester)
+						player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+					break;
 			}
         }
         private void setNameClient(string mess, playerSocket player)
@@ -202,6 +203,7 @@ namespace ServerCoTuong
                 player.room = r;
                 plr.room = r;
                 plr.socket.Send(VanCo.Serialize("NGUOICHOIMOIVAOPHONG|," + r.plnguoichoi2.ten + ","));
+				player.socket.Send(VanCo.Serialize("TENCHUPHONG|," + r.plnguoichoi1.ten));
             }
             else
                 player.socket.Send(VanCo.Serialize("PHONGDADAY|,"));

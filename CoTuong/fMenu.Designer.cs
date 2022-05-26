@@ -34,6 +34,7 @@ namespace CoTuong
 			this.txtPass = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.btnSignUP = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// PlayGame
@@ -70,6 +71,7 @@ namespace CoTuong
 			this.txtPass.Name = "txtPass";
 			this.txtPass.Size = new System.Drawing.Size(290, 39);
 			this.txtPass.TabIndex = 2;
+			this.txtPass.UseSystemPasswordChar = true;
 			// 
 			// label1
 			// 
@@ -97,6 +99,23 @@ namespace CoTuong
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Password";
 			// 
+			// btnSignUP
+			// 
+			this.btnSignUP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.btnSignUP.BackColor = System.Drawing.Color.Tomato;
+			this.btnSignUP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.btnSignUP.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSignUP.Font = new System.Drawing.Font("Showcard Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.btnSignUP.ForeColor = System.Drawing.Color.MistyRose;
+			this.btnSignUP.Location = new System.Drawing.Point(705, 676);
+			this.btnSignUP.Margin = new System.Windows.Forms.Padding(4);
+			this.btnSignUP.Name = "btnSignUP";
+			this.btnSignUP.Size = new System.Drawing.Size(157, 47);
+			this.btnSignUP.TabIndex = 5;
+			this.btnSignUP.Text = "Sign Up";
+			this.btnSignUP.UseVisualStyleBackColor = false;
+			this.btnSignUP.Click += new System.EventHandler(this.btnSignUP_Click);
+			// 
 			// fMenu
 			// 
 			this.AccessibleName = "Co Tuong";
@@ -105,6 +124,7 @@ namespace CoTuong
 			this.BackgroundImage = global::CoTuong.Properties.Resources.menu;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(875, 736);
+			this.Controls.Add(this.btnSignUP);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtPass);
@@ -128,5 +148,6 @@ namespace CoTuong
 		private System.Windows.Forms.TextBox txtPass;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button btnSignUP;
 	}
 }

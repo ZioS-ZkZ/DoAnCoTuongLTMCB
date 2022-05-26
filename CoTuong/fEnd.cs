@@ -22,7 +22,6 @@ namespace CoTuong
             VanCo.isWin = "none";
             VanCo.clickSound("click");
             this.Close();
-            
         }
 
         

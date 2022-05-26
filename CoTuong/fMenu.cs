@@ -8,6 +8,9 @@ using System.Windows.Forms;
 using System.Media;
 using System.Net.Sockets;
 using System.Net;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
 
 namespace CoTuong
 {
@@ -66,28 +69,68 @@ namespace CoTuong
                 e.Cancel = true;
         }
 
-        private void PlayGame_Click(object sender, EventArgs e)
-        { 
-            try
-            {
-                client.Send(VanCo.Serialize("NAMECLIENT|," + txtUsername.Text + ","));
-                fBanCo f = new fBanCo();
-                this.Hide();
-                this.soundMenu.Stop();
-                fBanCo.player.socket = client;
-                fBanCo.player.ten = txtUsername.Text;
-                f.ShowDialog();
+		IFirebaseConfig fcon = new FirebaseConfig()
+		{
+			AuthSecret = "LbuStsX6U5KYTSGKHlLOKGeOlN2XOqA3SCvyd0O0",
+			BasePath = "https://ltmcb-cotuong-default-rtdb.firebaseio.com/"
+		};
 
-                this.Show();
+		IFirebaseClient firebaseClient;
 
-                //this.soundMenu.PlayLooping();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+		private void PlayGame_Click(object sender, EventArgs e)
+        {
+			try
+			{
+				firebaseClient = new FireSharp.FirebaseClient(fcon);
+				FirebaseResponse data = firebaseClient.Get("PlayerInfo/" + txtUsername.Text);
+
+				if (data.Body != "null")
+				{
+					PlayerInfo plr = data.ResultAs<PlayerInfo>();
+					if (plr.UserName == txtUsername.Text && plr.Password == txtPass.Text)
+					{
+						try
+						{
+							client.Send(VanCo.Serialize("NAMECLIENT|," + txtUsername.Text + ","));
+							fBanCo f = new fBanCo();
+							this.Hide();
+							this.soundMenu.Stop();
+							fBanCo.player.socket = client;
+							fBanCo.player.ten = txtUsername.Text;
+							f.ShowDialog();
+
+							this.Show();
+
+							//this.soundMenu.PlayLooping();
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show(ex.Message);
+						}
+					}
+					else
+					{
+						MessageBox.Show("Wrong username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Wrong username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+			catch
+			{
+				MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
         }
 
-        
-    }
+		private void btnSignUP_Click(object sender, EventArgs e)
+		{
+			SignUp res = new SignUp();
+			this.Hide();
+			res.ShowDialog();
+			this.Show();
+		}
+	}
 }

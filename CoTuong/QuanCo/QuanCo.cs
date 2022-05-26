@@ -58,25 +58,28 @@ namespace CoTuong.QuanCo
                             VanCo.temp = this;
                             if (Phe == 0)
                             {
-                                if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDen;
-                                if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDen;
-                                if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDen;
-                                if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDen;
-                                if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDen;
-                                if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDen;
-                                if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDen;
-                            }
+								if (Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectXeDen;
+								if (Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectMaDen;
+								if (Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectVoiDen;
+								if (Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectSiDen;
+								if (Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectTuongDen;
+								if (Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectPhaoDen;
+								if (Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectTotDen;
+							}
                             else if (Phe == 1)
                             {
-                                if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
-                                if (Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecXeDo;
-                                if (Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecMaDo;
-                                if (Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecVoiDo;
-                                if (Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecSiDo;
-                                if (Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTuongDo;
-                                if (Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecPhaoDo;
-                                if (Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.selecTotDo;
-                            }
+								//if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
+								fBanCo.player.socket.Send(VanCo.Serialize("DOen|"));
+
+								if (!VanCo.timerDo.Enabled) VanCo.timerDo.Enabled = true;
+								if (Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectXeDo;
+								if (Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectMaDo;
+								if (Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectVoiDo;
+								if (Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectSiDo;
+								if (Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectTuongDo;
+								if (Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectPhaoDo;
+								if (Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SelectTotDo;
+							}
                             for (int i = 0; i < 10; i++)
                                 for (int j = 0; j < 9; j++)
                                     if (this.KiemTra(i, j) == 1)
@@ -95,24 +98,24 @@ namespace CoTuong.QuanCo
                             VanCo.isMarked = false;
                             if (VanCo.temp.Phe == 0)
                             {
-                                if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-                                if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-                                if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-                                if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-                                if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-                                if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-                                if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
-                            }
+								if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_XeDen;
+								if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_MaDen;
+								if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_VoiDen;
+								if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SiDen;
+								if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TuongDen;
+								if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_PhaoDen;
+								if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TotDen;
+							}
                             else if (VanCo.temp.Phe == 1)
                             {
-                                if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-                                if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-                                if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-                                if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-                                if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-                                if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-                                if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
-                            }
+								if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_XeDo;
+								if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_MaDo;
+								if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_VoiDo;
+								if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SiDo;
+								if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TuongDo;
+								if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_PhaoDo;
+								if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TotDo;
+							}
                             BanCo.ResetCanMove();
 
                         }
@@ -150,24 +153,24 @@ namespace CoTuong.QuanCo
                         VanCo.isMarked = false;
                         if (VanCo.temp.Phe == 0)
                         {
-                            if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-                            if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-                            if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-                            if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-                            if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-                            if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-                            if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
-                        }
+							if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_XeDen;
+							if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_MaDen;
+							if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_VoiDen;
+							if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SiDen;
+							if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TuongDen;
+							if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_PhaoDen;
+							if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TotDen;
+						}
                         else if (VanCo.temp.Phe == 1)
                         {
-                            if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-                            if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-                            if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-                            if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-                            if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-                            if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-                            if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
-                        }
+							if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_XeDo;
+							if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_MaDo;
+							if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_VoiDo;
+							if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_SiDo;
+							if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TuongDo;
+							if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_PhaoDo;
+							if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = fBanCo.SelectedColor_TotDo;
+						}
                         BanCo.ResetCanMove();
 
 
@@ -183,26 +186,25 @@ namespace CoTuong.QuanCo
         //Hàm vẽ quân cờ
         public void draw()
         {
-            if (Phe == 0)
-            {
-                if (Ten == "tuong") picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-                if (Ten == "si") picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-                if (Ten == "voi") picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-                if (Ten == "xe") picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-                if (Ten == "phao") picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-                if (Ten == "ma") picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-                if (Ten == "tot") picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+			if (Phe == 0)
+			{
+				if (Ten == "tuong") picQuanCo.Image = fBanCo.SelectedColor_TuongDen;
+				if (Ten == "si") picQuanCo.Image = fBanCo.SelectedColor_SiDen;
+				if (Ten == "voi") picQuanCo.Image = fBanCo.SelectedColor_VoiDen;
+				if (Ten == "xe") picQuanCo.Image = fBanCo.SelectedColor_XeDen;
+				if (Ten == "phao") picQuanCo.Image = fBanCo.SelectedColor_PhaoDen;
+				if (Ten == "ma") picQuanCo.Image = fBanCo.SelectedColor_MaDen;
+				if (Ten == "tot") picQuanCo.Image = fBanCo.SelectedColor_TotDen;
 			}
-            if (Phe == 1)
-            {
-                if (Ten == "tuong") picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-                if (Ten == "si") picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-                if (Ten == "voi") picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-                if (Ten == "xe") picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-                if (Ten == "phao") picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-                if (Ten == "ma") picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-                if (Ten == "tot") picQuanCo.Image = CoTuong.Properties.Resources.totDo;
-				
+			if (Phe == 1)
+			{
+				if (Ten == "tuong") picQuanCo.Image = fBanCo.SelectedColor_TuongDo;
+				if (Ten == "si") picQuanCo.Image = fBanCo.SelectedColor_SiDo;
+				if (Ten == "voi") picQuanCo.Image = fBanCo.SelectedColor_VoiDo;
+				if (Ten == "xe") picQuanCo.Image = fBanCo.SelectedColor_XeDo;
+				if (Ten == "phao") picQuanCo.Image = fBanCo.SelectedColor_PhaoDo;
+				if (Ten == "ma") picQuanCo.Image = fBanCo.SelectedColor_MaDo;
+				if (Ten == "tot") picQuanCo.Image = fBanCo.SelectedColor_TotDo;
 			}
 
 			//Vẽ quân cờ

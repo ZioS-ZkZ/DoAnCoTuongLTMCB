@@ -36,10 +36,12 @@ namespace CoTuong
 			lichSuDo = new System.Windows.Forms.TextBox();
 			labelTimerDo = new System.Windows.Forms.Label();
 			labelTimerDen = new System.Windows.Forms.Label();
+			this.btnDraw = new System.Windows.Forms.Button();
 			this.plLobby = new System.Windows.Forms.Panel();
 			this.btTimPhong = new System.Windows.Forms.Button();
 			this.btTaoPhong = new System.Windows.Forms.Button();
 			this.lbDanhSachPhong = new System.Windows.Forms.ListBox();
+			this.btnCancelLobby = new System.Windows.Forms.PictureBox();
 			this.rtbBoxSend = new System.Windows.Forms.RichTextBox();
 			this.rtbContentChat = new System.Windows.Forms.RichTextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -65,6 +67,7 @@ namespace CoTuong
 			this.Time = new System.Windows.Forms.ColumnHeader();
 			cmbSelectColor = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.undo)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnCancelLobby)).BeginInit();
 			this.plLobby.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -163,6 +166,7 @@ namespace CoTuong
 			// 
 			// plLobby
 			// 
+			this.plLobby.Controls.Add(this.btnCancelLobby);
 			this.plLobby.Controls.Add(this.lbHistory);
 			this.plLobby.Controls.Add(this.panel2);
 			this.plLobby.Controls.Add(this.lbDetail);
@@ -206,6 +210,19 @@ namespace CoTuong
 			this.lbDanhSachPhong.Size = new System.Drawing.Size(575, 779);
 			this.lbDanhSachPhong.TabIndex = 0;
 			this.lbDanhSachPhong.SelectedIndexChanged += new System.EventHandler(this.lbDanhSachPhong_SelectedIndexChanged);
+			// 
+			// btnCancelLobby
+			// 
+			this.btnCancelLobby.BackColor = System.Drawing.Color.Transparent;
+			this.btnCancelLobby.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnCancelLobby.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelLobby.Image")));
+			this.btnCancelLobby.Location = new System.Drawing.Point(81, 43);
+			this.btnCancelLobby.Name = "btnCancelLobby";
+			this.btnCancelLobby.Size = new System.Drawing.Size(74, 74);
+			this.btnCancelLobby.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.btnCancelLobby.TabIndex = 11;
+			this.btnCancelLobby.TabStop = false;
+			this.btnCancelLobby.Click += new System.EventHandler(this.btnCancelLobby_Click);
 			// 
 			// rtbBoxSend
 			// 
@@ -321,7 +338,6 @@ namespace CoTuong
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(140, 32);
 			this.txtName.TabIndex = 6;
-			this.txtName.Text = "Trần Trí Đức";
 			// 
 			// txtSex
 			// 
@@ -331,7 +347,6 @@ namespace CoTuong
 			this.txtSex.Name = "txtSex";
 			this.txtSex.Size = new System.Drawing.Size(65, 32);
 			this.txtSex.TabIndex = 7;
-			this.txtSex.Text = "Nam";
 			// 
 			// txtBirth
 			// 
@@ -341,7 +356,6 @@ namespace CoTuong
 			this.txtBirth.Name = "txtBirth";
 			this.txtBirth.Size = new System.Drawing.Size(66, 32);
 			this.txtBirth.TabIndex = 8;
-			this.txtBirth.Text = "2002";
 			// 
 			// txtWin
 			// 
@@ -351,7 +365,6 @@ namespace CoTuong
 			this.txtWin.Name = "txtWin";
 			this.txtWin.Size = new System.Drawing.Size(53, 32);
 			this.txtWin.TabIndex = 12;
-			this.txtWin.Text = "999";
 			// 
 			// txtLose
 			// 
@@ -361,7 +374,6 @@ namespace CoTuong
 			this.txtLose.Name = "txtLose";
 			this.txtLose.Size = new System.Drawing.Size(53, 32);
 			this.txtLose.TabIndex = 14;
-			this.txtLose.Text = "999";
 			// 
 			// lbLose
 			// 
@@ -381,7 +393,6 @@ namespace CoTuong
 			this.txtDraw.Name = "txtDraw";
 			this.txtDraw.Size = new System.Drawing.Size(53, 32);
 			this.txtDraw.TabIndex = 14;
-			this.txtDraw.Text = "999";
 			// 
 			// lbDraw
 			// 
@@ -443,11 +454,25 @@ namespace CoTuong
 			"Blue",
 			"Grey",
 			"Paper"});
-			cmbSelectColor.Location = new System.Drawing.Point(1627, 130);
+			cmbSelectColor.Location = new System.Drawing.Point(1680, 130);
 			cmbSelectColor.Name = "cmbSelectColor";
-			cmbSelectColor.Size = new System.Drawing.Size(219, 33);
+			cmbSelectColor.Size = new System.Drawing.Size(162, 33);
 			cmbSelectColor.TabIndex = 9;
 			cmbSelectColor.SelectedIndexChanged += new System.EventHandler(cmbSelectColor_SelectedIndexChanged);
+			// 
+			// btnDraw
+			// 
+			this.btnDraw.AutoSize = true;
+			this.btnDraw.BackColor = System.Drawing.Color.Chocolate;
+			this.btnDraw.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnDraw.Font = new System.Drawing.Font("Showcard Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnDraw.Location = new System.Drawing.Point(1503, 130);
+			this.btnDraw.Name = "btnDraw";
+			this.btnDraw.Size = new System.Drawing.Size(159, 43);
+			this.btnDraw.TabIndex = 10;
+			this.btnDraw.Text = "Draw";
+			this.btnDraw.UseVisualStyleBackColor = false;
+			this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
 			// 
 			// fBanCo
 			// 
@@ -467,6 +492,7 @@ namespace CoTuong
 			this.Controls.Add(this.rtbBoxSend);
 			this.Controls.Add(this.rtbContentChat);
 			this.Controls.Add(cmbSelectColor);
+			this.Controls.Add(this.btnDraw);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
@@ -476,6 +502,7 @@ namespace CoTuong
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeFormBanCo);
 			this.Load += new System.EventHandler(this.fBanCo_Load);
 			((System.ComponentModel.ISupportInitialize)(this.undo)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnCancelLobby)).EndInit();
 			this.plLobby.ResumeLayout(false);
 			this.plLobby.PerformLayout();
 			this.panel1.ResumeLayout(false);
@@ -497,6 +524,7 @@ namespace CoTuong
 		private System.Windows.Forms.Button btTimPhong;
 		private System.Windows.Forms.Button btTaoPhong;
 		private System.Windows.Forms.ListBox lbDanhSachPhong;
+		private System.Windows.Forms.PictureBox btnCancelLobby;
 		private System.Windows.Forms.Label lbHistory;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.ListView listViewHistory;
@@ -518,6 +546,7 @@ namespace CoTuong
 		private System.Windows.Forms.Label lbBirth;
 		private System.Windows.Forms.Label lbSex;
 		private System.Windows.Forms.Label lbName;
+		private System.Windows.Forms.Button btnDraw;
 		public static System.Windows.Forms.Label labelTimerDo;
 		public static System.Windows.Forms.Label labelTimerDen;
 		public static System.Windows.Forms.TextBox lichSuDen;

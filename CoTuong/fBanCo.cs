@@ -9,11 +9,47 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
+using Newtonsoft.Json;
 
 namespace CoTuong
 {
 	public partial class fBanCo : Form
 	{
+		private delegate void SafeCallDelegate1(string text);
+		private delegate void SafeCallDelegate2(ListViewItem item);
+		public static dynamic SelectedColor_board;
+		public static dynamic SelectedColor_TuongDo;
+		public static dynamic SelectedColor_TuongDen;
+		public static dynamic SelectedColor_SiDo;
+		public static dynamic SelectedColor_SiDen;
+		public static dynamic SelectedColor_VoiDo;
+		public static dynamic SelectedColor_VoiDen;
+		public static dynamic SelectedColor_XeDo;
+		public static dynamic SelectedColor_XeDen;
+		public static dynamic SelectedColor_PhaoDo;
+		public static dynamic SelectedColor_PhaoDen;
+		public static dynamic SelectedColor_MaDo;
+		public static dynamic SelectedColor_MaDen;
+		public static dynamic SelectedColor_TotDo;
+		public static dynamic SelectedColor_TotDen;
+		public static dynamic SelectedColor_SelectTuongDo;
+		public static dynamic SelectedColor_SelectTuongDen;
+		public static dynamic SelectedColor_SelectSiDo;
+		public static dynamic SelectedColor_SelectSiDen;
+		public static dynamic SelectedColor_SelectVoiDo;
+		public static dynamic SelectedColor_SelectVoiDen;
+		public static dynamic SelectedColor_SelectXeDo;
+		public static dynamic SelectedColor_SelectXeDen;
+		public static dynamic SelectedColor_SelectPhaoDo;
+		public static dynamic SelectedColor_SelectPhaoDen;
+		public static dynamic SelectedColor_SelectMaDo;
+		public static dynamic SelectedColor_SelectMaDen;
+		public static dynamic SelectedColor_SelectTotDo;
+		public static dynamic SelectedColor_SelectTotDen;
+
 		public fBanCo()
 		{
 			CheckForIllegalCrossThreadCalls = false;
@@ -27,10 +63,15 @@ namespace CoTuong
 			Thread threadListen = new Thread(LangNgheServer);
 			threadListen.IsBackground = true;
 			threadListen.Start();
+			ShowPlayerInfo();
+			ShowMatchHistory();
 		}
 		public static string mess;
 		public static string[] itemMess;
 		byte[] dataNhan = new byte[1024 * 500000];
+		private string enemy;
+		private string host;
+
 		private void LangNgheServer()
 		{
 			while (true)
@@ -88,22 +129,26 @@ namespace CoTuong
 					VanCo.DoiLuotDi(int.Parse(fBanCo.itemMess[8]));
 					break;
 				case "DOWIN":
-					VanCo.NewGame();
-					end = new fEnd();
-					end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
-					end.ShowDialog();
+					DoWinHandler();
 					break;
 				case "DENWIN":
-					VanCo.NewGame();
-					end = new fEnd();
-					end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
-					end.ShowDialog();
+					DenWinHandler();
 					break;
 				case "HOA":
-					VanCo.NewGame();
-					end = new fEnd();
-					end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
-					end.ShowDialog();
+					HoaHandler();
+					break;
+				case "DOen":
+					VanCo.timerDo.Enabled = true;
+					break;
+				case "TENCHUPHONG":
+					LayTenChuPhong();
+					break;
+				case "REQUESTDRAW":
+					if(MessageBox.Show($"{mess.Split(',')[1]} cầu hoà. Bạn có muốn chấp nhận không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+					{
+						VanCo.isWin = "Hoa";
+						player.socket.Send(VanCo.Serialize("HOA|,"));
+					} 
 					break;
 			}
 		}
@@ -150,7 +195,15 @@ namespace CoTuong
 		{
 			itemMess = mess.Split(',');
 			rtbContentChat.AppendText(itemMess[1] + " đã vào phòng\n");
+			enemy = itemMess[1];
 		}
+
+		private void LayTenChuPhong()
+		{
+			itemMess = mess.Split(',');
+			host = itemMess[1];
+		}
+
 		private void rtbBoxSend_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (e.KeyChar == 13)
@@ -170,7 +223,6 @@ namespace CoTuong
 		}
 		private void undo_Click(object sender, EventArgs e)
 		{
-
 			VanCo.clickSound("click");
 			if (MessageBox.Show("BAN MUON QUAY TRO LAI MENU ???", "THONG BAO", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
 			{
@@ -183,6 +235,7 @@ namespace CoTuong
 					player.chuPhong = false;
 					player.room = null;
 					rtbContentChat.Clear();
+					ShowMatchHistory();
 				}
 				catch
 				{
@@ -209,9 +262,12 @@ namespace CoTuong
 			rtbContentChat.AppendText(itemMess[1] + " đã bắt đầu ván cờ mới !!!\n");
 			VanCo.NewGame();
 			VanCo.clickSound("ready");
+			
 			if (VanCo.LuotDi == 0)
+				VanCo.LuotDi = 1;
+
+			if (player.chuPhong)
 			{
-				VanCo.LuotDi = 1;// VanCo.DoiLuotDi();
 				for (int i = 0; i < 2; i++)
 				{
 					VanCo.player[0].qXe[i].isLock = true;
@@ -223,6 +279,9 @@ namespace CoTuong
 				for (int i = 0; i < 5; i++)
 					VanCo.player[0].qTot[i].isLock = true;
 				VanCo.player[0].qTuong.isLock = true;
+			} else
+			{
+				VanCo.LockAllChess();
 			}
 
 			if (this.InvokeRequired)
@@ -268,23 +327,23 @@ namespace CoTuong
 								case true:
 									if (VanCo.temp.Phe == 0)
 									{
-										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = SelectedColor_XeDen;
+										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = SelectedColor_MaDen;
+										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = SelectedColor_VoiDen;
+										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = SelectedColor_SiDen;
+										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = SelectedColor_TuongDen;
+										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = SelectedColor_PhaoDen;
+										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = SelectedColor_TotDen;
 									}
 									else if (VanCo.temp.Phe == 1)
 									{
-										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
+										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = SelectedColor_XeDo;
+										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = SelectedColor_MaDo;
+										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = SelectedColor_VoiDo;
+										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = SelectedColor_SiDo;
+										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = SelectedColor_TuongDo;
+										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = SelectedColor_PhaoDo;
+										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = SelectedColor_TotDo;
 									}
 									//Bỏ chọn quân cờ
 									VanCo.isMarked = false;
@@ -295,23 +354,23 @@ namespace CoTuong
 								case false:
 									if (VanCo.temp.Phe == 0)
 									{
-										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDen;
-										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDen;
-										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDen;
-										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDen;
-										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDen;
-										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDen;
-										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDen;
+										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = SelectedColor_XeDen;
+										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = SelectedColor_MaDen;
+										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = SelectedColor_VoiDen;
+										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = SelectedColor_SiDen;
+										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = SelectedColor_TuongDen;
+										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = SelectedColor_PhaoDen;
+										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = SelectedColor_TotDen;
 									}
 									else if (VanCo.temp.Phe == 1)
 									{
-										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.xeDo;
-										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.maDo;
-										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.voiDo;
-										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.siDo;
-										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.tuongDo;
-										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.phaoDo;
-										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = CoTuong.Properties.Resources.totDo;
+										if (VanCo.temp.Ten == "xe") VanCo.temp.picQuanCo.Image = SelectedColor_XeDo;
+										if (VanCo.temp.Ten == "ma") VanCo.temp.picQuanCo.Image = SelectedColor_MaDo;
+										if (VanCo.temp.Ten == "voi") VanCo.temp.picQuanCo.Image = SelectedColor_VoiDo;
+										if (VanCo.temp.Ten == "si") VanCo.temp.picQuanCo.Image = SelectedColor_SiDo;
+										if (VanCo.temp.Ten == "tuong") VanCo.temp.picQuanCo.Image = SelectedColor_TuongDo;
+										if (VanCo.temp.Ten == "phao") VanCo.temp.picQuanCo.Image = SelectedColor_PhaoDo;
+										if (VanCo.temp.Ten == "tot") VanCo.temp.picQuanCo.Image = SelectedColor_TotDo;
 									}
 
 									int PheConLai = (VanCo.temp.Phe == 0) ? 1 : 0;
@@ -378,7 +437,6 @@ namespace CoTuong
 										player.socket.Send(VanCo.Serialize("HOA|,"));
 									}
 									BanCo.ResetCanMove();
-									//sendStatus();
 									break;
 							}
 						}
@@ -386,90 +444,6 @@ namespace CoTuong
 				}
 
 			}
-
-		}
-		public static void sendStatus()
-		{
-			// gui thong tin cac quan co den player khac
-			//quan xe
-			string infoXe_00 = VanCo.player[0].qXe[0].Hang + "," + VanCo.player[0].qXe[0].Cot + "," + VanCo.player[0].qXe[0].Ten
-							+ "," + VanCo.player[0].qXe[0].Phe + "," + VanCo.player[0].qXe[0].Phia + "," + VanCo.player[0].qXe[0].TrangThai;
-			string infoXe_01 = VanCo.player[0].qXe[1].Hang + "," + VanCo.player[0].qXe[1].Cot + "," + VanCo.player[0].qXe[1].Ten
-							+ "," + VanCo.player[0].qXe[1].Phe + "," + VanCo.player[0].qXe[1].Phia + "," + VanCo.player[0].qXe[1].TrangThai;
-			string infoXe_10 = VanCo.player[1].qXe[0].Hang + "," + VanCo.player[1].qXe[0].Cot + "," + VanCo.player[1].qXe[0].Ten
-							+ "," + VanCo.player[1].qXe[0].Phe + "," + VanCo.player[1].qXe[0].Phia + "," + VanCo.player[1].qXe[0].TrangThai;
-			string infoXe_11 = VanCo.player[1].qXe[1].Hang + "," + VanCo.player[1].qXe[1].Cot + "," + VanCo.player[1].qXe[1].Ten
-							+ "," + VanCo.player[1].qXe[1].Phe + "," + VanCo.player[1].qXe[1].Phia + "," + VanCo.player[1].qXe[1].TrangThai;
-			//quan ma
-			string infoMa_00 = VanCo.player[0].qMa[0].Hang + "," + VanCo.player[0].qMa[0].Cot + "," + VanCo.player[0].qMa[0].Ten
-							+ "," + VanCo.player[0].qMa[0].Phe + "," + VanCo.player[0].qMa[0].Phia + "," + VanCo.player[0].qMa[0].TrangThai;
-			string infoMa_01 = VanCo.player[0].qMa[1].Hang + "," + VanCo.player[0].qMa[1].Cot + "," + VanCo.player[0].qMa[1].Ten
-							+ "," + VanCo.player[0].qMa[1].Phe + "," + VanCo.player[0].qMa[1].Phia + "," + VanCo.player[0].qMa[1].TrangThai;
-			string infoMa_10 = VanCo.player[1].qMa[0].Hang + "," + VanCo.player[1].qMa[0].Cot + "," + VanCo.player[1].qMa[0].Ten
-							+ "," + VanCo.player[1].qMa[0].Phe + "," + VanCo.player[1].qMa[0].Phia + "," + VanCo.player[1].qMa[0].TrangThai;
-			string infoMa_11 = VanCo.player[1].qMa[1].Hang + "," + VanCo.player[1].qMa[1].Cot + "," + VanCo.player[1].qMa[1].Ten
-							+ "," + VanCo.player[1].qMa[1].Phe + "," + VanCo.player[1].qMa[1].Phia + "," + VanCo.player[1].qMa[1].TrangThai;
-			//quan voi
-			string infoVoi_00 = VanCo.player[0].qVoi[0].Hang + "," + VanCo.player[0].qVoi[0].Cot + "," + VanCo.player[0].qVoi[0].Ten
-							+ "," + VanCo.player[0].qVoi[0].Phe + "," + VanCo.player[0].qVoi[0].Phia + "," + VanCo.player[0].qVoi[0].TrangThai;
-			string infoVoi_01 = VanCo.player[0].qVoi[1].Hang + "," + VanCo.player[0].qVoi[1].Cot + "," + VanCo.player[0].qVoi[1].Ten
-							+ "," + VanCo.player[0].qVoi[1].Phe + "," + VanCo.player[0].qVoi[1].Phia + "," + VanCo.player[0].qVoi[1].TrangThai;
-			string infoVoi_10 = VanCo.player[1].qVoi[0].Hang + "," + VanCo.player[1].qVoi[0].Cot + "," + VanCo.player[1].qVoi[0].Ten
-							+ "," + VanCo.player[1].qVoi[0].Phe + "," + VanCo.player[1].qVoi[0].Phia + "," + VanCo.player[1].qVoi[0].TrangThai;
-			string infoVoi_11 = VanCo.player[1].qVoi[1].Hang + "," + VanCo.player[1].qVoi[1].Cot + "," + VanCo.player[1].qVoi[1].Ten
-							+ "," + VanCo.player[1].qVoi[1].Phe + "," + VanCo.player[1].qVoi[1].Phia + "," + VanCo.player[1].qVoi[1].TrangThai;
-			// quan sy
-			string infoSy_00 = VanCo.player[0].qSi[0].Hang + "," + VanCo.player[0].qSi[0].Cot + "," + VanCo.player[0].qSi[0].Ten
-							+ "," + VanCo.player[0].qSi[0].Phe + "," + VanCo.player[0].qSi[0].Phia + "," + VanCo.player[0].qSi[0].TrangThai;
-			string infoSy_01 = VanCo.player[0].qSi[1].Hang + "," + VanCo.player[0].qSi[1].Cot + "," + VanCo.player[0].qSi[1].Ten
-							+ "," + VanCo.player[0].qSi[1].Phe + "," + VanCo.player[0].qSi[1].Phia + "," + VanCo.player[0].qSi[1].TrangThai;
-			string infoSy_10 = VanCo.player[1].qSi[0].Hang + "," + VanCo.player[1].qSi[0].Cot + "," + VanCo.player[1].qSi[0].Ten
-							+ "," + VanCo.player[1].qSi[0].Phe + "," + VanCo.player[1].qSi[0].Phia + "," + VanCo.player[1].qSi[0].TrangThai;
-			string infoSy_11 = VanCo.player[1].qSi[1].Hang + "," + VanCo.player[1].qSi[1].Cot + "," + VanCo.player[1].qSi[1].Ten
-							+ "," + VanCo.player[1].qSi[1].Phe + "," + VanCo.player[1].qSi[1].Phia + "," + VanCo.player[1].qSi[1].TrangThai;
-			// quan Phao
-			string infoPhao_00 = VanCo.player[0].qPhao[0].Hang + "," + VanCo.player[0].qPhao[0].Cot + "," + VanCo.player[0].qPhao[0].Ten
-							+ "," + VanCo.player[0].qPhao[0].Phe + "," + VanCo.player[0].qPhao[0].Phia + "," + VanCo.player[0].qPhao[0].TrangThai;
-			string infoPhao_01 = VanCo.player[0].qPhao[1].Hang + "," + VanCo.player[0].qPhao[1].Cot + "," + VanCo.player[0].qPhao[1].Ten
-							+ "," + VanCo.player[0].qPhao[1].Phe + "," + VanCo.player[0].qPhao[1].Phia + "," + VanCo.player[0].qPhao[1].TrangThai;
-			string infoPhao_10 = VanCo.player[1].qPhao[0].Hang + "," + VanCo.player[1].qPhao[0].Cot + "," + VanCo.player[1].qPhao[0].Ten
-							+ "," + VanCo.player[1].qPhao[0].Phe + "," + VanCo.player[1].qPhao[0].Phia + "," + VanCo.player[1].qPhao[0].TrangThai;
-			string infoPhao_11 = VanCo.player[1].qPhao[1].Hang + "," + VanCo.player[1].qPhao[1].Cot + "," + VanCo.player[1].qPhao[1].Ten
-							+ "," + VanCo.player[1].qPhao[1].Phe + "," + VanCo.player[1].qPhao[1].Phia + "," + VanCo.player[1].qPhao[1].TrangThai;
-			//quan tuong
-			string infoTuongDen = VanCo.player[0].qTuong.Hang + "," + VanCo.player[0].qTuong.Cot + "," + VanCo.player[0].qTuong.Ten
-							+ "," + VanCo.player[0].qTuong.Phe + "," + VanCo.player[0].qTuong.Phia + "," + VanCo.player[0].qTuong.TrangThai;
-			string infoTuongDo = VanCo.player[1].qTuong.Hang + "," + VanCo.player[1].qTuong.Cot + "," + VanCo.player[1].qTuong.Ten
-							+ "," + VanCo.player[1].qTuong.Phe + "," + VanCo.player[1].qTuong.Phia + "," + VanCo.player[1].qTuong.TrangThai;
-			//quan tot
-			string infoTot_00 = VanCo.player[0].qTot[0].Hang + "," + VanCo.player[0].qTot[0].Cot + "," + VanCo.player[0].qTot[0].Ten
-						   + "," + VanCo.player[0].qTot[0].Phe + "," + VanCo.player[0].qTot[0].Phia + "," + VanCo.player[0].qTot[0].TrangThai;
-			string infoTot_01 = VanCo.player[0].qTot[1].Hang + "," + VanCo.player[0].qTot[1].Cot + "," + VanCo.player[0].qTot[1].Ten
-							+ "," + VanCo.player[0].qTot[1].Phe + "," + VanCo.player[0].qTot[1].Phia + "," + VanCo.player[0].qTot[1].TrangThai;
-			string infoTot_02 = VanCo.player[0].qTot[2].Hang + "," + VanCo.player[0].qTot[2].Cot + "," + VanCo.player[0].qTot[2].Ten
-							+ "," + VanCo.player[0].qTot[2].Phe + "," + VanCo.player[0].qTot[2].Phia + "," + VanCo.player[0].qTot[2].TrangThai;
-			string infoTot_03 = VanCo.player[0].qTot[3].Hang + "," + VanCo.player[0].qTot[3].Cot + "," + VanCo.player[0].qTot[3].Ten
-							+ "," + VanCo.player[0].qTot[3].Phe + "," + VanCo.player[0].qTot[3].Phia + "," + VanCo.player[0].qTot[3].TrangThai;
-			string infoTot_04 = VanCo.player[0].qTot[4].Hang + "," + VanCo.player[0].qTot[4].Cot + "," + VanCo.player[0].qTot[4].Ten
-							+ "," + VanCo.player[0].qTot[4].Phe + "," + VanCo.player[0].qTot[1].Phia + "," + VanCo.player[0].qTot[4].TrangThai;
-			string infoTot_10 = VanCo.player[1].qTot[0].Hang + "," + VanCo.player[1].qTot[0].Cot + "," + VanCo.player[1].qTot[0].Ten
-						   + "," + VanCo.player[1].qTot[0].Phe + "," + VanCo.player[1].qTot[0].Phia + "," + VanCo.player[1].qTot[0].TrangThai;
-			string infoTot_11 = VanCo.player[1].qTot[1].Hang + "," + VanCo.player[1].qTot[1].Cot + "," + VanCo.player[1].qTot[1].Ten
-							+ "," + VanCo.player[1].qTot[1].Phe + "," + VanCo.player[1].qTot[1].Phia + "," + VanCo.player[1].qTot[1].TrangThai;
-			string infoTot_12 = VanCo.player[1].qTot[2].Hang + "," + VanCo.player[1].qTot[2].Cot + "," + VanCo.player[1].qTot[2].Ten
-							+ "," + VanCo.player[1].qTot[2].Phe + "," + VanCo.player[1].qTot[2].Phia + "," + VanCo.player[1].qTot[2].TrangThai;
-			string infoTot_13 = VanCo.player[1].qTot[3].Hang + "," + VanCo.player[1].qTot[3].Cot + "," + VanCo.player[1].qTot[3].Ten
-							+ "," + VanCo.player[1].qTot[3].Phe + "," + VanCo.player[1].qTot[3].Phia + "," + VanCo.player[1].qTot[3].TrangThai;
-			string infoTot_14 = VanCo.player[1].qTot[4].Hang + "," + VanCo.player[1].qTot[4].Cot + "," + VanCo.player[1].qTot[4].Ten
-							+ "," + VanCo.player[1].qTot[4].Phe + "," + VanCo.player[1].qTot[1].Phia + "," + VanCo.player[1].qTot[4].TrangThai;
-			player.socket.Send(VanCo.Serialize("DANHCO|," + infoXe_00 + "," + infoXe_01 + "," + infoXe_10 + "," + infoXe_11 + ","
-														+ infoMa_00 + "," + infoMa_01 + "," + infoMa_10 + "," + infoMa_11 + ","
-														+ infoVoi_00 + "," + infoVoi_01 + "," + infoVoi_10 + "," + infoVoi_11 + ","
-														+ infoSy_00 + "," + infoSy_01 + "," + infoSy_10 + "," + infoSy_11 + ","
-														+ infoTuongDen + "," + infoTuongDo + ","
-														+ infoPhao_00 + "," + infoPhao_01 + "," + infoPhao_10 + "," + infoPhao_11 + ","
-														+ infoTot_00 + "," + infoTot_01 + "," + infoTot_02 + "," + infoTot_03 + "," + infoTot_04 + ","
-														+ infoTot_10 + "," + infoTot_11 + "," + infoTot_12 + "," + infoTot_13 + "," + infoTot_14 + ","));
 
 		}
 
@@ -602,221 +576,515 @@ namespace CoTuong
 
 		private void cmbSelectColor_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			//	ComboBox cmb = (ComboBox)sender;
-			//	string selectedItem = (string)(cmb.SelectedItem);
-			//	if (selectedItem == "Default")
-			//	{
-			//		SelectedColor_board = CoTuong.Properties.Resources.board_default;
-			//		SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenDefault;
-			//		SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoDefault;
-			//		SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenDefault;
-			//		SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoDefault;
-			//		SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenDefault;
-			//		SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoDefault;
-			//		SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenDefault;
-			//		SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoDefault;
-			//		SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenDefault;
-			//		SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoDefault;
-			//		SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenDefault;
-			//		SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoDefault;
-			//		SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenDefault;
-			//		SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoDefault;
-			//		SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelecTuongDenDefault;
-			//		SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelecTuongDoDefault;
-			//		SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenDefault;
-			//		SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoDefault;
-			//		SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenDefault;
-			//		SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoDefault;
-			//		SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenDefault;
-			//		SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoDefault;
-			//		SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenDefault;
-			//		SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoDefault;
-			//		SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenDefault;
-			//		SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoDefault;
-			//		SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelecTotDenDefault;
-			//		SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelecTotDoDefault;
+			ComboBox cmb = (ComboBox)sender;
+			string selectedItem = (string)(cmb.SelectedItem);
+			if (selectedItem == "Default")
+			{
+				SelectedColor_board = CoTuong.Properties.Resources.board_default;
+				SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenDefault;
+				SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoDefault;
+				SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenDefault;
+				SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoDefault;
+				SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenDefault;
+				SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoDefault;
+				SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenDefault;
+				SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoDefault;
+				SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenDefault;
+				SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoDefault;
+				SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenDefault;
+				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoDefault;
+				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenDefault;
+				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoDefault;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelecTuongDenDefault;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelecTuongDoDefault;
+				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenDefault;
+				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoDefault;
+				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenDefault;
+				SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoDefault;
+				SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenDefault;
+				SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoDefault;
+				SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenDefault;
+				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoDefault;
+				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenDefault;
+				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoDefault;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelecTotDenDefault;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelecTotDoDefault;
 
-			//		lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.NavajoWhite;
-			//		lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
-			//	}
-			//	else if (selectedItem == "Black")
-			//	{
-			//		SelectedColor_board = CoTuong.Properties.Resources.board_black;
-			//		SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenBlack;
-			//		SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoBlack;
-			//		SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenBlack;
-			//		SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoBlack;
-			//		SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenBlack;
-			//		SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoBlack;
-			//		SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenBlack;
-			//		SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoBlack;
-			//		SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenBlack;
-			//		SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoBlack;
-			//		SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenBlack;
-			//		SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoBlack;
-			//		SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenBlack;
-			//		SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoBlack;
-			//		SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenBlack;
-			//		SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoBlack;
-			//		SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenBlack;
-			//		SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoBlack;
-			//		SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenBlack;
-			//		SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoBlack;
-			//		SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenBlack;
-			//		SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoBlack;
-			//		SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenBlack;
-			//		SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoBlack;
-			//		SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenBlack;
-			//		SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoBlack;
-			//		SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenBlack;
-			//		SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoBlack;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.NavajoWhite;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+			}
+			else if (selectedItem == "Black")
+			{
+				SelectedColor_board = CoTuong.Properties.Resources.board_black;
+				SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenBlack;
+				SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoBlack;
+				SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenBlack;
+				SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoBlack;
+				SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenBlack;
+				SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoBlack;
+				SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenBlack;
+				SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoBlack;
+				SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenBlack;
+				SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoBlack;
+				SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenBlack;
+				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoBlack;
+				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenBlack;
+				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoBlack;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenBlack;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoBlack;
+				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenBlack;
+				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoBlack;
+				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenBlack;
+				SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoBlack;
+				SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenBlack;
+				SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoBlack;
+				SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenBlack;
+				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoBlack;
+				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenBlack;
+				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoBlack;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenBlack;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoBlack;
 
-			//		lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			//		lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			//	}
-			//	else if (selectedItem == "Blue")
-			//	{
-			//		SelectedColor_board = CoTuong.Properties.Resources.board_blue;
-			//		SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenBlue;
-			//		SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoBlue;
-			//		SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenBlue;
-			//		SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoBlue;
-			//		SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenBlue;
-			//		SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoBlue;
-			//		SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenBlue;
-			//		SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoBlue;
-			//		SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenBlue;
-			//		SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoBlue;
-			//		SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenBlue;
-			//		SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoBlue;
-			//		SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenBlue;
-			//		SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoBlue;
-			//		SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenBlue;
-			//		SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoBlue;
-			//		SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenBlue;
-			//		SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoBlue;
-			//		SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenBlue;
-			//		SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoBlue;
-			//		SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenBlue;
-			//		SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoBlue;
-			//		SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenBlue;
-			//		SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoBlue;
-			//		SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenBlue;
-			//		SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoBlue;
-			//		SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenBlue;
-			//		SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoBlue;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			}
+			else if (selectedItem == "Blue")
+			{
+				SelectedColor_board = CoTuong.Properties.Resources.board_blue;
+				SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenBlue;
+				SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoBlue;
+				SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenBlue;
+				SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoBlue;
+				SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenBlue;
+				SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoBlue;
+				SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenBlue;
+				SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoBlue;
+				SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenBlue;
+				SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoBlue;
+				SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenBlue;
+				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoBlue;
+				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenBlue;
+				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoBlue;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenBlue;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoBlue;
+				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenBlue;
+				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoBlue;
+				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenBlue;
+				SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoBlue;
+				SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenBlue;
+				SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoBlue;
+				SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenBlue;
+				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoBlue;
+				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenBlue;
+				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoBlue;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenBlue;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoBlue;
 
-			//		lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			//		lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
-			//	}
-			//	else if (selectedItem == "Grey")
-			//	{
-			//		SelectedColor_board = CoTuong.Properties.Resources.board_grey;
-			//		SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenGrey;
-			//		SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoGrey;
-			//		SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenGrey;
-			//		SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoGrey;
-			//		SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenGrey;
-			//		SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoGrey;
-			//		SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenGrey;
-			//		SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoGrey;
-			//		SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenGrey;
-			//		SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoGrey;
-			//		SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenGrey;
-			//		SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoGrey;
-			//		SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenGrey;
-			//		SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoGrey;
-			//		SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenGrey;
-			//		SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoGrey;
-			//		SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenGrey;
-			//		SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoGrey;
-			//		SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenGrey;
-			//		SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoGrey;
-			//		SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenGrey;
-			//		SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoGrey;
-			//		SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenGrey;
-			//		SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoGrey;
-			//		SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenGrey;
-			//		SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoGrey;
-			//		SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenGrey;
-			//		SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoGrey;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+			}
+			else if (selectedItem == "Grey")
+			{
+				SelectedColor_board = CoTuong.Properties.Resources.board_grey;
+				SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenGrey;
+				SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoGrey;
+				SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenGrey;
+				SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoGrey;
+				SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenGrey;
+				SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoGrey;
+				SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenGrey;
+				SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoGrey;
+				SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenGrey;
+				SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoGrey;
+				SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenGrey;
+				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoGrey;
+				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenGrey;
+				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoGrey;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenGrey;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoGrey;
+				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenGrey;
+				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoGrey;
+				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenGrey;
+				SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoGrey;
+				SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenGrey;
+				SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoGrey;
+				SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenGrey;
+				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoGrey;
+				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenGrey;
+				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoGrey;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenGrey;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoGrey;
 
-			//		lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlLight;
-			//		lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
-			//	}
-			//	else if (selectedItem == "Paper")
-			//	{
-			//		SelectedColor_board = CoTuong.Properties.Resources.board_paper;
-			//		SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenPaper;
-			//		SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoPaper;
-			//		SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenPaper;
-			//		SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoPaper;
-			//		SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenPaper;
-			//		SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoPaper;
-			//		SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenPaper;
-			//		SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoPaper;
-			//		SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenPaper;
-			//		SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoPaper;
-			//		SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenPaper;
-			//		SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoPaper;
-			//		SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenPaper;
-			//		SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoPaper;
-			//		SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenPaper;
-			//		SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoPaper;
-			//		SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenPaper;
-			//		SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoPaper;
-			//		SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenPaper;
-			//		SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoPaper;
-			//		SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenPaper;
-			//		SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoPaper;
-			//		SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenPaper;
-			//		SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoPaper;
-			//		SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenPaper;
-			//		SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoPaper;
-			//		SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenPaper;
-			//		SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoPaper;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlLight;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+			}
+			else if (selectedItem == "Paper")
+			{
+				SelectedColor_board = CoTuong.Properties.Resources.board_paper;
+				SelectedColor_TuongDen = CoTuong.Properties.Resources.TuongDenPaper;
+				SelectedColor_TuongDo = CoTuong.Properties.Resources.TuongDoPaper;
+				SelectedColor_SiDen = CoTuong.Properties.Resources.SiDenPaper;
+				SelectedColor_SiDo = CoTuong.Properties.Resources.SiDoPaper;
+				SelectedColor_VoiDen = CoTuong.Properties.Resources.VoiDenPaper;
+				SelectedColor_VoiDo = CoTuong.Properties.Resources.VoiDoPaper;
+				SelectedColor_XeDen = CoTuong.Properties.Resources.XeDenPaper;
+				SelectedColor_XeDo = CoTuong.Properties.Resources.XeDoPaper;
+				SelectedColor_PhaoDen = CoTuong.Properties.Resources.PhaoDenPaper;
+				SelectedColor_PhaoDo = CoTuong.Properties.Resources.PhaoDoPaper;
+				SelectedColor_MaDen = CoTuong.Properties.Resources.MaDenPaper;
+				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoPaper;
+				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenPaper;
+				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoPaper;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenPaper;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoPaper;
+				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenPaper;
+				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoPaper;
+				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenPaper;
+				SelectedColor_SelectVoiDo = CoTuong.Properties.Resources.SelectVoiDoPaper;
+				SelectedColor_SelectXeDen = CoTuong.Properties.Resources.SelectXeDenPaper;
+				SelectedColor_SelectXeDo = CoTuong.Properties.Resources.SelectXeDoPaper;
+				SelectedColor_SelectPhaoDen = CoTuong.Properties.Resources.SelectPhaoDenPaper;
+				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoPaper;
+				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenPaper;
+				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoPaper;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenPaper;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoPaper;
 
-			//		lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			//		lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			//	}
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			}
 
-			//	this.BackgroundImage = SelectedColor_board;
-			//	RenderBackGroundBoard();
+			this.BackgroundImage = SelectedColor_board;
+			RenderBackGroundBoard();
 
-			//	for (int i = 0; i < 2; i++)
-			//	{
-			//		VanCo.player[0].qXe[i].draw();
-			//		VanCo.player[0].qMa[i].draw();
-			//		VanCo.player[0].qVoi[i].draw();
-			//		VanCo.player[0].qSi[i].draw();
-			//		VanCo.player[0].qPhao[i].draw();
-			//	}
-			//	for (int i = 0; i < 5; i++)
-			//		VanCo.player[0].qTot[i].draw();
-			//	VanCo.player[0].qTuong.draw();
-			//	//========================
-			//	for (int i = 0; i < 2; i++)
-			//	{
-			//		VanCo.player[1].qXe[i].draw();
-			//		VanCo.player[1].qMa[i].draw();
-			//		VanCo.player[1].qVoi[i].draw();
-			//		VanCo.player[1].qSi[i].draw();
-			//		VanCo.player[1].qPhao[i].draw();
-			//	}
-			//	for (int i = 0; i < 5; i++)
-			//		VanCo.player[1].qTot[i].draw();
-			//	VanCo.player[1].qTuong.draw();
+			for (int i = 0; i < 2; i++)
+			{
+				VanCo.player[0].qXe[i].draw();
+				VanCo.player[0].qMa[i].draw();
+				VanCo.player[0].qVoi[i].draw();
+				VanCo.player[0].qSi[i].draw();
+				VanCo.player[0].qPhao[i].draw();
+			}
+			for (int i = 0; i < 5; i++)
+				VanCo.player[0].qTot[i].draw();
+			VanCo.player[0].qTuong.draw();
+			//========================
+			for (int i = 0; i < 2; i++)
+			{
+				VanCo.player[1].qXe[i].draw();
+				VanCo.player[1].qMa[i].draw();
+				VanCo.player[1].qVoi[i].draw();
+				VanCo.player[1].qSi[i].draw();
+				VanCo.player[1].qPhao[i].draw();
+			}
+			for (int i = 0; i < 5; i++)
+				VanCo.player[1].qTot[i].draw();
+			VanCo.player[1].qTuong.draw();
 		}
 
 		private void RenderBackGroundBoard()
 		{
-			//	VanCo.BackBuffer = new Bitmap(this.Width, this.Height);
-			//	Bitmap bg = new Bitmap(SelectedColor_board);
-			//	Graphics g = Graphics.FromImage(VanCo.BackBuffer);
-			//	g.Clear(this.BackColor);
-			//	g.DrawImage(bg, 0, 0);
-			//	g.Dispose();
-			//}
+			VanCo.BackBuffer = new Bitmap(this.Width, this.Height);
+			Bitmap bg = new Bitmap(SelectedColor_board);
+			Graphics g = Graphics.FromImage(VanCo.BackBuffer);
+			g.Clear(this.BackColor);
+			g.DrawImage(bg, 0, 0);
+			g.Dispose();
+		}
+
+		IFirebaseConfig fcon = new FirebaseConfig()
+		{
+			AuthSecret = "LbuStsX6U5KYTSGKHlLOKGeOlN2XOqA3SCvyd0O0",
+			BasePath = "https://ltmcb-cotuong-default-rtdb.firebaseio.com/"
+		};
+
+		IFirebaseClient client;
+
+		public void WriteNameSafe(string text)
+		{
+			if (txtName.InvokeRequired)
+			{
+				var d = new SafeCallDelegate1(WriteNameSafe);
+				txtName.Invoke(d, new object[] { text });
+			}
+			else
+			{
+				txtName.Text = text;
+			}
+		}
+
+		public void WriteSexSafe(string text)
+		{
+			if (txtSex.InvokeRequired)
+			{
+				var d = new SafeCallDelegate1(WriteSexSafe);
+				txtSex.Invoke(d, new object[] { text });
+			}
+			else
+			{
+				txtSex.Text = text;
+			}
+		}
+
+		public void WriteBirthYearSafe(string text)
+		{
+			if (txtBirth.InvokeRequired)
+			{
+				var d = new SafeCallDelegate1(WriteBirthYearSafe);
+				txtBirth.Invoke(d, new object[] { text });
+			}
+			else
+			{
+				txtBirth.Text = text;
+			}
+		}
+
+		public void AddItemSafe(ListViewItem item)
+		{
+
+			if (listViewHistory.InvokeRequired)
+			{
+				var d = new SafeCallDelegate2(AddItemSafe);
+				listViewHistory.Invoke(d, new object[] { item });
+			}
+			else
+			{
+				listViewHistory.Items.Add(item);
+			}
+		}
+
+		private void ShowPlayerInfo()
+		{
+			try
+			{
+				client = new FireSharp.FirebaseClient(fcon);
+				FirebaseResponse data = client.Get("PlayerInfo/" + player.ten);
+				if (data.Body != "null")
+				{
+					PlayerInfo player = data.ResultAs<PlayerInfo>();
+					WriteNameSafe(player.FullName);
+					WriteSexSafe(player.Sex);
+					WriteBirthYearSafe(player.BirthYear);
+				} else
+				{
+					MessageBox.Show("Can't get player info!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+			catch
+			{
+				MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void ShowMatchHistory()
+		{
+			listViewHistory.Items.Clear();
+			try
+			{
+				client = new FireSharp.FirebaseClient(fcon);
+				FirebaseResponse data = client.Get("MatchHistory/" + player.ten);
+				
+				if (data.Body != "null")
+				{
+					Dictionary<string, MatchInfo> treatedData = JsonConvert.DeserializeObject<Dictionary<string, MatchInfo>>(data.Body);
+					int win = 0, lose = 0, draw = 0;
+
+					foreach(var item in treatedData)
+					{
+						if (item.Value.Result == "Thang")
+							win++;
+						else if (item.Value.Result == "Thua")
+							lose++;
+						else if (item.Value.Result == "Hoa")
+							draw++;
+
+						ListViewItem enemy = new ListViewItem(item.Value.Enemy);
+
+						ListViewItem.ListViewSubItem result = new ListViewItem.ListViewSubItem(enemy, item.Value.Result);
+						enemy.SubItems.Add(result);
+
+						ListViewItem.ListViewSubItem numgo = new ListViewItem.ListViewSubItem(enemy, item.Value.NumGo);
+						enemy.SubItems.Add(numgo);
+
+						ListViewItem.ListViewSubItem totaltime = new ListViewItem.ListViewSubItem(enemy, item.Value.TotalTime);
+						enemy.SubItems.Add(totaltime);
+
+						AddItemSafe(enemy);
+					}
+
+					txtWin.Text = win.ToString();
+					txtLose.Text = lose.ToString();
+					txtDraw.Text = draw.ToString();
+				}
+				else
+				{
+					MessageBox.Show("Not find any match history!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+			catch
+			{
+				MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void SaveMatchInfo(MatchInfo matchInfo)
+		{
+			SetResponse setter = client.Set("MatchHistory/" + $"{player.ten}/" + matchInfo.ID, matchInfo);
+			if (setter.StatusCode.ToString() == "OK")
+			{
+				MessageBox.Show("Saved match info");
+			}
+			else
+			{
+				MessageBox.Show("Can't save match info!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void DoWinHandler()
+		{
+			MatchInfo matchInfo = new MatchInfo()
+			{
+				ID = DateTime.Now.ToString("hh:mm:ss tt")
+			};
+
+			if (player.chuPhong)
+			{
+				int m = (3600 - VanCo.secondsDo) / 60;
+				int s = (3600 - VanCo.secondsDo) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Thang";
+				matchInfo.NumGo = VanCo.soLanDi_Do.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = enemy;
+			} else
+			{
+				int m = (3600 - VanCo.secondsDen) / 60;
+				int s = (3600 - VanCo.secondsDen) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Thua";
+				matchInfo.NumGo = VanCo.soLanDi_Den.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = host;
+			}
+
+			VanCo.NewGame();
+			end = new fEnd();
+			end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
+			end.ShowDialog();
+
+			SaveMatchInfo(matchInfo);
+		}
+
+		private void DenWinHandler()
+		{
+			MatchInfo matchInfo = new MatchInfo()
+			{
+				ID = DateTime.Now.ToString("hh:mm:ss tt")
+			};
+
+			if (player.chuPhong)
+			{
+				int m = (3600 - VanCo.secondsDo) / 60;
+				int s = (3600 - VanCo.secondsDo) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Thua";
+				matchInfo.NumGo = VanCo.soLanDi_Do.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = enemy;
+			}
+			else
+			{
+				int m = (3600 - VanCo.secondsDen) / 60;
+				int s = (3600 - VanCo.secondsDen) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Thang";
+				matchInfo.NumGo = VanCo.soLanDi_Den.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = host;
+			}
+
+			VanCo.NewGame();
+			end = new fEnd();
+			end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
+			end.ShowDialog();
+
+			SaveMatchInfo(matchInfo);
+		}
+
+		private void HoaHandler()
+		{
+			MatchInfo matchInfo = new MatchInfo()
+			{
+				ID = DateTime.Now.ToString("hh:mm:ss tt")
+			};
+
+			if (player.chuPhong)
+			{
+				int m = (3600 - VanCo.secondsDo) / 60;
+				int s = (3600 - VanCo.secondsDo) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Hoa";
+				matchInfo.NumGo = VanCo.soLanDi_Do.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = enemy;
+			}
+			else
+			{
+				int m = (3600 - VanCo.secondsDen) / 60;
+				int s = (3600 - VanCo.secondsDen) % 60;
+				string mi, se;
+				if (m > 9) mi = $"{m}";
+				else mi = $"0{m}";
+				if (s > 9) se = $"{s}";
+				else se = $"0{s}";
+
+				matchInfo.Result = "Hoa";
+				matchInfo.NumGo = VanCo.soLanDi_Den.ToString();
+				matchInfo.TotalTime = $"{mi}:{se}";
+				matchInfo.Enemy = host;
+			}
+
+			VanCo.NewGame();
+			end = new fEnd();
+			end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
+			end.ShowDialog();
+
+			SaveMatchInfo(matchInfo);
+		}
+
+		private void btnDraw_Click(object sender, EventArgs e)
+		{
+			player.socket.Send(VanCo.Serialize("REQUESTDRAW|," + player.ten));
+		}
+
+		private void btnCancelLobby_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

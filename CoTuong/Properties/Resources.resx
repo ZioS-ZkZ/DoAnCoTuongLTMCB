@@ -118,44 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="totDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\totDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecXeDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecXeDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="totDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\totDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="selecTotDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecTotDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xeDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xeDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="youwin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\youwin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecSiDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecSiDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecTuongDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecTuongDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tuongDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tuongDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phaoDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phaoDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecTuongDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecTuongDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="viTriDiDuoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viTriDiDuoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,107 +133,20 @@
   <data name="Undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecSiDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecSiDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecXeDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecXeDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecVoiDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecVoiDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Chuot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chuot.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="viTriCu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viTriCu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chieuTuongDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chieuTuongDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="viTriDiDuoc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\viTriDiDuoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecTotDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecTotDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Undo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconMess" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconMess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecPhaoDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecPhaoDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Gameover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gameover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="endgame1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\endgame.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phaoDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phaoDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecVoiDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecVoiDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="siDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\siDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecMaDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecMaDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menucuoigame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menucuoigame.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xeDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xeDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="voiDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\voiDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecPhaoDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecPhaoDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chieuTuongDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chieuTuongDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="selecMaDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\selecMaDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Undo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="voiDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\voiDen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tuongDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tuongDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="endgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\endgame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="siDo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\siDo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconMess1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconMess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chieu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -289,17 +169,8 @@
   <data name="nhacNen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nhacNen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MuiTen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MuiTen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NutGui" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NutGui.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KhungChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KhungChat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DenThang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DenThang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,7 +181,439 @@
   <data name="Draw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Draw.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="board_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\board_black.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="board_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\board_blue.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="board_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\board_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Backgound_Default\board_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="board_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\board_grey.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="board_paper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\board_paper.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\MaDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\MaDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\MaDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\MaDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\MaDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\MaDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\MaDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\MaDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\MaDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\MaDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\PhaoDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\PhaoDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\PhaoDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\PhaoDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\PhaoDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\PhaoDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\PhaoDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\PhaoDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\PhaoDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhaoDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\PhaoDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectMaDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectMaDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectMaDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectMaDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectMaDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectMaDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectMaDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectMaDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectMaDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMaDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectMaDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelecTotDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelecTotDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelecTotDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelecTotDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectPhaoDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectPhaoDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectPhaoDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectPhaoDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectPhaoDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectPhaoDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectPhaoDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectPhaoDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectPhaoDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPhaoDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectPhaoDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectSiDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectSiDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectSiDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectSiDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectSiDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectSiDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectSiDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectSiDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectSiDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectSiDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectSiDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectTotDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectTotDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectTotDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectTotDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectTotDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectTotDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectTotDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTotDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectTotDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectTuongDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectTuongDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectTuongDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectTuongDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectTuongDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectTuongDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectTuongDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectTuongDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectTuongDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelecTuongDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelecTuongDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelecTuongDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelecTuongDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectVoiDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectVoiDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectVoiDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectVoiDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectVoiDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectVoiDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectVoiDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectVoiDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectVoiDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectVoiDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectVoiDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectXeDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectXeDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectXeDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectXeDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectXeDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SelectXeDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SelectXeDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SelectXeDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SelectXeDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectXeDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SelectXeDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SiDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SiDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SiDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SiDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SiDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\SiDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\SiDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\SiDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\SiDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\SiDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\TotDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\TotDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\TotDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\TotDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\TotDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\TotDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\TotDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\TotDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\TotDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TotDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\TotDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\TuongDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\TuongDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\TuongDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\TuongDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\TuongDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\TuongDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\TuongDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\TuongDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\TuongDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TuongDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\TuongDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\VoiDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\VoiDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\VoiDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\VoiDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\VoiDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\VoiDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\VoiDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\VoiDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\VoiDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoiDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\VoiDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDenBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\XeDenBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\XeDenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDenDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\XeDenDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDenGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\XeDenGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDenPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\XeDenPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDoBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Black\XeDoBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Blue\XeDoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDoDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backgound_Default\XeDoDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDoGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Grey\XeDoGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XeDoPaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background_Paper\XeDoPaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

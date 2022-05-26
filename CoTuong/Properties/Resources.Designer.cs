@@ -63,6 +63,26 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap board_black {
+            get {
+                object obj = ResourceManager.GetObject("board_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap board_blue {
+            get {
+                object obj = ResourceManager.GetObject("board_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap board_default {
             get {
                 object obj = ResourceManager.GetObject("board_default", resourceCulture);
@@ -73,9 +93,19 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chat {
+        internal static System.Drawing.Bitmap board_grey {
             get {
-                object obj = ResourceManager.GetObject("chat", resourceCulture);
+                object obj = ResourceManager.GetObject("board_grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap board_paper {
+            get {
+                object obj = ResourceManager.GetObject("board_paper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,26 +116,6 @@ namespace CoTuong.Properties {
         internal static System.IO.UnmanagedMemoryStream Chieu {
             get {
                 return ResourceManager.GetStream("Chieu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chieuTuongDen {
-            get {
-                object obj = ResourceManager.GetObject("chieuTuongDen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chieuTuongDo {
-            get {
-                object obj = ResourceManager.GetObject("chieuTuongDo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -171,36 +181,6 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap endgame {
-            get {
-                object obj = ResourceManager.GetObject("endgame", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap endgame1 {
-            get {
-                object obj = ResourceManager.GetObject("endgame1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Expand {
-            get {
-                object obj = ResourceManager.GetObject("Expand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Gameover {
             get {
                 object obj = ResourceManager.GetObject("Gameover", resourceCulture);
@@ -219,16 +199,6 @@ namespace CoTuong.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconMess1 {
-            get {
-                object obj = ResourceManager.GetObject("iconMess1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream ketThuc {
@@ -240,9 +210,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KhungChat {
+        internal static System.Drawing.Bitmap MaDenBlack {
             get {
-                object obj = ResourceManager.GetObject("KhungChat", resourceCulture);
+                object obj = ResourceManager.GetObject("MaDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -250,9 +220,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maDen {
+        internal static System.Drawing.Bitmap MaDenBlue {
             get {
-                object obj = ResourceManager.GetObject("maDen", resourceCulture);
+                object obj = ResourceManager.GetObject("MaDenBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -260,9 +230,79 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maDo {
+        internal static System.Drawing.Bitmap MaDenDefault {
             get {
-                object obj = ResourceManager.GetObject("maDo", resourceCulture);
+                object obj = ResourceManager.GetObject("MaDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("MaDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("MaDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("MaDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("MaDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("MaDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("MaDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("MaDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -282,36 +322,6 @@ namespace CoTuong.Properties {
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu1 {
-            get {
-                object obj = ResourceManager.GetObject("menu1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menucuoigame {
-            get {
-                object obj = ResourceManager.GetObject("menucuoigame", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MuiTen {
-            get {
-                object obj = ResourceManager.GetObject("MuiTen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -347,9 +357,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap phaoDen {
+        internal static System.Drawing.Bitmap PhaoDenBlack {
             get {
-                object obj = ResourceManager.GetObject("phaoDen", resourceCulture);
+                object obj = ResourceManager.GetObject("PhaoDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -357,9 +367,89 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap phaoDo {
+        internal static System.Drawing.Bitmap PhaoDenBlue {
             get {
-                object obj = ResourceManager.GetObject("phaoDo", resourceCulture);
+                object obj = ResourceManager.GetObject("PhaoDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PhaoDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("PhaoDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,9 +466,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecMaDen {
+        internal static System.Drawing.Bitmap SelectMaDenBlack {
             get {
-                object obj = ResourceManager.GetObject("selecMaDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,9 +476,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecMaDo {
+        internal static System.Drawing.Bitmap SelectMaDenBlue {
             get {
-                object obj = ResourceManager.GetObject("selecMaDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDenBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,9 +486,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecPhaoDen {
+        internal static System.Drawing.Bitmap SelectMaDenDefault {
             get {
-                object obj = ResourceManager.GetObject("selecPhaoDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDenDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,9 +496,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecPhaoDo {
+        internal static System.Drawing.Bitmap SelectMaDenGrey {
             get {
-                object obj = ResourceManager.GetObject("selecPhaoDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDenGrey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,9 +506,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecSiDen {
+        internal static System.Drawing.Bitmap SelectMaDenPaper {
             get {
-                object obj = ResourceManager.GetObject("selecSiDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDenPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,9 +516,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecSiDo {
+        internal static System.Drawing.Bitmap SelectMaDoBlack {
             get {
-                object obj = ResourceManager.GetObject("selecSiDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDoBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,9 +526,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecTotDen {
+        internal static System.Drawing.Bitmap SelectMaDoBlue {
             get {
-                object obj = ResourceManager.GetObject("selecTotDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDoBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,9 +536,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecTotDo {
+        internal static System.Drawing.Bitmap SelectMaDoDefault {
             get {
-                object obj = ResourceManager.GetObject("selecTotDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDoDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,9 +546,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecTuongDen {
+        internal static System.Drawing.Bitmap SelectMaDoGrey {
             get {
-                object obj = ResourceManager.GetObject("selecTuongDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDoGrey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,9 +556,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecTuongDo {
+        internal static System.Drawing.Bitmap SelectMaDoPaper {
             get {
-                object obj = ResourceManager.GetObject("selecTuongDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectMaDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,9 +566,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecVoiDen {
+        internal static System.Drawing.Bitmap SelecTotDenDefault {
             get {
-                object obj = ResourceManager.GetObject("selecVoiDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelecTotDenDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,9 +576,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecVoiDo {
+        internal static System.Drawing.Bitmap SelecTotDoDefault {
             get {
-                object obj = ResourceManager.GetObject("selecVoiDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelecTotDoDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -496,9 +586,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecXeDen {
+        internal static System.Drawing.Bitmap SelectPhaoDenBlack {
             get {
-                object obj = ResourceManager.GetObject("selecXeDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,9 +596,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selecXeDo {
+        internal static System.Drawing.Bitmap SelectPhaoDenBlue {
             get {
-                object obj = ResourceManager.GetObject("selecXeDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDenBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,9 +606,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap siDen {
+        internal static System.Drawing.Bitmap SelectPhaoDenDefault {
             get {
-                object obj = ResourceManager.GetObject("siDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDenDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,9 +616,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap siDo {
+        internal static System.Drawing.Bitmap SelectPhaoDenGrey {
             get {
-                object obj = ResourceManager.GetObject("siDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDenGrey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -536,9 +626,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap totDen {
+        internal static System.Drawing.Bitmap SelectPhaoDenPaper {
             get {
-                object obj = ResourceManager.GetObject("totDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDenPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -546,9 +636,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap totDo {
+        internal static System.Drawing.Bitmap SelectPhaoDoBlack {
             get {
-                object obj = ResourceManager.GetObject("totDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDoBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,9 +646,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tuongDen {
+        internal static System.Drawing.Bitmap SelectPhaoDoBlue {
             get {
-                object obj = ResourceManager.GetObject("tuongDen", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDoBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -566,9 +656,809 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tuongDo {
+        internal static System.Drawing.Bitmap SelectPhaoDoDefault {
             get {
-                object obj = ResourceManager.GetObject("tuongDo", resourceCulture);
+                object obj = ResourceManager.GetObject("SelectPhaoDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectPhaoDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectPhaoDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectPhaoDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectPhaoDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectSiDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectSiDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelecTuongDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelecTuongDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelecTuongDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelecTuongDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectVoiDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectVoiDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectXeDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SelectXeDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("SiDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("SiDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SiDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("SiDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("SiDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("SiDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("SiDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SiDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("SiDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SiDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("SiDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("TotDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("TotDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("TotDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("TotDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("TotDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("TotDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("TotDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("TotDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("TotDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TotDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("TotDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDenBlack {
+            get {
+                object obj = ResourceManager.GetObject("TuongDenBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDenBlue {
+            get {
+                object obj = ResourceManager.GetObject("TuongDenBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("TuongDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("TuongDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("TuongDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("TuongDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("TuongDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("TuongDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("TuongDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TuongDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("TuongDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -596,26 +1486,6 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Undo1 {
-            get {
-                object obj = ResourceManager.GetObject("Undo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Undo2 {
-            get {
-                object obj = ResourceManager.GetObject("Undo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap viTriCu {
             get {
                 object obj = ResourceManager.GetObject("viTriCu", resourceCulture);
@@ -636,9 +1506,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap viTriDiDuoc1 {
+        internal static System.Drawing.Bitmap VoiDenBlack {
             get {
-                object obj = ResourceManager.GetObject("viTriDiDuoc1", resourceCulture);
+                object obj = ResourceManager.GetObject("VoiDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -646,9 +1516,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap voiDen {
+        internal static System.Drawing.Bitmap VoiDenBlue {
             get {
-                object obj = ResourceManager.GetObject("voiDen", resourceCulture);
+                object obj = ResourceManager.GetObject("VoiDenBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -656,9 +1526,79 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap voiDo {
+        internal static System.Drawing.Bitmap VoiDenDefault {
             get {
-                object obj = ResourceManager.GetObject("voiDo", resourceCulture);
+                object obj = ResourceManager.GetObject("VoiDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("VoiDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("VoiDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("VoiDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("VoiDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("VoiDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("VoiDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoiDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("VoiDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -676,9 +1616,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap xeDen {
+        internal static System.Drawing.Bitmap XeDenBlack {
             get {
-                object obj = ResourceManager.GetObject("xeDen", resourceCulture);
+                object obj = ResourceManager.GetObject("XeDenBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,9 +1626,9 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap xeDo {
+        internal static System.Drawing.Bitmap XeDenBlue {
             get {
-                object obj = ResourceManager.GetObject("xeDo", resourceCulture);
+                object obj = ResourceManager.GetObject("XeDenBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -696,9 +1636,79 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap youwin {
+        internal static System.Drawing.Bitmap XeDenDefault {
             get {
-                object obj = ResourceManager.GetObject("youwin", resourceCulture);
+                object obj = ResourceManager.GetObject("XeDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDenGrey {
+            get {
+                object obj = ResourceManager.GetObject("XeDenGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDenPaper {
+            get {
+                object obj = ResourceManager.GetObject("XeDenPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDoBlack {
+            get {
+                object obj = ResourceManager.GetObject("XeDoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDoBlue {
+            get {
+                object obj = ResourceManager.GetObject("XeDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("XeDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDoGrey {
+            get {
+                object obj = ResourceManager.GetObject("XeDoGrey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XeDoPaper {
+            get {
+                object obj = ResourceManager.GetObject("XeDoPaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

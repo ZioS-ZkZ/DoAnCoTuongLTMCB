@@ -7,6 +7,7 @@ using System.Media;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
+using System.Timers;
 
 namespace CoTuong
 {
@@ -21,29 +22,32 @@ namespace CoTuong
         public static string isWin = "none";
 		private static ToaDo toaDoMoDo = new ToaDo(0,0);
 		private static ToaDo toaDoMoDen = new ToaDo(0, 0);
-		private static int soLanDi_Do = 1;
-		private static int soLanDi_Den = 1;
-		public static Timer timerDen;
-		public static Timer timerDo;
-		private static int secondsDo = 3600;
-		private static int secondsDen = 3600;
-
+		public static int soLanDi_Do = 0;
+		public static int soLanDi_Den = 0;
+		public static System.Timers.Timer timerDen;
+		public static System.Timers.Timer timerDo;
+		public static int secondsDo = 3600;
+		public static int secondsDen = 3600;
+		public static bool timerDoRun, timerDenRun;
 
 
 		static VanCo()
 		{
 			player[0] = new NguoiChoi(0);
 			player[1] = new NguoiChoi(1);
-			timerDo = new Timer
+
+			timerDo = new System.Timers.Timer
 			{
 				Interval = 1000
 			};
-			timerDen = new Timer
+			timerDen = new System.Timers.Timer
 			{
 				Interval = 1000
+
 			};
-			timerDo.Tick += (sender1, e1) => Count_down(sender1, e1, 1);
-			timerDen.Tick += (sender1, e1) => Count_down(sender1, e1, 0);
+
+			timerDen.Elapsed += (sender1, e1) => Count_down(sender1, e1, 0);
+			timerDo.Elapsed += (sender1, e1) => Count_down(sender1, e1, 1);
 		}
         public static void NewGame()
         {
@@ -160,79 +164,113 @@ namespace CoTuong
                 for (int i = 0; i < 5; i++)
                     player[1].qTot[i].draw();
                 player[1].qTuong.draw();
-            }
+			}
 
         }
 
 		public static void DoiLuotDi(int luotdi)
 		{
-			if (luotdi == 0) LuotDi = 1;
-			else LuotDi = 0;
+			if (luotdi == 0) VanCo.LuotDi = 1;
+			else VanCo.LuotDi = 0;
 
 			if(VanCo.LuotDi == 0)
 			{
 				timerDen.Enabled = true;
-				timerDen.Start();
 				timerDo.Enabled = false;
-				timerDo.Stop();
-				for (int i = 0; i < 2; i++)
-				{
-					player[0].qXe[i].isLock = false;
-					player[0].qMa[i].isLock = false;
-					player[0].qVoi[i].isLock = false;
-					player[0].qSi[i].isLock = false;
-					player[0].qPhao[i].isLock = false;
-				}
-				for (int i = 0; i < 5; i++)
-					player[0].qTot[i].isLock = false;
-				player[0].qTuong.isLock = false;
 
-				//khoa quan co lai
-				for (int i = 0; i < 2; i++)
+				if (fBanCo.player.chuPhong)
 				{
-					player[1].qXe[i].isLock = true;
-					player[1].qMa[i].isLock = true;
-					player[1].qVoi[i].isLock = true;
-					player[1].qSi[i].isLock = true;
-					player[1].qPhao[i].isLock = true;
+					LockAllChess();
+				} else
+				{
+					for (int i = 0; i < 2; i++)
+					{
+						VanCo.player[0].qXe[i].isLock = false;
+						VanCo.player[0].qMa[i].isLock = false;
+						VanCo.player[0].qVoi[i].isLock = false;
+						VanCo.player[0].qSi[i].isLock = false;
+						VanCo.player[0].qPhao[i].isLock = false;
+					}
+					for (int i = 0; i < 5; i++)
+						VanCo.player[0].qTot[i].isLock = false;
+					VanCo.player[0].qTuong.isLock = false;
+
+					//khoa quan co lai
+					for (int i = 0; i < 2; i++)
+					{
+						VanCo.player[1].qXe[i].isLock = true;
+						VanCo.player[1].qMa[i].isLock = true;
+						VanCo.player[1].qVoi[i].isLock = true;
+						VanCo.player[1].qSi[i].isLock = true;
+						VanCo.player[1].qPhao[i].isLock = true;
+					}
+					for (int i = 0; i < 5; i++)
+						VanCo.player[1].qTot[i].isLock = true;
+					VanCo.player[1].qTuong.isLock = true;
 				}
-				for (int i = 0; i < 5; i++)
-					player[1].qTot[i].isLock = true;
-				player[1].qTuong.isLock = true;
+				
 			}
 			else if (LuotDi == 1)
 			{
 				timerDo.Enabled = true;
-				timerDo.Start();
 				timerDen.Enabled = false;
-				timerDen.Stop();
-				for (int i = 0; i < 2; i++)
+
+				if (fBanCo.player.chuPhong)
 				{
-					player[1].qXe[i].isLock = false;
-					player[1].qMa[i].isLock = false;
-					player[1].qVoi[i].isLock = false;
-					player[1].qSi[i].isLock = false;
-					player[1].qPhao[i].isLock = false;
-				}
-				for (int i = 0; i < 5; i++)
-					player[1].qTot[i].isLock = false;
-				player[1].qTuong.isLock = false;
-				//==========================
-				for (int i = 0; i < 2; i++)
+					for (int i = 0; i < 2; i++)
+					{
+						VanCo.player[1].qXe[i].isLock = false;
+						VanCo.player[1].qMa[i].isLock = false;
+						VanCo.player[1].qVoi[i].isLock = false;
+						VanCo.player[1].qSi[i].isLock = false;
+						VanCo.player[1].qPhao[i].isLock = false;
+					}
+					for (int i = 0; i < 5; i++)
+						VanCo.player[1].qTot[i].isLock = false;
+					VanCo.player[1].qTuong.isLock = false;
+					//==========================
+					for (int i = 0; i < 2; i++)
+					{
+						VanCo.player[0].qXe[i].isLock = true;
+						VanCo.player[0].qMa[i].isLock = true;
+						VanCo.player[0].qVoi[i].isLock = true;
+						VanCo.player[0].qSi[i].isLock = true;
+						VanCo.player[0].qPhao[i].isLock = true;
+					}
+					for (int i = 0; i < 5; i++)
+						VanCo.player[0].qTot[i].isLock = true;
+					VanCo.player[0].qTuong.isLock = true;
+				} else
 				{
-					player[0].qXe[i].isLock = true;
-					player[0].qMa[i].isLock = true;
-					player[0].qVoi[i].isLock = true;
-					player[0].qSi[i].isLock = true;
-					player[0].qPhao[i].isLock = true;
+					LockAllChess();
 				}
-				for (int i = 0; i < 5; i++)
-					player[0].qTot[i].isLock = true;
-				player[0].qTuong.isLock = true;
-			
 			}
 		}
 		
+		public static void LockAllChess()
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				VanCo.player[1].qXe[i].isLock = true;
+				VanCo.player[1].qMa[i].isLock = true;
+				VanCo.player[1].qVoi[i].isLock = true;
+				VanCo.player[1].qSi[i].isLock = true;
+				VanCo.player[1].qPhao[i].isLock = true;
+
+				VanCo.player[0].qXe[i].isLock = true;
+				VanCo.player[0].qMa[i].isLock = true;
+				VanCo.player[0].qVoi[i].isLock = true;
+				VanCo.player[0].qSi[i].isLock = true;
+				VanCo.player[0].qPhao[i].isLock = true;
+			}
+			for (int i = 0; i < 5; i++)
+			{
+				VanCo.player[1].qTot[i].isLock = true;
+				VanCo.player[0].qTot[i].isLock = true;
+			}
+			VanCo.player[0].qTuong.isLock = true;
+			VanCo.player[1].qTuong.isLock = true;
+		}
 
 		public static void setOCoTrong(int row, int col)
 		{
@@ -405,13 +443,13 @@ namespace CoTuong
 
 			if (phe == 0)
 			{
-				fBanCo.lichSuDen.AppendText($"{soLanDi_Den}. {content}\r\n");
 				soLanDi_Den++;
+				fBanCo.lichSuDen.AppendText($"{soLanDi_Den}. {content}\r\n");
 			}
 			else
 			{
-				fBanCo.lichSuDo.AppendText($"{soLanDi_Do}. {content}\r\n");
 				soLanDi_Do++;
+				fBanCo.lichSuDo.AppendText($"{soLanDi_Do}. {content}\r\n");
 			}
 		}
 
@@ -918,9 +956,7 @@ namespace CoTuong
 					timerDen.Stop();
 					fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "do";
-					VanCo.NewGame();
-					fEnd end = new fEnd();
-					end.ShowDialog();
+					fBanCo.player.socket.Send(VanCo.Serialize("DOWIN|,"));
 				}
 			}
 			else
@@ -946,9 +982,7 @@ namespace CoTuong
 					timerDo.Stop();
 					fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "den";
-					VanCo.NewGame();
-					fEnd end = new fEnd();
-					end.ShowDialog();
+					fBanCo.player.socket.Send(VanCo.Serialize("DENWIN|,"));
 				}
 			}
 		}
