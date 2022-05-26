@@ -63,6 +63,16 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackYellow {
+            get {
+                object obj = ResourceManager.GetObject("BackYellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap board_black {
             get {
                 object obj = ResourceManager.GetObject("board_black", resourceCulture);
@@ -1599,6 +1609,16 @@ namespace CoTuong.Properties {
         internal static System.Drawing.Bitmap VoiDoPaper {
             get {
                 object obj = ResourceManager.GetObject("VoiDoPaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WaitingRoom {
+            get {
+                object obj = ResourceManager.GetObject("WaitingRoom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

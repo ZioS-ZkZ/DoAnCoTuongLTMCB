@@ -180,6 +180,7 @@ namespace CoTuong
 			this.plLobby.Name = "plLobby";
 			this.plLobby.Size = new System.Drawing.Size(1946, 1106);
 			this.plLobby.TabIndex = 9;
+			this.plLobby.BackgroundImage = CoTuong.Properties.Resources.WaitingRoom;
 			// 
 			// btTimPhong
 			// 
@@ -204,6 +205,7 @@ namespace CoTuong
 			// lbDanhSachPhong
 			// 
 			this.lbDanhSachPhong.FormattingEnabled = true;
+			this.lbDraw.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbDanhSachPhong.ItemHeight = 25;
 			this.lbDanhSachPhong.Location = new System.Drawing.Point(665, 115);
 			this.lbDanhSachPhong.Name = "lbDanhSachPhong";
@@ -215,8 +217,8 @@ namespace CoTuong
 			// 
 			this.btnCancelLobby.BackColor = System.Drawing.Color.Transparent;
 			this.btnCancelLobby.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCancelLobby.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelLobby.Image")));
-			this.btnCancelLobby.Location = new System.Drawing.Point(81, 43);
+			this.btnCancelLobby.Image = CoTuong.Properties.Resources.BackYellow;
+			this.btnCancelLobby.Location = new System.Drawing.Point(131, 957);
 			this.btnCancelLobby.Name = "btnCancelLobby";
 			this.btnCancelLobby.Size = new System.Drawing.Size(74, 74);
 			this.btnCancelLobby.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,7 +245,6 @@ namespace CoTuong
 			// 
 			// panel1
 			// 
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel1.Controls.Add(this.txtBirth);
 			this.panel1.Controls.Add(this.txtSex);
 			this.panel1.Controls.Add(this.txtName);
@@ -254,30 +255,34 @@ namespace CoTuong
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(516, 162);
 			this.panel1.TabIndex = 3;
+			this.panel1.BackColor = System.Drawing.Color.Transparent;
 			// 
 			// lbDetail
 			// 
 			this.lbDetail.AutoSize = true;
-			this.lbDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbDetail.Location = new System.Drawing.Point(1402, 99);
+			this.lbDetail.Font = new System.Drawing.Font("Book Antiqua", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbDetail.ForeColor = System.Drawing.Color.Gold;
+			this.lbDetail.Location = new System.Drawing.Point(1417, 89);
 			this.lbDetail.Name = "lbDetail";
 			this.lbDetail.Size = new System.Drawing.Size(239, 32);
 			this.lbDetail.TabIndex = 4;
 			this.lbDetail.Text = "Thông tin người chơi";
+			this.lbDetail.BackColor = System.Drawing.Color.Transparent;
 			// 
 			// lbHistory
 			// 
 			this.lbHistory.AutoSize = true;
-			this.lbHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbHistory.Location = new System.Drawing.Point(1402, 344);
+			this.lbHistory.Font = new System.Drawing.Font("Book Antiqua", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbHistory.ForeColor = System.Drawing.Color.Gold;
+			this.lbHistory.Location = new System.Drawing.Point(1477, 339);
 			this.lbHistory.Name = "lbHistory";
 			this.lbHistory.Size = new System.Drawing.Size(169, 32);
 			this.lbHistory.TabIndex = 6;
 			this.lbHistory.Text = "Lịch sử thi đấu";
+			this.lbHistory.BackColor = System.Drawing.Color.Transparent;
 			// 
 			// panel2
 			// 
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel2.Controls.Add(this.listViewHistory);
 			this.panel2.Controls.Add(this.txtDraw);
 			this.panel2.Controls.Add(this.txtLose);
@@ -289,21 +294,24 @@ namespace CoTuong
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(516, 471);
 			this.panel2.TabIndex = 5;
+			this.panel2.BackColor = System.Drawing.Color.Transparent;
 			// 
 			// lbName
 			// 
 			this.lbName.AutoSize = true;
-			this.lbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbName.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.lbName.Location = new System.Drawing.Point(11, 38);
 			this.lbName.Name = "lbName";
 			this.lbName.Size = new System.Drawing.Size(95, 32);
 			this.lbName.TabIndex = 0;
 			this.lbName.Text = "Họ Tên:";
+			this.lbName.ForeColor = System.Drawing.Color.MistyRose;
 			// 
 			// lbSex
 			// 
 			this.lbSex.AutoSize = true;
-			this.lbSex.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbSex.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbSex.ForeColor = System.Drawing.Color.MistyRose;
 			this.lbSex.Location = new System.Drawing.Point(11, 90);
 			this.lbSex.Name = "lbSex";
 			this.lbSex.Size = new System.Drawing.Size(110, 32);
@@ -313,18 +321,20 @@ namespace CoTuong
 			// lbBirth
 			// 
 			this.lbBirth.AutoSize = true;
-			this.lbBirth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbBirth.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbBirth.ForeColor = System.Drawing.Color.MistyRose;
 			this.lbBirth.Location = new System.Drawing.Point(245, 90);
 			this.lbBirth.Name = "lbBirth";
 			this.lbBirth.Size = new System.Drawing.Size(116, 32);
 			this.lbBirth.TabIndex = 4;
-			this.lbBirth.Text = "Năm sinh";
+			this.lbBirth.Text = "Năm sinh:";
 			// 
 			// lbWin
 			// 
 			this.lbWin.AutoSize = true;
-			this.lbWin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbWin.Location = new System.Drawing.Point(11, 34);
+			this.lbWin.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbWin.ForeColor = System.Drawing.Color.MistyRose;
+			this.lbWin.Location = new System.Drawing.Point(11, 40);
 			this.lbWin.Name = "lbWin";
 			this.lbWin.Size = new System.Drawing.Size(81, 32);
 			this.lbWin.TabIndex = 6;
@@ -333,53 +343,64 @@ namespace CoTuong
 			// txtName
 			// 
 			this.txtName.AutoSize = true;
-			this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtName.Location = new System.Drawing.Point(107, 38);
+			this.txtName.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtName.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtName.Location = new System.Drawing.Point(122, 37);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(140, 32);
 			this.txtName.TabIndex = 6;
+			this.txtName.Text = "Trần Trí Đức";
 			// 
 			// txtSex
 			// 
 			this.txtSex.AutoSize = true;
-			this.txtSex.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtSex.Location = new System.Drawing.Point(127, 90);
+			this.txtSex.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtSex.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtSex.Location = new System.Drawing.Point(137, 88);
 			this.txtSex.Name = "txtSex";
 			this.txtSex.Size = new System.Drawing.Size(65, 32);
 			this.txtSex.TabIndex = 7;
+			this.txtSex.Text = "Nữ";
 			// 
 			// txtBirth
 			// 
 			this.txtBirth.AutoSize = true;
-			this.txtBirth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtBirth.Location = new System.Drawing.Point(367, 90);
+			this.txtBirth.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtBirth.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtBirth.Location = new System.Drawing.Point(377, 88);
 			this.txtBirth.Name = "txtBirth";
 			this.txtBirth.Size = new System.Drawing.Size(66, 32);
 			this.txtBirth.TabIndex = 8;
+			this.txtBirth.Text = "2002";
 			// 
 			// txtWin
 			// 
 			this.txtWin.AutoSize = true;
-			this.txtWin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtWin.Location = new System.Drawing.Point(98, 34);
+			this.txtWin.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtWin.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtWin.Location = new System.Drawing.Point(98, 42);
 			this.txtWin.Name = "txtWin";
 			this.txtWin.Size = new System.Drawing.Size(53, 32);
 			this.txtWin.TabIndex = 12;
+			this.txtWin.Text = "999";
 			// 
 			// txtLose
 			// 
 			this.txtLose.AutoSize = true;
-			this.txtLose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtLose.Location = new System.Drawing.Point(274, 34);
+			this.txtLose.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtLose.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtLose.Location = new System.Drawing.Point(274, 42);
 			this.txtLose.Name = "txtLose";
 			this.txtLose.Size = new System.Drawing.Size(53, 32);
 			this.txtLose.TabIndex = 14;
+			this.txtLose.Text = "999";
 			// 
 			// lbLose
 			// 
 			this.lbLose.AutoSize = true;
-			this.lbLose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbLose.Location = new System.Drawing.Point(201, 34);
+			this.lbLose.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbLose.ForeColor = System.Drawing.Color.MistyRose;
+			this.lbLose.Location = new System.Drawing.Point(201, 40);
 			this.lbLose.Name = "lbLose";
 			this.lbLose.Size = new System.Drawing.Size(67, 32);
 			this.lbLose.TabIndex = 13;
@@ -388,17 +409,20 @@ namespace CoTuong
 			// txtDraw
 			// 
 			this.txtDraw.AutoSize = true;
-			this.txtDraw.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtDraw.Location = new System.Drawing.Point(430, 34);
+			this.txtDraw.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.txtDraw.ForeColor = System.Drawing.Color.MistyRose;
+			this.txtDraw.Location = new System.Drawing.Point(430, 42);
 			this.txtDraw.Name = "txtDraw";
 			this.txtDraw.Size = new System.Drawing.Size(53, 32);
 			this.txtDraw.TabIndex = 14;
+			this.txtDraw.Text = "999";
 			// 
 			// lbDraw
 			// 
 			this.lbDraw.AutoSize = true;
-			this.lbDraw.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbDraw.Location = new System.Drawing.Point(367, 34);
+			this.lbDraw.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.lbDraw.ForeColor = System.Drawing.Color.MistyRose;
+			this.lbDraw.Location = new System.Drawing.Point(367, 40);
 			this.lbDraw.Name = "lbDraw";
 			this.lbDraw.Size = new System.Drawing.Size(57, 32);
 			this.lbDraw.TabIndex = 13;

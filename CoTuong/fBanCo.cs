@@ -54,6 +54,7 @@ namespace CoTuong
 		{
 			CheckForIllegalCrossThreadCalls = false;
 			InitializeComponent();
+			cmbSelectColor.SelectedIndex = 0;
 		}
 		public static playerSocket player = new playerSocket();
 		fEnd end;
@@ -612,6 +613,8 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.NavajoWhite;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+
+				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
 			else if (selectedItem == "Black")
 			{
@@ -647,6 +650,8 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
+				undo.Image = CoTuong.Properties.Resources.BackYellow;
 			}
 			else if (selectedItem == "Blue")
 			{
@@ -680,8 +685,10 @@ namespace CoTuong
 				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenBlue;
 				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoBlue;
 
-				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(160)))), ((int)(((byte)(215)))));
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+
+				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
 			else if (selectedItem == "Grey")
 			{
@@ -717,6 +724,8 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlLight;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+
+				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
 			else if (selectedItem == "Paper")
 			{
@@ -750,8 +759,10 @@ namespace CoTuong
 				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenPaper;
 				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoPaper;
 
-				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+
+				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
 
 			this.BackgroundImage = SelectedColor_board;
@@ -759,27 +770,25 @@ namespace CoTuong
 
 			for (int i = 0; i < 2; i++)
 			{
-				VanCo.player[0].qXe[i].draw();
-				VanCo.player[0].qMa[i].draw();
-				VanCo.player[0].qVoi[i].draw();
-				VanCo.player[0].qSi[i].draw();
-				VanCo.player[0].qPhao[i].draw();
+				VanCo.player[0].qXe[i].picQuanCo.Image = SelectedColor_XeDen;
+				VanCo.player[0].qMa[i].picQuanCo.Image = SelectedColor_MaDen;
+				VanCo.player[0].qVoi[i].picQuanCo.Image = SelectedColor_VoiDen;
+				VanCo.player[0].qSi[i].picQuanCo.Image = SelectedColor_SiDen;
+				VanCo.player[0].qPhao[i].picQuanCo.Image = SelectedColor_PhaoDen;
+
+				VanCo.player[1].qXe[i].picQuanCo.Image = SelectedColor_XeDo;
+				VanCo.player[1].qMa[i].picQuanCo.Image = SelectedColor_MaDo;
+				VanCo.player[1].qVoi[i].picQuanCo.Image = SelectedColor_VoiDo;
+				VanCo.player[1].qSi[i].picQuanCo.Image = SelectedColor_SiDo;
+				VanCo.player[1].qPhao[i].picQuanCo.Image = SelectedColor_PhaoDo;
 			}
 			for (int i = 0; i < 5; i++)
-				VanCo.player[0].qTot[i].draw();
-			VanCo.player[0].qTuong.draw();
-			//========================
-			for (int i = 0; i < 2; i++)
 			{
-				VanCo.player[1].qXe[i].draw();
-				VanCo.player[1].qMa[i].draw();
-				VanCo.player[1].qVoi[i].draw();
-				VanCo.player[1].qSi[i].draw();
-				VanCo.player[1].qPhao[i].draw();
+				VanCo.player[0].qTot[i].picQuanCo.Image = SelectedColor_TotDen;
+				VanCo.player[1].qTot[i].picQuanCo.Image = SelectedColor_TotDo;
 			}
-			for (int i = 0; i < 5; i++)
-				VanCo.player[1].qTot[i].draw();
-			VanCo.player[1].qTuong.draw();
+			VanCo.player[0].qTuong.picQuanCo.Image = SelectedColor_TuongDen;
+			VanCo.player[1].qTuong.picQuanCo.Image = SelectedColor_TuongDo;
 		}
 
 		private void RenderBackGroundBoard()

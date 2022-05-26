@@ -47,10 +47,13 @@
 			// lbName
 			// 
 			this.lbName.AutoSize = true;
-			this.lbName.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbName.BackColor = System.Drawing.Color.Transparent;
+			this.lbName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbName.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbName.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbName.Location = new System.Drawing.Point(43, 42);
 			this.lbName.Name = "lbName";
-			this.lbName.Size = new System.Drawing.Size(95, 36);
+			this.lbName.Size = new System.Drawing.Size(97, 32);
 			this.lbName.TabIndex = 0;
 			this.lbName.Text = "Họ Tên";
 			// 
@@ -65,10 +68,13 @@
 			// lbSex
 			// 
 			this.lbSex.AutoSize = true;
-			this.lbSex.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbSex.BackColor = System.Drawing.Color.Transparent;
+			this.lbSex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbSex.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbSex.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbSex.Location = new System.Drawing.Point(526, 42);
 			this.lbSex.Name = "lbSex";
-			this.lbSex.Size = new System.Drawing.Size(113, 36);
+			this.lbSex.Size = new System.Drawing.Size(124, 32);
 			this.lbSex.TabIndex = 2;
 			this.lbSex.Text = "Giới tính";
 			// 
@@ -83,17 +89,20 @@
 			// lbYear
 			// 
 			this.lbYear.AutoSize = true;
-			this.lbYear.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbYear.BackColor = System.Drawing.Color.Transparent;
+			this.lbYear.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbYear.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbYear.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbYear.Location = new System.Drawing.Point(486, 109);
 			this.lbYear.Name = "lbYear";
-			this.lbYear.Size = new System.Drawing.Size(123, 36);
+			this.lbYear.Size = new System.Drawing.Size(123, 32);
 			this.lbYear.TabIndex = 4;
 			this.lbYear.Text = "Năm sinh";
 			// 
 			// txtUsr
 			// 
 			this.txtUsr.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtUsr.Location = new System.Drawing.Point(200, 170);
+			this.txtUsr.Location = new System.Drawing.Point(223, 163);
 			this.txtUsr.Name = "txtUsr";
 			this.txtUsr.Size = new System.Drawing.Size(339, 42);
 			this.txtUsr.TabIndex = 7;
@@ -101,17 +110,20 @@
 			// lbUsername
 			// 
 			this.lbUsername.AutoSize = true;
-			this.lbUsername.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbUsername.BackColor = System.Drawing.Color.Transparent;
+			this.lbUsername.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbUsername.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbUsername.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbUsername.Location = new System.Drawing.Point(43, 170);
 			this.lbUsername.Name = "lbUsername";
-			this.lbUsername.Size = new System.Drawing.Size(131, 36);
+			this.lbUsername.Size = new System.Drawing.Size(137, 32);
 			this.lbUsername.TabIndex = 6;
 			this.lbUsername.Text = "Username";
 			// 
 			// txtPsw
 			// 
 			this.txtPsw.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtPsw.Location = new System.Drawing.Point(200, 231);
+			this.txtPsw.Location = new System.Drawing.Point(223, 229);
 			this.txtPsw.Name = "txtPsw";
 			this.txtPsw.Size = new System.Drawing.Size(339, 42);
 			this.txtPsw.TabIndex = 9;
@@ -120,17 +132,20 @@
 			// lbPsw
 			// 
 			this.lbPsw.AutoSize = true;
-			this.lbPsw.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbPsw.BackColor = System.Drawing.Color.Transparent;
+			this.lbPsw.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbPsw.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbPsw.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbPsw.Location = new System.Drawing.Point(43, 231);
 			this.lbPsw.Name = "lbPsw";
-			this.lbPsw.Size = new System.Drawing.Size(122, 36);
+			this.lbPsw.Size = new System.Drawing.Size(145, 32);
 			this.lbPsw.TabIndex = 8;
 			this.lbPsw.Text = "Password";
 			// 
 			// txtRePsw
 			// 
 			this.txtRePsw.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtRePsw.Location = new System.Drawing.Point(200, 291);
+			this.txtRePsw.Location = new System.Drawing.Point(223, 287);
 			this.txtRePsw.Name = "txtRePsw";
 			this.txtRePsw.Size = new System.Drawing.Size(339, 42);
 			this.txtRePsw.TabIndex = 11;
@@ -140,22 +155,30 @@
 			// lbRePsw
 			// 
 			this.lbRePsw.AutoSize = true;
-			this.lbRePsw.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbRePsw.BackColor = System.Drawing.Color.Transparent;
+			this.lbRePsw.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lbRePsw.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbRePsw.ForeColor = System.Drawing.Color.AntiqueWhite;
 			this.lbRePsw.Location = new System.Drawing.Point(43, 294);
 			this.lbRePsw.Name = "lbRePsw";
-			this.lbRePsw.Size = new System.Drawing.Size(151, 36);
+			this.lbRePsw.Size = new System.Drawing.Size(174, 32);
 			this.lbRePsw.TabIndex = 10;
 			this.lbRePsw.Text = "RePasswrod";
 			// 
 			// btnSignUp
 			// 
-			this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.btnSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.btnSignUp.BackColor = System.Drawing.Color.Tomato;
+			this.btnSignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSignUp.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.btnSignUp.ForeColor = System.Drawing.Color.MistyRose;
 			this.btnSignUp.Location = new System.Drawing.Point(646, 369);
 			this.btnSignUp.Name = "btnSignUp";
 			this.btnSignUp.Size = new System.Drawing.Size(142, 69);
 			this.btnSignUp.TabIndex = 12;
 			this.btnSignUp.Text = "Sign Up";
-			this.btnSignUp.UseVisualStyleBackColor = true;
+			this.btnSignUp.UseVisualStyleBackColor = false;
 			this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
 			// 
 			// checkListGender
@@ -173,18 +196,23 @@
 			// cbHienThiPass
 			// 
 			this.cbHienThiPass.AutoSize = true;
-			this.cbHienThiPass.Location = new System.Drawing.Point(557, 242);
+			this.cbHienThiPass.BackColor = System.Drawing.Color.Transparent;
+			this.cbHienThiPass.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.cbHienThiPass.ForeColor = System.Drawing.Color.AntiqueWhite;
+			this.cbHienThiPass.Location = new System.Drawing.Point(600, 240);
 			this.cbHienThiPass.Name = "cbHienThiPass";
-			this.cbHienThiPass.Size = new System.Drawing.Size(82, 29);
+			this.cbHienThiPass.Size = new System.Drawing.Size(91, 32);
 			this.cbHienThiPass.TabIndex = 27;
 			this.cbHienThiPass.Text = "Show";
-			this.cbHienThiPass.UseVisualStyleBackColor = true;
+			this.cbHienThiPass.UseVisualStyleBackColor = false;
 			this.cbHienThiPass.CheckedChanged += new System.EventHandler(this.cbHienThiPass_CheckedChanged);
 			// 
 			// SignUp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackgroundImage = global::CoTuong.Properties.Resources.menu;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.cbHienThiPass);
 			this.Controls.Add(this.checkListGender);
