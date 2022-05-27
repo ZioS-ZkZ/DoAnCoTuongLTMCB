@@ -145,11 +145,14 @@ namespace CoTuong
 					LayTenChuPhong();
 					break;
 				case "REQUESTDRAW":
-					if(MessageBox.Show($"{mess.Split(',')[1]} cầu hoà. Bạn có muốn chấp nhận không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+					if(MessageBox.Show($"{mess.Split(',')[1]} cầu hoà. Bạn có muốn chấp nhận không?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.Yes)
 					{
 						VanCo.isWin = "Hoa";
 						player.socket.Send(VanCo.Serialize("HOA|,"));
 					} 
+					break;
+				case "CHUADUNGUOICHOI":
+					MessageBox.Show("Phòng chưa đủ người chơi", "Thông báo !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					break;
 			}
 		}
@@ -177,20 +180,24 @@ namespace CoTuong
 		}
 		private void lbDanhSachPhong_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			mess = lbDanhSachPhong.SelectedItem.ToString();
-			itemMess = mess.Split('(');
-			mess = itemMess[0].Replace("Phòng", "").Trim();
-			try
-			{
-				player.socket.Send(VanCo.Serialize("VAOPHONGGAME|," + mess + ","));
-				plLobby.Visible = false;
-				player.chuPhong = false;
-				rtbContentChat.AppendText("Vào Phòng Thành Công\n");
+            if (lbDanhSachPhong.SelectedItem != null)
+            {
+				mess = lbDanhSachPhong.SelectedItem.ToString();
+				itemMess = mess.Split('(');
+				mess = itemMess[0].Replace("Phòng", "").Trim();
+				try
+				{
+					player.socket.Send(VanCo.Serialize("VAOPHONGGAME|," + mess + ","));
+					plLobby.Visible = false;
+					player.chuPhong = false;
+					rtbContentChat.AppendText("Vào Phòng Thành Công\n");
+				}
+				catch
+				{
+					player.socket.Close();
+				}
 			}
-			catch
-			{
-				player.socket.Close();
-			}
+			
 		}
 		private void coNguoiVaoPhong()
 		{
@@ -231,11 +238,25 @@ namespace CoTuong
 				VanCo.timerDo.Stop();
 				try
 				{
+					if(VanCo.DangChoi )
+                    {
+						if(player.chuPhong)
+                        {
+							player.socket.Send(VanCo.Serialize("DENWIN|,"));
+							VanCo.isWin = "den";
+						}
+                        else
+                        {
+							player.socket.Send(VanCo.Serialize("DOWIN|,"));
+							VanCo.isWin = "do";
+						}
+					}
 					player.socket.Send(VanCo.Serialize("THOATKHOIPHONGGAME|," + ((player.chuPhong == true) ? "1" : "0") + ","));
 					plLobby.Visible = true;
 					player.chuPhong = false;
 					player.room = null;
 					rtbContentChat.Clear();
+					player.socket.Send(VanCo.Serialize("LAYDANHSACHPHONG|,"));
 					ShowMatchHistory();
 				}
 				catch
@@ -990,7 +1011,7 @@ namespace CoTuong
 			end = new fEnd();
 			end.BackgroundImage = global::CoTuong.Properties.Resources.DoThang;
 			end.ShowDialog();
-
+			VanCo.DangChoi = false;
 			SaveMatchInfo(matchInfo);
 		}
 
@@ -1036,7 +1057,7 @@ namespace CoTuong
 			end = new fEnd();
 			end.BackgroundImage = global::CoTuong.Properties.Resources.DenThang;
 			end.ShowDialog();
-
+			VanCo.DangChoi = false;
 			SaveMatchInfo(matchInfo);
 		}
 
@@ -1082,7 +1103,7 @@ namespace CoTuong
 			end = new fEnd();
 			end.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
 			end.ShowDialog();
-
+			VanCo.DangChoi = false;
 			SaveMatchInfo(matchInfo);
 		}
 

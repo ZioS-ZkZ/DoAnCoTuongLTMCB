@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btExit = new System.Windows.Forms.Button();
             this.btStarServer = new System.Windows.Forms.Button();
             this.txtTerminal = new System.Windows.Forms.RichTextBox();
             this.btCloseServer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btExit
-            // 
-            this.btExit.Location = new System.Drawing.Point(565, 481);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(188, 60);
-            this.btExit.TabIndex = 0;
-            this.btExit.Text = "Exit";
-            this.btExit.UseVisualStyleBackColor = true;
-            // 
             // btStarServer
             // 
             this.btStarServer.Location = new System.Drawing.Point(68, 481);
             this.btStarServer.Name = "btStarServer";
-            this.btStarServer.Size = new System.Drawing.Size(188, 60);
+            this.btStarServer.Size = new System.Drawing.Size(271, 60);
             this.btStarServer.TabIndex = 1;
             this.btStarServer.Text = "Start Server";
             this.btStarServer.UseVisualStyleBackColor = true;
@@ -63,12 +53,13 @@
             // 
             // btCloseServer
             // 
-            this.btCloseServer.Location = new System.Drawing.Point(321, 481);
+            this.btCloseServer.Location = new System.Drawing.Point(511, 481);
             this.btCloseServer.Name = "btCloseServer";
-            this.btCloseServer.Size = new System.Drawing.Size(188, 60);
+            this.btCloseServer.Size = new System.Drawing.Size(242, 60);
             this.btCloseServer.TabIndex = 3;
             this.btCloseServer.Text = "Close Server";
             this.btCloseServer.UseVisualStyleBackColor = true;
+            this.btCloseServer.Click += new System.EventHandler(this.btCloseServer_Click);
             // 
             // fSeverMain
             // 
@@ -78,7 +69,6 @@
             this.Controls.Add(this.btCloseServer);
             this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.btStarServer);
-            this.Controls.Add(this.btExit);
             this.Name = "fSeverMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -86,8 +76,6 @@
         }
 
         #endregion
-
-        private Button btExit;
         private Button btStarServer;
         private RichTextBox txtTerminal;
         private Button btCloseServer;

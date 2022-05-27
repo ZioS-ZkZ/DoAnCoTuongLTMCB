@@ -1,9 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Text;
 
 namespace CoTuong
 {
+	internal class MatchInfo
+	{
+		public string ID { get; set; }
+		public string Enemy { get; set; }
+		public string Result { get; set; }
+		public string NumGo { get; set; }
+		public string TotalTime { get; set; }
+
+	}
+	internal class PlayerInfo
+	{
+		public string FullName { get; set; }
+		public string Sex { get; set; }
+		public string BirthYear { get; set; }
+		public string UserName { get; set; }
+		public string Password { get; set; }
+	}
+	public class playerSocket
+	{
+		public string ten { get; set; }
+		public string ipAddress { get; set; }
+		public bool chuPhong { get; set; }
+		public Socket socket { get; set; }
+		public Room room { get; set; }
+
+	}
     public class Room
     {
         public int _sophong;

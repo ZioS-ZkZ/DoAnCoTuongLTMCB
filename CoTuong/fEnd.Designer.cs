@@ -50,6 +50,7 @@ namespace CoTuong
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(813, 620);
             this.Controls.Add(this.rePlay);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

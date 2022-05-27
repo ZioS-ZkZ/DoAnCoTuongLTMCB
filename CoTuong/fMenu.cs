@@ -36,8 +36,10 @@ namespace CoTuong
             try
             {
                 client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-				ipe = new IPEndPoint(IPAddress.Parse("25.5.36.175"), 9999);
-				client.Connect(ipe);
+                //ipe = new IPEndPoint(IPAddress.Parse("25.5.36.175"), 9999);
+                ipe = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+
+                client.Connect(ipe);
             }
             catch (Exception ex)
             {
