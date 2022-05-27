@@ -188,9 +188,13 @@ namespace CoTuong
 			this.btTimPhong.Location = new System.Drawing.Point(1030, 920);
 			this.btTimPhong.Name = "btTimPhong";
 			this.btTimPhong.Size = new System.Drawing.Size(211, 82);
+			this.btTimPhong.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btTimPhong.TabIndex = 2;
+			this.btTimPhong.Font= new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.btTimPhong.Text = "Tìm Phòng";
 			this.btTimPhong.UseVisualStyleBackColor = true;
+			this.btTimPhong.BackColor = System.Drawing.Color.Gold;
+
 			this.btTimPhong.Click += new System.EventHandler(this.btTimPhong_Click);
 			// 
 			// btTaoPhong
@@ -198,9 +202,13 @@ namespace CoTuong
 			this.btTaoPhong.Location = new System.Drawing.Point(665, 920);
 			this.btTaoPhong.Name = "btTaoPhong";
 			this.btTaoPhong.Size = new System.Drawing.Size(211, 82);
+			this.btTaoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btTaoPhong.TabIndex = 1;
+			this.btTaoPhong.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.btTaoPhong.Text = "Tạo Phòng";
 			this.btTaoPhong.UseVisualStyleBackColor = true;
+			this.btTaoPhong.BackColor = System.Drawing.Color.Gold;
+			
 			this.btTaoPhong.Click += new System.EventHandler(this.btTaoPhong_Click);
 			// 
 			// lbDanhSachPhong

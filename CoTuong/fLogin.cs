@@ -14,13 +14,13 @@ using FireSharp.Interfaces;
 
 namespace CoTuong
 {
-    public partial class fMenu : Form
+    public partial class fLogin : Form
     {
         SoundPlayer soundMenu = new SoundPlayer(CoTuong.Properties.Resources.nenMenu);
         public Socket client;
         IPEndPoint ipe;
         bool daketnoi = false;
-        public fMenu()
+        public fLogin()
         {
             InitializeComponent();
             //soundMenu.PlayLooping();

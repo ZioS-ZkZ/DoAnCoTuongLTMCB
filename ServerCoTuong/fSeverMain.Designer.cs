@@ -70,7 +70,7 @@
             this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.btStarServer);
             this.Name = "fSeverMain";
-            this.Text = "Form1";
+            this.Text = "Sever cờ tướng";
             this.ResumeLayout(false);
 
         }
