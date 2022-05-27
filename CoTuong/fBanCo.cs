@@ -966,7 +966,7 @@ namespace CoTuong
 				if (s > 9) se = $"{s}";
 				else se = $"0{s}";
 
-				matchInfo.Result = "Thang";
+				matchInfo.Result = "Thắng";
 				matchInfo.NumGo = VanCo.soLanDi_Do.ToString();
 				matchInfo.TotalTime = $"{mi}:{se}";
 				matchInfo.Enemy = enemy;
@@ -1026,7 +1026,7 @@ namespace CoTuong
 				if (s > 9) se = $"{s}";
 				else se = $"0{s}";
 
-				matchInfo.Result = "Thang";
+				matchInfo.Result = "Thắng";
 				matchInfo.NumGo = VanCo.soLanDi_Den.ToString();
 				matchInfo.TotalTime = $"{mi}:{se}";
 				matchInfo.Enemy = host;
@@ -1057,7 +1057,7 @@ namespace CoTuong
 				if (s > 9) se = $"{s}";
 				else se = $"0{s}";
 
-				matchInfo.Result = "Hoa";
+				matchInfo.Result = "Hoà";
 				matchInfo.NumGo = VanCo.soLanDi_Do.ToString();
 				matchInfo.TotalTime = $"{mi}:{se}";
 				matchInfo.Enemy = enemy;
@@ -1072,7 +1072,7 @@ namespace CoTuong
 				if (s > 9) se = $"{s}";
 				else se = $"0{s}";
 
-				matchInfo.Result = "Hoa";
+				matchInfo.Result = "Hoà";
 				matchInfo.NumGo = VanCo.soLanDi_Den.ToString();
 				matchInfo.TotalTime = $"{mi}:{se}";
 				matchInfo.Enemy = host;

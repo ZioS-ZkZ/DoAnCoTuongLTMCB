@@ -166,6 +166,7 @@ namespace CoTuong
 			// 
 			// plLobby
 			// 
+			this.plLobby.BringToFront();
 			this.plLobby.Controls.Add(this.btnCancelLobby);
 			this.plLobby.Controls.Add(this.lbHistory);
 			this.plLobby.Controls.Add(this.panel2);

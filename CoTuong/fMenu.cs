@@ -35,27 +35,9 @@ namespace CoTuong
             string hostName = Dns.GetHostName();
             try
             {
-
-                IPHostEntry ipHostEntry = Dns.GetHostEntry(hostName);
-
-                IPAddress[] iPAddress = ipHostEntry.AddressList;
                 client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                foreach (IPAddress ip in iPAddress)
-                {
-                    try
-                    {
-                        ipe = new IPEndPoint(IPAddress.Parse(ip.ToString()), 9999);
-                        client.Connect(ipe);
-                        daketnoi = true;
-                        break;
-                    }
-                    catch { }
-                }
-                if (!daketnoi)
-                {
-                    MessageBox.Show("Không tìm thấy server");
-                    Application.Exit();
-                }
+				ipe = new IPEndPoint(IPAddress.Parse("25.5.36.175"), 9999);
+				client.Connect(ipe);
             }
             catch (Exception ex)
             {

@@ -228,7 +228,9 @@
 			this.Controls.Add(this.lbSex);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.lbName);
+			this.DoubleBuffered = true;
 			this.Name = "SignUp";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SignUp";
 			this.ResumeLayout(false);
 			this.PerformLayout();
