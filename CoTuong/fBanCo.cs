@@ -116,7 +116,7 @@ namespace CoTuong
 					rtbContentChat.AppendText(mess.Split(',')[1] + "\n");
 					break;
 				case "NEWGAME":
-					newGame(mess);
+					newGame();
 					break;
 				case "DANHCO":
 					fBanCo.itemMess = mess.Split(',');
@@ -144,6 +144,10 @@ namespace CoTuong
 					break;
 				case "TENCHUPHONG":
 					LayTenChuPhong();
+					break;
+				case "REQUESTNEWGAME":
+					if (MessageBox.Show($"{mess.Split(',')[1]} Muốn bắt đầu ván cờ mới.\nBạn có chấp nhận không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+						player.socket.Send(VanCo.Serialize("NEWGAME|,"));
 					break;
 				case "REQUESTDRAW":
 					if(MessageBox.Show($"{mess.Split(',')[1]} cầu hoà. Bạn có muốn chấp nhận không?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Information) == DialogResult.Yes)
@@ -280,13 +284,12 @@ namespace CoTuong
 		}
 		private void NewGame_Click(object sender, EventArgs e)
 		{
-			player.socket.Send(VanCo.Serialize("NEWGAME|," + player.ten + ","));
+			player.socket.Send(VanCo.Serialize("REQUESTNEWGAME|," + player.ten + ","));
 
 		}
-		private void newGame(string mess)
+		private void newGame()
 		{
-			itemMess = mess.Split(',');
-			rtbContentChat.AppendText(itemMess[1] + " đã bắt đầu ván cờ mới !!!\n");
+			rtbContentChat.AppendText("Đã bắt đầu ván cờ mới !!!\n");
 			VanCo.NewGame();
 			VanCo.clickSound("ready");
 			
@@ -376,7 +379,6 @@ namespace CoTuong
 									VanCo.isMarked = false;
 									fBanCo.player.socket.Send(VanCo.Serialize("DANHCO|," + VanCo.temp.Hang + "," + VanCo.temp.Cot + "," + VanCo.temp.Ten + "," + VanCo.temp.Phe + "," + VanCo.temp.Phia + "," + i + "," + j+","+VanCo.LuotDi+","+"0,0,0"));
 									BanCo.ResetCanMove();
-									//sendStatus();
 									break;
 								case false:
 									if (VanCo.temp.Phe == 0)

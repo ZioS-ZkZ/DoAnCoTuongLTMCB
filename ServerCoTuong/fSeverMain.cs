@@ -175,9 +175,22 @@ namespace ServerCoTuong
                     {
                         player.room.plnguoichoi1.socket.Send(VanCo.Serialize("CHUADUNGUOICHOI|,"));
                     }
-					
 					break;
-			}
+                case "REQUESTNEWGAME":
+                    if (player.room.siso == 2)
+                    {
+                        string requester = data.Split(',')[1];
+                        if (player.room.plnguoichoi1.ten != requester)
+                            player.room.plnguoichoi1.socket.Send(VanCo.Serialize(data));
+                        else if (player.room.plnguoichoi2.ten != requester)
+                            player.room.plnguoichoi2.socket.Send(VanCo.Serialize(data));
+                    }
+                    else
+                    {
+                        player.room.plnguoichoi1.socket.Send(VanCo.Serialize("CHUADUNGUOICHOI|,"));
+                    }
+                    break;
+            }
         }
         private void setNameClient(string mess, playerSocket player)
         {
@@ -212,7 +225,7 @@ namespace ServerCoTuong
                 r.siso = 2;
                 r.plnguoichoi2 = player;
                 player.room = r;
-                //plr.room = r;
+                plr.room = r;
                 plr.socket.Send(VanCo.Serialize("NGUOICHOIMOIVAOPHONG|," + r.plnguoichoi2.ten + ","));
 				player.socket.Send(VanCo.Serialize("TENCHUPHONG|," + r.plnguoichoi1.ten));
             }
@@ -243,6 +256,7 @@ namespace ServerCoTuong
         private void thoatphonggame(string mess, playerSocket player)
         {
             itemMess = mess.Split(',');
+            
             if (itemMess[1] == "1")
             {
                 if (player.room.siso == 2)
@@ -277,6 +291,7 @@ namespace ServerCoTuong
                     player.room = null;
                 }
             }
+            
         }
 
         private void btCloseServer_Click(object sender, EventArgs e)
