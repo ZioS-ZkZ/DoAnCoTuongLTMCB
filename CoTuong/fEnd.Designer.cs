@@ -35,25 +35,26 @@ namespace CoTuong
             // rePlay
             // 
             this.rePlay.BackColor = System.Drawing.Color.Firebrick;
-            this.rePlay.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rePlay.Location = new System.Drawing.Point(265, 285);
+            this.rePlay.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rePlay.Location = new System.Drawing.Point(68, 496);
             this.rePlay.Name = "rePlay";
-            this.rePlay.Size = new System.Drawing.Size(289, 68);
+            this.rePlay.Size = new System.Drawing.Size(1786, 118);
             this.rePlay.TabIndex = 0;
-            this.rePlay.Text = "CHƠI LẠI";
+            this.rePlay.Text = "PLAY AGAIN";
             this.rePlay.UseVisualStyleBackColor = false;
             this.rePlay.Click += new System.EventHandler(this.rePlay_Click);
             // 
             // fEnd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CoTuong.Properties.Resources.Draw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ClientSize = new System.Drawing.Size(813, 620);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.rePlay);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "fEnd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

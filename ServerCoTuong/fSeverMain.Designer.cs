@@ -35,9 +35,11 @@
             // 
             // btStarServer
             // 
-            this.btStarServer.Location = new System.Drawing.Point(68, 481);
+            this.btStarServer.BackgroundImage = global::ServerCoTuong.Properties.Resources.YelloLable;
+            this.btStarServer.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btStarServer.Location = new System.Drawing.Point(76, 553);
             this.btStarServer.Name = "btStarServer";
-            this.btStarServer.Size = new System.Drawing.Size(271, 60);
+            this.btStarServer.Size = new System.Drawing.Size(305, 69);
             this.btStarServer.TabIndex = 1;
             this.btStarServer.Text = "Start Server";
             this.btStarServer.UseVisualStyleBackColor = true;
@@ -45,17 +47,19 @@
             // 
             // txtTerminal
             // 
-            this.txtTerminal.Location = new System.Drawing.Point(68, 39);
+            this.txtTerminal.Location = new System.Drawing.Point(76, 45);
             this.txtTerminal.Name = "txtTerminal";
-            this.txtTerminal.Size = new System.Drawing.Size(685, 414);
+            this.txtTerminal.Size = new System.Drawing.Size(770, 476);
             this.txtTerminal.TabIndex = 2;
             this.txtTerminal.Text = "";
             // 
             // btCloseServer
             // 
-            this.btCloseServer.Location = new System.Drawing.Point(511, 481);
+            this.btCloseServer.BackgroundImage = global::ServerCoTuong.Properties.Resources.YelloLable;
+            this.btCloseServer.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btCloseServer.Location = new System.Drawing.Point(575, 553);
             this.btCloseServer.Name = "btCloseServer";
-            this.btCloseServer.Size = new System.Drawing.Size(242, 60);
+            this.btCloseServer.Size = new System.Drawing.Size(272, 69);
             this.btCloseServer.TabIndex = 3;
             this.btCloseServer.Text = "Close Server";
             this.btCloseServer.UseVisualStyleBackColor = true;
@@ -63,12 +67,15 @@
             // 
             // fSeverMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 575);
+            this.BackgroundImage = global::ServerCoTuong.Properties.Resources.Server;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(958, 661);
             this.Controls.Add(this.btCloseServer);
             this.Controls.Add(this.txtTerminal);
             this.Controls.Add(this.btStarServer);
+            this.DoubleBuffered = true;
             this.Name = "fSeverMain";
             this.Text = "Sever cờ tướng";
             this.ResumeLayout(false);
