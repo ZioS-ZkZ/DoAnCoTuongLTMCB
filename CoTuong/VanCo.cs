@@ -124,8 +124,8 @@ namespace CoTuong
 				//Reset lịch sử nước đi
 				fBanCo.lichSuDo.Text = "";
 				fBanCo.lichSuDen.Text = "";
-				soLanDi_Den = 1;
-				soLanDi_Do = 1;
+				soLanDi_Den = 0;
+				soLanDi_Do = 0;
 
 				//Reset timer
 				secondsDen = 3600;
@@ -956,7 +956,8 @@ namespace CoTuong
 					timerDen.Stop();
 					fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "do";
-					fBanCo.player.socket.Send(VanCo.Serialize("DOWIN|,"));
+					if(fBanCo.player.chuPhong)
+						fBanCo.player.socket.Send(VanCo.Serialize("DOWIN|,"));
 				}
 			}
 			else
@@ -982,7 +983,8 @@ namespace CoTuong
 					timerDo.Stop();
 					fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
 					VanCo.isWin = "den";
-					fBanCo.player.socket.Send(VanCo.Serialize("DENWIN|,"));
+					if(fBanCo.player.chuPhong)
+						fBanCo.player.socket.Send(VanCo.Serialize("DENWIN|,"));
 				}
 			}
 		}

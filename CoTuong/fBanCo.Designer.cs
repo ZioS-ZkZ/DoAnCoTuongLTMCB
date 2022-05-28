@@ -343,7 +343,7 @@ namespace CoTuong
 			this.lbWin.AutoSize = true;
 			this.lbWin.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.lbWin.ForeColor = System.Drawing.Color.MistyRose;
-			this.lbWin.Location = new System.Drawing.Point(11, 40);
+			this.lbWin.Location = new System.Drawing.Point(15, 40);
 			this.lbWin.Name = "lbWin";
 			this.lbWin.Size = new System.Drawing.Size(81, 32);
 			this.lbWin.TabIndex = 6;
@@ -387,7 +387,7 @@ namespace CoTuong
 			this.txtWin.AutoSize = true;
 			this.txtWin.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.txtWin.ForeColor = System.Drawing.Color.MistyRose;
-			this.txtWin.Location = new System.Drawing.Point(98, 42);
+			this.txtWin.Location = new System.Drawing.Point(103, 42);
 			this.txtWin.Name = "txtWin";
 			this.txtWin.Size = new System.Drawing.Size(53, 32);
 			this.txtWin.TabIndex = 12;
@@ -420,7 +420,7 @@ namespace CoTuong
 			this.txtDraw.AutoSize = true;
 			this.txtDraw.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.txtDraw.ForeColor = System.Drawing.Color.MistyRose;
-			this.txtDraw.Location = new System.Drawing.Point(430, 42);
+			this.txtDraw.Location = new System.Drawing.Point(440, 42);
 			this.txtDraw.Name = "txtDraw";
 			this.txtDraw.Size = new System.Drawing.Size(53, 32);
 			this.txtDraw.TabIndex = 14;
@@ -431,7 +431,7 @@ namespace CoTuong
 			this.lbDraw.AutoSize = true;
 			this.lbDraw.Font = new System.Drawing.Font("Baskerville Old Face", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.lbDraw.ForeColor = System.Drawing.Color.MistyRose;
-			this.lbDraw.Location = new System.Drawing.Point(367, 40);
+			this.lbDraw.Location = new System.Drawing.Point(377, 40);
 			this.lbDraw.Name = "lbDraw";
 			this.lbDraw.Size = new System.Drawing.Size(57, 32);
 			this.lbDraw.TabIndex = 13;

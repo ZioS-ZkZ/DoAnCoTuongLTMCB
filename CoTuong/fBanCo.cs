@@ -49,6 +49,7 @@ namespace CoTuong
 		public static dynamic SelectedColor_SelectMaDen;
 		public static dynamic SelectedColor_SelectTotDo;
 		public static dynamic SelectedColor_SelectTotDen;
+		private bool undoClicked = false;
 
 		public fBanCo()
 		{
@@ -240,6 +241,7 @@ namespace CoTuong
 				{
 					if(VanCo.DangChoi )
                     {
+						undoClicked = true;
 						if(player.chuPhong)
                         {
 							player.socket.Send(VanCo.Serialize("DENWIN|,"));
@@ -251,13 +253,16 @@ namespace CoTuong
 							VanCo.isWin = "do";
 						}
 					}
-					player.socket.Send(VanCo.Serialize("THOATKHOIPHONGGAME|," + ((player.chuPhong == true) ? "1" : "0") + ","));
-					plLobby.Visible = true;
-					player.chuPhong = false;
-					player.room = null;
-					rtbContentChat.Clear();
-					player.socket.Send(VanCo.Serialize("LAYDANHSACHPHONG|,"));
-					ShowMatchHistory();
+					else
+					{
+						player.socket.Send(VanCo.Serialize("THOATKHOIPHONGGAME|," + ((player.chuPhong == true) ? "1" : "0") + ","));
+						plLobby.Visible = true;
+						player.chuPhong = false;
+						player.room = null;
+						rtbContentChat.Clear();
+						player.socket.Send(VanCo.Serialize("LAYDANHSACHPHONG|,"));
+						ShowMatchHistory();
+					}
 				}
 				catch
 				{
@@ -590,10 +595,6 @@ namespace CoTuong
 				this.Controls.Add(VanCo.player[1].qTuong.picQuanCo);
 
 			}
-
-
-
-
 		}
 
 		private void cmbSelectColor_SelectedIndexChanged(object sender, EventArgs e)
@@ -921,11 +922,11 @@ namespace CoTuong
 
 					foreach(var item in treatedData)
 					{
-						if (item.Value.Result == "Thang")
+						if (item.Value.Result == "Thắng")
 							win++;
 						else if (item.Value.Result == "Thua")
 							lose++;
-						else if (item.Value.Result == "Hoa")
+						else if (item.Value.Result == "Hoà")
 							draw++;
 
 						ListViewItem enemy = new ListViewItem(item.Value.Enemy);
@@ -948,7 +949,7 @@ namespace CoTuong
 				}
 				else
 				{
-					MessageBox.Show("Not find any match history!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					txtWin.Text = txtLose.Text = txtDraw.Text = "0";
 				}
 			}
 			catch
@@ -1013,6 +1014,17 @@ namespace CoTuong
 			end.ShowDialog();
 			VanCo.DangChoi = false;
 			SaveMatchInfo(matchInfo);
+			if(undoClicked)
+			{
+				undoClicked = false;
+				player.socket.Send(VanCo.Serialize("THOATKHOIPHONGGAME|," + ((player.chuPhong == true) ? "1" : "0") + ","));
+				plLobby.Visible = true;
+				player.chuPhong = false;
+				player.room = null;
+				rtbContentChat.Clear();
+				player.socket.Send(VanCo.Serialize("LAYDANHSACHPHONG|,"));
+				ShowMatchHistory();
+			}
 		}
 
 		private void DenWinHandler()
@@ -1059,6 +1071,17 @@ namespace CoTuong
 			end.ShowDialog();
 			VanCo.DangChoi = false;
 			SaveMatchInfo(matchInfo);
+			if(undoClicked)
+			{
+				undoClicked = false;
+				player.socket.Send(VanCo.Serialize("THOATKHOIPHONGGAME|," + ((player.chuPhong == true) ? "1" : "0") + ","));
+				plLobby.Visible = true;
+				player.chuPhong = false;
+				player.room = null;
+				rtbContentChat.Clear();
+				player.socket.Send(VanCo.Serialize("LAYDANHSACHPHONG|,"));
+				ShowMatchHistory();
+			}
 		}
 
 		private void HoaHandler()
