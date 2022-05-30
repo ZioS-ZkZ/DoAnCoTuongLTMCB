@@ -26,7 +26,7 @@ namespace CoTuong
 		public static int soLanDi_Den = 0;
 		public static System.Timers.Timer timerDen;
 		public static System.Timers.Timer timerDo;
-		public static int secondsDo = 3600;
+		public static int secondsDo = 15;
 		public static int secondsDen = 3600;
 		public static bool timerDoRun, timerDenRun;
 
@@ -129,7 +129,7 @@ namespace CoTuong
 
 				//Reset timer
 				secondsDen = 3600;
-				secondsDo = 3600;
+				secondsDo = 15;
 				timerDo.Stop();
 				timerDen.Stop();
 				fBanCo.labelTimerDen.Text = "";
@@ -942,7 +942,6 @@ namespace CoTuong
 				string mi, se;
 
 				if (secondsDen <= 10) fBanCo.labelTimerDen.ForeColor = Color.Red;
-				else fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
 
 				if (m > 9) mi = $"{m}";
 				else mi = $"0{m}";
@@ -954,7 +953,18 @@ namespace CoTuong
 				if (secondsDen == 0)
 				{
 					timerDen.Stop();
-					fBanCo.labelTimerDen.ForeColor = SystemColors.ControlText;
+					string selectedItem = (string)(fBanCo.cmbSelectColor.SelectedItem);
+					if (selectedItem == "Default")
+						fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
+					else if (selectedItem == "Black")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+					else if (selectedItem == "Blue")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
+					else if (selectedItem == "Grey")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
+					else if (selectedItem == "Paper")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(214)))));
+
 					VanCo.isWin = "do";
 					if(fBanCo.player.chuPhong)
 						fBanCo.player.socket.Send(VanCo.Serialize("DOWIN|,"));
@@ -969,7 +979,6 @@ namespace CoTuong
 				string mi, se;
 
 				if (secondsDo <= 10) fBanCo.labelTimerDo.ForeColor = Color.Red;
-				else fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
 
 				if (m > 9) mi = $"{m}";
 				else mi = $"0{m}";
@@ -981,7 +990,18 @@ namespace CoTuong
 				if (secondsDo == 0)
 				{
 					timerDo.Stop();
-					fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
+					string selectedItem = (string)(fBanCo.cmbSelectColor.SelectedItem);
+					if (selectedItem == "Default")
+						fBanCo.labelTimerDo.ForeColor = SystemColors.ControlText;
+					else if (selectedItem == "Black")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+					else if (selectedItem == "Blue")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
+					else if (selectedItem == "Grey")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
+					else if (selectedItem == "Paper")
+						fBanCo.labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(214)))));
+
 					VanCo.isWin = "den";
 					if(fBanCo.player.chuPhong)
 						fBanCo.player.socket.Send(VanCo.Serialize("DENWIN|,"));

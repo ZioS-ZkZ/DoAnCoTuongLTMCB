@@ -637,6 +637,7 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.NavajoWhite;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+				labelTimerDen.ForeColor = labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
 
 				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
@@ -674,6 +675,7 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+				labelTimerDen.ForeColor = labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 
 				undo.Image = CoTuong.Properties.Resources.BackYellow;
 			}
@@ -711,6 +713,7 @@ namespace CoTuong
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(160)))), ((int)(((byte)(215)))));
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+				labelTimerDo.ForeColor = labelTimerDen.ForeColor = System.Drawing.SystemColors.WindowText;
 
 				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
@@ -749,6 +752,8 @@ namespace CoTuong
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.SystemColors.ControlLight;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
 
+				labelTimerDen.ForeColor = labelTimerDo.ForeColor = System.Drawing.SystemColors.WindowText;
+
 				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
 			else if (selectedItem == "Paper")
@@ -784,7 +789,8 @@ namespace CoTuong
 				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoPaper;
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;
+				labelTimerDen.ForeColor = labelTimerDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(214)))));
 
 				undo.Image = CoTuong.Properties.Resources.Undo;
 			}
