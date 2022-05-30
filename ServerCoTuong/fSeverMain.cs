@@ -225,7 +225,7 @@ namespace ServerCoTuong
                 r.siso = 2;
                 r.plnguoichoi2 = player;
                 player.room = r;
-                plr.room = r;
+                //plr.room = r;
                 plr.socket.Send(VanCo.Serialize("NGUOICHOIMOIVAOPHONG|," + r.plnguoichoi2.ten + ","));
 				player.socket.Send(VanCo.Serialize("TENCHUPHONG|," + r.plnguoichoi1.ten));
             }
