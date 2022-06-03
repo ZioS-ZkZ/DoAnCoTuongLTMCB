@@ -49,7 +49,7 @@ namespace CoTuong
         }
         private void fMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Ban dung cuoc choi tai day ???","THONG BAO", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn dừng cuộc chơi tại đây ???","THÔNG BÁO", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
         }
 
