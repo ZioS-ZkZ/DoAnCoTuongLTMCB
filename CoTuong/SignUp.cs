@@ -28,31 +28,38 @@ namespace CoTuong
 
 		private void btnSignUp_Click(object sender, EventArgs e)
 		{
-			PlayerInfo player = new PlayerInfo()
-			{
-				FullName = txtName.Text,
-				Sex = checkListGender.CheckedItems[0].ToString(),
-				BirthYear = txtYear.Text,
-				UserName = txtUsr.Text,
-				Password = txtPsw.Text,
-			};
+			try {
+				PlayerInfo player = new PlayerInfo()
+				{
+					FullName = txtName.Text,
+					Sex = checkListGender.CheckedItems[0].ToString(),
+					BirthYear = txtYear.Text,
+					UserName = txtUsr.Text,
+					Password = txtPsw.Text,
+				};
 
-			try
-			{
-				client = new FireSharp.FirebaseClient(fcon);
-				SetResponse setter = client.Set("PlayerInfo/" + txtUsr.Text, player);
-				if (setter.StatusCode.ToString() == "OK")
+				try
 				{
-					MessageBox.Show("Sign up successfully");
-				} else
-				{
-					MessageBox.Show("Something wrong! Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					client = new FireSharp.FirebaseClient(fcon);
+					SetResponse setter = client.Set("PlayerInfo/" + txtUsr.Text, player);
+					if (setter.StatusCode.ToString() == "OK")
+					{
+						MessageBox.Show("Sign up successfully");
+					}
+					else
+					{
+						MessageBox.Show("Something wrong! Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
-			}
-			catch
-			{
-				MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+				catch
+				{
+					MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			} catch
+            {
+				MessageBox.Show("Please fill in all information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+			
 			this.Close();
 		}
 
