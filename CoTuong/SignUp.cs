@@ -28,39 +28,45 @@ namespace CoTuong
 
 		private void btnSignUp_Click(object sender, EventArgs e)
 		{
-			try {
-				PlayerInfo player = new PlayerInfo()
-				{
-					FullName = txtName.Text,
-					Sex = checkListGender.CheckedItems[0].ToString(),
-					BirthYear = txtYear.Text,
-					UserName = txtUsr.Text,
-					Password = txtPsw.Text,
-				};
-
+			if (txtPsw.Text.Equals(txtRePsw.Text))
+			{
 				try
 				{
-					client = new FireSharp.FirebaseClient(fcon);
-					SetResponse setter = client.Set("PlayerInfo/" + txtUsr.Text, player);
-					if (setter.StatusCode.ToString() == "OK")
+					PlayerInfo player = new PlayerInfo()
 					{
-						MessageBox.Show("Sign up successfully");
+						FullName = txtName.Text,
+						Sex = checkListGender.CheckedItems[0].ToString(),
+						BirthYear = txtYear.Text,
+						UserName = txtUsr.Text,
+						Password = txtPsw.Text,
+					};
+
+					try
+					{
+						client = new FireSharp.FirebaseClient(fcon);
+						SetResponse setter = client.Set("PlayerInfo/" + txtUsr.Text, player);
+						if (setter.StatusCode.ToString() == "OK")
+						{
+							MessageBox.Show("Sign up successfully");
+							this.Close();
+						}
+						else
+						{
+							MessageBox.Show("Something wrong! Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
 					}
-					else
+					catch
 					{
-						MessageBox.Show("Something wrong! Please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 				catch
 				{
-					MessageBox.Show("There was a problem in the internet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Please fill in all information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-			} catch
-            {
-				MessageBox.Show("Please fill in all information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+			}
+			else MessageBox.Show("Wrong reenter password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			
-			this.Close();
 		}
 
 		private void checkListGender_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -75,7 +81,7 @@ namespace CoTuong
 			{
 				if (!txtPsw.Text.Equals(txtRePsw.Text))
 					MessageBox.Show("Wrong reenter password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				else MessageBox.Show("Confirm reenter password!");
+				else MessageBox.Show("Confirmed reenter password!");
 			}
 		}
 
