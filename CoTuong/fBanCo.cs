@@ -620,8 +620,8 @@ namespace CoTuong
 				SelectedColor_MaDo = CoTuong.Properties.Resources.MaDoDefault;
 				SelectedColor_TotDen = CoTuong.Properties.Resources.TotDenDefault;
 				SelectedColor_TotDo = CoTuong.Properties.Resources.TotDoDefault;
-				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelecTuongDenDefault;
-				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelecTuongDoDefault;
+				SelectedColor_SelectTuongDen = CoTuong.Properties.Resources.SelectTuongDenDefault;
+				SelectedColor_SelectTuongDo = CoTuong.Properties.Resources.SelectTuongDoDefault;
 				SelectedColor_SelectSiDen = CoTuong.Properties.Resources.SelectSiDenDefault;
 				SelectedColor_SelectSiDo = CoTuong.Properties.Resources.SelectSiDoDefault;
 				SelectedColor_SelectVoiDen = CoTuong.Properties.Resources.SelectVoiDenDefault;
@@ -632,8 +632,8 @@ namespace CoTuong
 				SelectedColor_SelectPhaoDo = CoTuong.Properties.Resources.SelectPhaoDoDefault;
 				SelectedColor_SelectMaDen = CoTuong.Properties.Resources.SelectMaDenDefault;
 				SelectedColor_SelectMaDo = CoTuong.Properties.Resources.SelectMaDoDefault;
-				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelecTotDenDefault;
-				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelecTotDoDefault;
+				SelectedColor_SelectTotDen = CoTuong.Properties.Resources.SelectTotDenDefault;
+				SelectedColor_SelectTotDo = CoTuong.Properties.Resources.SelectTotDoDefault;
 
 				lichSuDen.BackColor = lichSuDo.BackColor = System.Drawing.Color.NavajoWhite;
 				lichSuDen.ForeColor = lichSuDo.ForeColor = System.Drawing.SystemColors.WindowText;

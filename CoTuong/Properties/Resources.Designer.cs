@@ -576,26 +576,6 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SelecTotDenDefault {
-            get {
-                object obj = ResourceManager.GetObject("SelecTotDenDefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelecTotDoDefault {
-            get {
-                object obj = ResourceManager.GetObject("SelecTotDoDefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap SelectPhaoDenBlack {
             get {
                 object obj = ResourceManager.GetObject("SelectPhaoDenBlack", resourceCulture);
@@ -816,6 +796,16 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SelectTotDenGrey {
             get {
                 object obj = ResourceManager.GetObject("SelectTotDenGrey", resourceCulture);
@@ -849,6 +839,16 @@ namespace CoTuong.Properties {
         internal static System.Drawing.Bitmap SelectTotDoBlue {
             get {
                 object obj = ResourceManager.GetObject("SelectTotDoBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectTotDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectTotDoDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -896,6 +896,16 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDenDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDenDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SelectTuongDenGrey {
             get {
                 object obj = ResourceManager.GetObject("SelectTuongDenGrey", resourceCulture);
@@ -936,6 +946,16 @@ namespace CoTuong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SelectTuongDoDefault {
+            get {
+                object obj = ResourceManager.GetObject("SelectTuongDoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SelectTuongDoGrey {
             get {
                 object obj = ResourceManager.GetObject("SelectTuongDoGrey", resourceCulture);
@@ -949,26 +969,6 @@ namespace CoTuong.Properties {
         internal static System.Drawing.Bitmap SelectTuongDoPaper {
             get {
                 object obj = ResourceManager.GetObject("SelectTuongDoPaper", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelecTuongDenDefault {
-            get {
-                object obj = ResourceManager.GetObject("SelecTuongDenDefault", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SelecTuongDoDefault {
-            get {
-                object obj = ResourceManager.GetObject("SelecTuongDoDefault", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
