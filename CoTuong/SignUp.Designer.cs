@@ -187,9 +187,9 @@
 			this.checkListGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-			this.checkListGender.Location = new System.Drawing.Point(661, 30);
+			this.checkListGender.Location = new System.Drawing.Point(661, 42);
 			this.checkListGender.Name = "checkListGender";
-			this.checkListGender.Size = new System.Drawing.Size(127, 60);
+			this.checkListGender.Size = new System.Drawing.Size(127, 32);
 			this.checkListGender.TabIndex = 26;
 			this.checkListGender.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkListGender_ItemCheck);
 			// 

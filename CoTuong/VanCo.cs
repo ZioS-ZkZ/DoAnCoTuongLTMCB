@@ -26,7 +26,7 @@ namespace CoTuong
 		public static int soLanDi_Den = 0;
 		public static System.Timers.Timer timerDen;
 		public static System.Timers.Timer timerDo;
-		public static int secondsDo = 15;
+		public static int secondsDo = 3600;
 		public static int secondsDen = 3600;
 		public static bool timerDoRun, timerDenRun;
 
@@ -129,7 +129,7 @@ namespace CoTuong
 
 				//Reset timer
 				secondsDen = 3600;
-				secondsDo = 15;
+				secondsDo = 3600;
 				timerDo.Stop();
 				timerDen.Stop();
 				fBanCo.labelTimerDen.Text = "";

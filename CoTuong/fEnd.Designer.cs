@@ -34,7 +34,7 @@ namespace CoTuong
 			// 
 			// rePlay
 			// 
-			this.rePlay.BackColor = System.Drawing.Color.Firebrick;
+			this.rePlay.BackColor = System.Drawing.Color.OrangeRed;
 			this.rePlay.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.rePlay.Location = new System.Drawing.Point(70, 508);
 			this.rePlay.Name = "rePlay";
